@@ -1,0 +1,30 @@
+.login-content{
+    min-height: 100vh;
+    padding: .4rem;
+    .login-label{
+        text-align: center;
+        font-size: .6rem;
+        color:#1b1b1b;
+        margin: 1rem 0;
+    }
+    input{
+        padding:.2rem 0;
+    }
+    .mui-row{
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #eeeeee;
+    }
+    .login-btn{
+        width:80%;
+        margin: 1rem auto;
+        border-radius: 2rem;
+        font-size: .45rem;
+    }
+}
+.verification-code{
+    display: block;
+    width:3rem;
+    margin-left: auto;
+
+}

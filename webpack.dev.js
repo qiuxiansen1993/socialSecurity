@@ -8,8 +8,8 @@ config.devServer = {
     openPage:'Home/index.html',
     index:'Home/index.html',
     proxy:{
-      '/mock/736/api/thh': {
-        target: 'http://yapi.bmp.sankuai.com',
+      '/': {
+        target: 'http://192.168.1.112',
         changeOrigin: true,
       },
     }

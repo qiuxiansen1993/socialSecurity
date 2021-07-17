@@ -7,10 +7,19 @@ const isProd = mode === 'production';
 const config = {
   mode,
   entry: {
-    main: './pages/utils/main.js',
+    // main: './pages/utils/main.js',
     Home: "./pages/Home/index.js", // home页面
     Personal: "./pages/Personal/index.js", // personal页面,
     AddUserInfo: "./pages/AddUserInfo/index.js", // personal页面
+    Login:"./pages/Login/index.js",
+    MyInvite:"./pages/MyInvite/index.js",
+    MyBalance:"./pages/MyBalance/index.js",
+    Feedback:"./pages/Feedback/index.js",
+    MyInfo:"./pages/MyInfo/index.js",
+    MyInvite:"./pages/MyInvite/index.js",
+    MyOrder:"./pages/MyOrder/index.js",
+    ServiceDetails:"./pages/ServiceDetails/index.js",
+    SetInsured:"./pages/SetInsured/index.js",
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -69,6 +78,60 @@ const config = {
       filename: "AddUserInfo/index.html",
       template: "./pages/AddUserInfo/index.html",
       chunks: ["AddUserInfo"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "Login",
+      filename: "Login/index.html",
+      template: "./pages/Login/index.html",
+      chunks: ["Login"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "MyInvite",
+      filename: "MyInvite/index.html",
+      template: "./pages/MyInvite/index.html",
+      chunks: ["MyInvite"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "MyBalance",
+      filename: "MyBalance/index.html",
+      template: "./pages/MyBalance/index.html",
+      chunks: ["MyBalance"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "Feedback",
+      filename: "Feedback/index.html",
+      template: "./pages/Feedback/index.html",
+      chunks: ["Feedback"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "MyInfo",
+      filename: "MyInfo/index.html",
+      template: "./pages/MyInfo/index.html",
+      chunks: ["MyInfo"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "MyInvite",
+      filename: "MyInvite/index.html",
+      template: "./pages/MyInvite/index.html",
+      chunks: ["MyInvite"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "MyOrder",
+      filename: "MyOrder/index.html",
+      template: "./pages/MyOrder/index.html",
+      chunks: ["MyOrder"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "ServiceDetails",
+      filename: "ServiceDetails/index.html",
+      template: "./pages/ServiceDetails/index.html",
+      chunks: ["ServiceDetails"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "SetInsured",
+      filename: "SetInsured/index.html",
+      template: "./pages/SetInsured/index.html",
+      chunks: ["SetInsured"],
     }),
     new MiniCssExtractPlugin({
         filename: isProd ? '[name]/[name].[contenthash].css' : '[name]/[name].css',
