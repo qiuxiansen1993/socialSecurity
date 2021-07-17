@@ -34,7 +34,7 @@ axios.interceptors.request.use(
   },
   function error(error) {
     // Do something with request error
-    console.log('request error, HTTP CODE: ', error.response.status);
+    mui.toast("请求异常");
     return Promise.reject(error);
   },
 );
@@ -42,13 +42,15 @@ axios.interceptors.request.use(
 // 返回状态判断(添加响应拦截器)
 axios.interceptors.response.use(
   res => {
-    if (res.data && res.data.code === 200) {
-      let errorMsg = res.data.msg;
-      return Promise.reject(errorMsg);
-    }
-
+    // if (res.data && res.data.code !== 200) {
+    //   let errorMsg = res.data.msg;
+    //   return Promise.reject(errorMsg);
+    // }
     return res.data;
   },
+  error =>{
+    mui.toast("请求异常");
+  }
 );
 
 export default axios;

@@ -8,10 +8,14 @@ config.devServer = {
     openPage:'Home/index.html',
     index:'Home/index.html',
     proxy:{
-      '/': {
-        target: 'http://192.168.1.112',
+      '/asset':{
+        target: 'http://localhost:8000',
         changeOrigin: true,
       },
+      // '/': {
+      //   target: 'http://192.168.1.112',
+      //   changeOrigin: true,
+      // },
     }
   };
 module.exports = config

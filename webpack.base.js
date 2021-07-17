@@ -4,6 +4,61 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const isProd = mode === 'production';
+const customPage = {
+  css:[
+    (isProd ? '/asset/mui/css/mui.min.css':'http://localhost:8000/asset/mui/css/mui.min.css')
+  ],
+  js:[
+    (isProd ? '/asset/mui/js/mui.min.js':'http://localhost:8000/asset/mui/js/mui.min.js')
+  ],
+  meta:[
+    {
+      name:'keywords',
+      content:'人事代理,社保管理,工资代发,劳务派遣,社保托管'
+    },
+    {
+      name:'description',
+      content:'致力于通过互联网提供高效便捷的人事服务,提供人事代理、社保管理、社保托管、工资代发、个税申报、灵活用工、社会化用工、人力资源外包、工资代发、个税申报、福利保险、劳务派遣等服务'
+    },
+    {
+      name:'apple-mobile-web-app-capable',
+      content:'yes'
+    },
+    {
+      name:'format-detection',
+      content:'telephone=no'
+    },
+    {
+      name:'author',
+      content:''
+    },
+    {
+      name:'browsermode',
+      content:'application'
+    },
+    {
+      name:'x5-fullscreen',
+      content:'true'
+    },
+    {
+      name:'x5-page-mode',
+      content:'app'
+    },
+    {
+      name:'baidu-hm-key',
+      content:''
+    },
+    {
+      name:'360-site-verification',
+      content:''
+    },
+    {
+      name:'baidu-site-verification',
+      content:''
+    },
+  ]
+}
+
 const config = {
   mode,
   entry: {
@@ -66,6 +121,7 @@ const config = {
       filename: "Home/index.html",
       template: "./pages/Home/index.html",
       chunks: ["Home"],
+      files:customPage
     }),
     new HtmlWebpackPlugin({
       title: "Personal",
