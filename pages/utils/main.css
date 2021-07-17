@@ -1,0 +1,20 @@
+h1,h2,h3,h4,h5,p,ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.mui-off-canvas-left, .mui-off-canvas-right{
+    opacity: .7;
+}
+.mui-navigate-right{
+    font-size: 15px;
+}
+.mui-off-canvas-wrap,.mui-scroll-wrapper{
+    overflow-y: auto;
+}
+.mui-active{
+    overflow:hidden;
+}
+.mui-active .mui-scroll-wrapper{
+    overflow:hidden;
+}

@@ -1,0 +1,17 @@
+.userInfo-content{
+    overflow: hidden;
+    label{
+        font-size: .4rem;
+    }
+    .userInfo-label{
+        font-size: .5rem;
+        text-align: center;
+        margin: .3rem 0;
+        color:#1b1b1b;
+    }
+}
+.add-user-btn{
+    display:block;
+    width: 80%;
+    margin: .3rem auto;
+}

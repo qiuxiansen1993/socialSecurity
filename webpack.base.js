@@ -9,7 +9,8 @@ const config = {
   entry: {
     main: './pages/utils/main.js',
     Home: "./pages/Home/index.js", // home页面
-    Personal: "./pages/Personal/index.js", // personal页面
+    Personal: "./pages/Personal/index.js", // personal页面,
+    AddUserInfo: "./pages/AddUserInfo/index.js", // personal页面
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -55,13 +56,19 @@ const config = {
       title: "Home",
       filename: "Home/index.html",
       template: "./pages/Home/index.html",
-      chunks: ["Home","main"],
+      chunks: ["Home"],
     }),
     new HtmlWebpackPlugin({
       title: "Personal",
       filename: "Personal/index.html",
       template: "./pages/Personal/index.html",
-      chunks: ["Personal","main"],
+      chunks: ["Personal"],
+    }),
+    new HtmlWebpackPlugin({
+      title: "AddUserInfo",
+      filename: "AddUserInfo/index.html",
+      template: "./pages/AddUserInfo/index.html",
+      chunks: ["AddUserInfo"],
     }),
     new MiniCssExtractPlugin({
         filename: isProd ? '[name]/[name].[contenthash].css' : '[name]/[name].css',
