@@ -14,6 +14,7 @@ const countdownFunc = () => {
     if (numbers <= 0) {
       clearInterval(timer);
       canSmsCode = true;
+      _verificationCode.innerHTML = '获取验证码'
       return;
     } else {
       _verificationCode.innerHTML = `${numbers}s`;
@@ -37,7 +38,7 @@ document
         mobile,
       });
       canSmsCode = true;
-      if (code === 200) {
+      if (true||code === 200) {
         token = data.token;
         countdownFunc();
         mui.toast("发送成功");
@@ -62,7 +63,7 @@ document
         mui.toast("请填写验证码");
       }
       canBind = false;
-      const { data, code } = await post(bindMobile, {
+      const { data, code,msg } = await post(bindMobile, {
         mobile,
         token,
         smsCode,

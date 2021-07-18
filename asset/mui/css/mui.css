@@ -34,24 +34,24 @@ body::after
 {
     0%
     {
-        background-image: url(https://cdn.dcloud.net.cn/img/mui-shadow-grey.png);
+        background-image: url(/asset/imgs/mui-shadow-grey.png);
     }
 
     100%
     {
-        background-image: url(https://cdn.dcloud.net.cn/img/mui-shadow-grey.png);
+        background-image: url(/asset/imgs/mui-shadow-grey.png);
     }
 }
 @keyframes shadow-preload
 {
     0%
     {
-        background-image: url(https://cdn.dcloud.net.cn/img/mui-shadow-grey.png);
+        background-image: url(/asset/imgs/mui-shadow-grey.png);
     }
 
     100%
     {
-        background-image: url(https://cdn.dcloud.net.cn/img/mui-shadow-grey.png);
+        background-image: url(/asset/imgs/mui-shadow-grey.png);
     }
 }
 article,
