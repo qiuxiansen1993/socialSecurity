@@ -38,7 +38,7 @@ document
         mobile,
       });
       canSmsCode = true;
-      if (true||code === 200) {
+      if (code === 200) {
         token = data.token;
         countdownFunc();
         mui.toast("发送成功");
