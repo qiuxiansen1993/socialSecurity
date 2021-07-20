@@ -26,7 +26,28 @@
         class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
         id="home-menu"
       ></a>
-      <h1 class="mui-title">个人中心</h1>
+      <h1 class="mui-title">创建订单</h1>
     </header>
+    <div>
+        <div class="mui-card" style="margin:0;">
+            <!--页眉，放置标题-->
+            <div class="mui-card-header">缴纳社保</div>
+            <!--内容区-->
+            <div class="mui-card-content">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <div class="mui-input-row">
+                        <label>社保缴费方案</label>
+                        <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <button id='showUserPicker' class="mui-btn mui-btn-block" type='button'>一级选择示例 ...</button>
+                    <div id='userResult' class="ui-alert"></div>
+                </li>
+                <li class="mui-table-view-cell"></li>
+            </ul>
+        </div>
+    </div>
   </body>
 </html>

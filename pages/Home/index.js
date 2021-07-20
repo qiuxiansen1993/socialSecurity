@@ -11,3 +11,9 @@ homeMenu && homeMenu.addEventListener("tap", function () {
 homeBody && homeBody.addEventListener("tap", function () {
     mui(".mui-off-canvas-wrap").offCanvas().close();
 });
+[...document.querySelectorAll('.nav-item__click')].map((item)=>{
+  item.addEventListener("tap", function (e) {
+    const _url = this.getAttribute('data-href');
+    window.location=`${document.location.protocol}//${window.location.host}${_url}`;
+  });
+})

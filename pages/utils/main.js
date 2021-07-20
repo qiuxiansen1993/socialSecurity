@@ -52,5 +52,8 @@ axios.interceptors.response.use(
     mui.toast("请求异常");
   }
 );
-
+const _nav = document.querySelector('.mui-icon-arrowleft');
+_nav && _nav.addEventListener("tap", function () {
+  window.history.go(-1);
+});
 export default axios;

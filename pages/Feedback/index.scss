@@ -1,10 +1,13 @@
 .feedback-content{
     margin-top: 1.5rem;
     .mui-card-content{
+        display: flex;
         padding: .2rem;
     }
     .mui-card-header{
         font-size: .35rem;
+        background-color:#1199FF;
+        color: #fff;
     }
     input{
         font-size: .4rem;
