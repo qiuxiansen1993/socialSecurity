@@ -28,25 +28,109 @@
       ></a>
       <h1 class="mui-title">创建订单</h1>
     </header>
-    <div>
-        <div class="mui-card" style="margin:0;">
-            <!--页眉，放置标题-->
-            <div class="mui-card-header">缴纳社保</div>
-            <!--内容区-->
-            <div class="mui-card-content">
+    <div class="createOrder-content">
+        <div class="mui-card" style="margin-top: 60px;">
+          <!--页眉，放置标题-->
+          <div class="mui-card-header" style="display: block;">
+            个人信息
+          </div>
+          <!--内容区-->
+          <div class="mui-card-content create-order-info" style="padding: 10px 15px;">
+            <div class="mui-row">
+              <div class="mui-col-sm-6 mui-col-xs-6">姓名</div>
+              <div class="mui-col-sm-6 mui-col-xs-6 create-order-info__right">邱成林</div>
+            </div>
+            <div class="mui-row">
+              <div class="mui-col-sm-6 mui-col-xs-6">身份证</div>
+              <div class="mui-col-sm-6 mui-col-xs-6 create-order-info__right">23100000000000000</div>
+            </div>
+            <div class="mui-row">
+              <div class="mui-col-sm-6 mui-col-xs-6">地址</div>
+              <div class="mui-col-sm-6 mui-col-xs-6 create-order-info__right">北京市 北京市昌平区</div>
+            </div>
+            <div class="mui-row">
+              <div class="mui-col-sm-6 mui-col-xs-6">姓名</div>
+              <div class="mui-col-sm-6 mui-col-xs-6 create-order-info__right">邱成林</div>
+            </div>
+            <div class="mui-row">
+              <div class="mui-col-sm-6 mui-col-xs-6">工作单位</div>
+              <div class="mui-col-sm-6 mui-col-xs-6 create-order-info__right">北京市</div>
+            </div>
+            <div class="mui-row">
+              <div class="mui-col-sm-6 mui-col-xs-6">办理单位</div>
+              <div class="mui-col-sm-6 mui-col-xs-6 create-order-info__right">北京市</div>
+            </div>
+            <div class="mui-row">
+              <div class="mui-col-sm-6 mui-col-xs-6">服务类型</div>
+              <div class="mui-col-sm-6 mui-col-xs-6 create-order-info__right">北京市</div>
+            </div>
+          </div>
+        </div>
+        <div class="mui-card">
+          <div class="mui-card-header">缴纳社保</div>
+          <!--内容区-->
+          <div class="mui-card-content">
             <ul class="mui-table-view">
-                <li class="mui-table-view-cell">
-                    <div class="mui-input-row">
-                        <label>社保缴费方案</label>
-                        <input type="text" class="mui-input-clear" placeholder="请输入用户名">
-                    </div>
-                </li>
-                <li class="mui-table-view-cell">
-                    <button id='showUserPicker' class="mui-btn mui-btn-block" type='button'>一级选择示例 ...</button>
-                    <div id='userResult' class="ui-alert"></div>
-                </li>
-                <li class="mui-table-view-cell"></li>
+              <li class="mui-table-view-cell">
+                  <a id='showUserPicker' class="mui-navigate-right">
+                    工资标准
+                    <span id='userResult'></span>
+                  </a>
+              </li>
+              <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">
+                    工资所属月份
+                  </a>
+              </li>
             </ul>
+          </div>
+        </div>
+        <div class="mui-card">
+          <div class="mui-card-header">缴纳社保</div>
+          <!--内容区-->
+          <div class="mui-card-content">
+            <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                  <a id='showUserPicker' class="mui-navigate-right">
+                    工资标准
+                    <span id='userResult'></span>
+                  </a>
+              </li>
+              <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">
+                    社保缴费方案
+                  </a>
+              </li>
+              <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">公积金缴费基数</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mui-card">
+          <div class="mui-card-header">工资和个税</div>
+          <!--内容区-->
+          <div class="mui-card-content">
+            <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                  <a id='showUserPicker' class="mui-navigate-right">
+                    工资所属方案
+                    <span id='userResult'></span>
+                  </a>
+              </li>
+              <li class="mui-table-view-cell">
+                  <a class="mui-navigate-right">
+                    社保缴费方案
+                  </a>
+              </li>
+              <li class="mui-table-view-cell">
+                <div class="mui-input-row">
+                  <label>公积金缴费基数</label>
+                  <input type="text" class="mui-input-clear" placeholder="请输入公积金缴费基数">
+              </div>
+              </li>
+            </ul>
+          </div>
         </div>
     </div>
   </body>

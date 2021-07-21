@@ -1,3 +1,7 @@
+*{
+    font-family: "Helvetica Neue",Arial,-apple-system,BlinkMacSystemFont,"PingFang SC","microsoft yahei","STXihei",sans-serif;
+    color: #1b1b1b;
+}
 h1,h2,h3,h4,h5,p,ul,li{
     margin: 0;
     padding: 0;

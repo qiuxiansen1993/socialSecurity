@@ -2,6 +2,17 @@
     margin:0;
     margin-top: 44px;
     background-color:#1199FF;
+    .mybalance-item{
+        text-align: center;
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        h5{
+            color: #fff;
+            font-size: .5rem;
+        }
+        span{color: #fff;}
+    }
     .balance-info{
         text-align: center;
         font-size: 1.5rem;
@@ -13,12 +24,19 @@
         width: 1.5rem;
         margin-left: auto;
         margin-right: 5px;
+        margin-top: 10px;
         margin-bottom: 10px;
         font-size: .3rem;
         color: #fff;
         border-color: #fff;
     }
+    .mui-pull-bottom-pocket{
+        background-color: #fff;
+    }
+}
+#recordLoad {
     .mui-table-view{
         border-radius: 0;
+        font-size: 14px;
     }
 }
