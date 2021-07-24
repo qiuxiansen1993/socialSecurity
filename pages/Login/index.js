@@ -2,7 +2,6 @@ import { get, post } from "../utils/main";
 import { getSmsCode, bindMobile, login } from "../utils/api/login";
 import "./index.scss";
 
-const loginres = get(login);
 const reg = /^1[0-9]{10}$/;
 let token = null;
 let canSmsCode = true;
