@@ -1,3 +1,19 @@
-.b{
-    font-size: 12px;
+.paycost-list{
+    margin-top: 1.5rem;
+    .mui-table-view{
+        border-radius: 0;
+        font-size: 14px;
+    }
+    .mui-table-view:after{
+        background-color: #fff;
+    }
+}
+.paycost-nav_active{
+    color:#1199FF;
+}
+.paycost-nav{
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    margin-bottom: 10px;
 }

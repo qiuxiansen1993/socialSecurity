@@ -82,6 +82,7 @@ const config = {
     SetInsured:"./pages/SetInsured/index.js",
     CreateOrder:"./pages/CreateOrder/index.js",
     PayCost:"./pages/PayCost/index.js",
+    PayList:"./pages/PayList/index.js",
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -219,6 +220,13 @@ const config = {
       filename: "PayCost/index.html",
       template: "./pages/PayCost/index.html",
       chunks: ["PayCost"],
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "PayList",
+      filename: "PayList/index.html",
+      template: "./pages/PayList/index.html",
+      chunks: ["PayList"],
       files:customPage
     }),
     new MiniCssExtractPlugin({

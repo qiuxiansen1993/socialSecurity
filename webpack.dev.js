@@ -13,8 +13,9 @@ config.devServer = {
         changeOrigin: true,
       },
       '/': {
-        target: 'http://user.liweirenli.com',
+        target: 'http://user.liweirenli.com',//'http://shizhongwei.com'
         changeOrigin: true,
+        // pathRewrite: {'^/api' : ''}
       },
     }
   };
