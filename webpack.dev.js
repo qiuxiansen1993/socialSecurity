@@ -12,10 +12,10 @@ config.devServer = {
         target: 'http://localhost:8000',
         changeOrigin: true,
       },
-      // '/': {
-      //   target: 'http://192.168.1.112',
-      //   changeOrigin: true,
-      // },
+      '/': {
+        target: 'http://user.liweirenli.com',
+        changeOrigin: true,
+      },
     }
   };
 module.exports = config

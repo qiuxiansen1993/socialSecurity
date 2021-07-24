@@ -22,7 +22,6 @@
     .top-up-btn{
         display: block;
         width: 1.5rem;
-        margin-left: auto;
         margin-right: 5px;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -39,4 +38,36 @@
         border-radius: 0;
         font-size: 14px;
     }
+}
+.mui-switch{
+    width:90px;
+    margin: 10px;
+}
+.mui-switch-blue{
+    border: 2px solid #fff;
+    background-color: #fff;
+}
+.mui-switch-blue.mui-active{
+    border: 2px solid #fff;
+    background-color: #fff;
+}
+.mui-switch .mui-switch-handle{
+    background-color: #1199FF;
+}
+.mui-switch:before{
+    color: #1199FF;
+    content:'余额'
+}
+.mui-switch.mui-active:before{
+    color: #1199FF;
+    content:'立伟币'
+}
+.view-record{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding:0 15px;
+}
+.view-record>span{
+    font-size: .4rem;
 }

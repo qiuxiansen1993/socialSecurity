@@ -28,31 +28,38 @@
           id="home-menu"
         ></a>
         <h1 class="mui-title">我的邀请</h1>
-        <a
+        <!-- <a
           class="mui-icon mui-icon-weixin mui-action-menu mui-pull-right"
           id="contact-user"
-        ></a>
+        ></a> -->
       </header>
         <div class="mui-card invite-qrcode">
             <!--页眉，放置标题-->
             <div class="mui-card-header">我的二维码</div>
             <!--内容区-->
             <div class="mui-card-content">
-                <img class="" src="https://img0.baidu.com/it/u=1353524166,3852939982&fm=224&fmt=auto&gp=0.jpg" alt="">
+                <img id="qrcode-img" class="qrcode-img" src="/asset/imgs/qrCode/1601627106666_.pic.jpg" alt="">
+                <p class="qrcode-title">长按图片转发或保存</p>
             </div>
         </div>
       <div class="invite-list">
         <div class="mui-card" style="margin:0;">
+          <div class="mui-row">
+            <div class="mui-col-sm-6 mui-col-xs-6 myinvite-item">
+              <span></span>
+              <h5>邀请的用户数</h5>
+            </div>
+            <div class="mui-col-sm-6 mui-col-xs-6 myinvite-item">
+              <span></span>
+              <h5>获得的返现余额</h5>
+            </div>
+          </div>
             <!--页眉，放置标题-->
             <div class="mui-card-header">我的邀请</div>
             <!--内容区-->
             <div class="mui-card-content">
-            <ul class="mui-table-view">
-                <li class="mui-table-view-cell"><span>张三</span><span style="margin-left: 10px;">邀请时间：202106</span></li>
-                <li class="mui-table-view-cell"><span>张三</span><span style="margin-left: 10px;">邀请时间：202106</span></li>
-                <li class="mui-table-view-cell"><span>张三</span><span style="margin-left: 10px;">邀请时间：202106</span></li>
-            </ul>
-        </div>
+              <ul class="mui-table-view" id="invitedUsersList"></ul>
+            </div>
     </div>
 </body>
 </html>

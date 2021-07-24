@@ -38,11 +38,11 @@ axios.interceptors.request.use(
     return Promise.reject(error);
   },
 );
-
+axios.defaults.withCredentials = true; //配置为true
 // 返回状态判断(添加响应拦截器)
 axios.interceptors.response.use(
   res => {
-    // if (res.data && res.data.code !== 200) {
+    // if (res.data && res.data.code !== 0) {
     //   let errorMsg = res.data.msg;
     //   return Promise.reject(errorMsg);
     // }
@@ -50,6 +50,7 @@ axios.interceptors.response.use(
   },
   error =>{
     mui.toast("请求异常");
+    return {}
   }
 );
 const _nav = document.querySelector('.mui-icon-arrowleft');

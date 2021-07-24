@@ -36,11 +36,14 @@
           <!--页眉，放置标题-->
           <div class="mui-card-header" style="color: #fff !important">
             我的资产
+            <div class="mui-switch mui-switch-blue" id="mybalance-switch">
+              <div class="mui-switch-handle"></div>
+            </div>
           </div>
           <!--内容区-->
           <div class="mui-card-content">
             <div>
-              <div class="mui-row" style="margin-top: 10px;">
+              <div class="mui-row" style="margin-top: 10px">
                 <div class="mui-col-sm-6 mui-col-xs-6 mybalance-item">
                   <span>7753</span>
                   <h5>余额</h5>
@@ -52,14 +55,23 @@
               </div>
             </div>
             <!-- <h5 class="balance-info">7753</h5> -->
-            <button
-              type="button"
-              class="mui-btn mui-btn-primary mui-btn-outlined top-up-btn"
-            >
-              充值
-            </button>
+            <div style="display: flex;width: 3rem;margin-top:10px;margin-left: auto;">
+              <button
+                type="button"
+                class="mui-btn mui-btn-primary mui-btn-outlined top-up-btn"
+              >
+                提现
+              </button>
+              <button
+                type="button"
+                class="mui-btn mui-btn-primary mui-btn-outlined top-up-btn"
+              >
+                充值
+              </button>
+            </div>
           </div>
         </div>
+
         <div>
           <ul class="mui-table-view"></ul>
         </div>

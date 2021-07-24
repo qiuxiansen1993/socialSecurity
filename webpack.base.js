@@ -65,6 +65,7 @@ const customPage = {
 
 const config = {
   mode,
+  devtool:'inline-source-map',
   entry: {
     // main: './pages/utils/main.js',
     Home: "./pages/Home/index.js", // home页面
@@ -80,6 +81,7 @@ const config = {
     MyServer:"./pages/MyServer/index.js",
     SetInsured:"./pages/SetInsured/index.js",
     CreateOrder:"./pages/CreateOrder/index.js",
+    PayCost:"./pages/PayCost/index.js",
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -210,6 +212,13 @@ const config = {
       filename: "CreateOrder/index.html",
       template: "./pages/CreateOrder/index.html",
       chunks: ["CreateOrder"],
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "PayCost",
+      filename: "PayCost/index.html",
+      template: "./pages/PayCost/index.html",
+      chunks: ["PayCost"],
       files:customPage
     }),
     new MiniCssExtractPlugin({

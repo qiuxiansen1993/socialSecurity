@@ -4,11 +4,16 @@
     .mui-card-header{
         color:#fff;
     }
-    img{
+    .qrcode-img{
         display: block;
         width:3rem;
         height:3rem;
         margin: .4rem auto;
+    }
+    .qrcode-title{
+        text-align: center;
+        color: #fff;
+        margin-bottom: 5px;
     }
     .mui-card-footer:before, .mui-card-header:after{
         background-color: #fff !important;
@@ -16,4 +21,29 @@
     .mui-card-content img{
         border: 1px solid #fff;
     }
+    
+}
+.invite-list{
+    .mui-card{
+        box-shadow:none;
+    }
+    .mui-card-header{
+        color: #fff;
+        background-color:#1199FF;
+    }
+}
+.myinvite-item{
+    text-align: center;
+    padding: 15px 0;
+    box-sizing: border-box;
+    span{
+        font-size: .5rem;
+    }
+    h5{
+        color: #1b1b1b;
+    }
+}
+.myinvite-empty{
+    text-align: center;
+    padding: 30px 0;
 }

@@ -13,6 +13,17 @@ let json = [
     '线上支付订单：2019-01-10 14:15:20',
     '线上支付订单：2019-01-10 14:15:20',
     '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
+    '线上支付订单：2019-01-10 14:15:20',
 ]
 document.querySelector('.mui-table-view').innerHTML= json.map((item)=>{
     return `<li class="mui-table-view-cell">${item}</li>`
@@ -34,3 +45,11 @@ mui.init({
 if(json.length<=10){
     mui('#recordLoad').pullRefresh().disablePullupToRefresh();
 }
+// 监听开关
+document.getElementById("mybalance-switch").addEventListener("toggle",function(event){
+    if(event.detail.isActive){
+      console.log("你启动了开关");
+    }else{
+      console.log("你关闭了开关");  
+    }
+  })
