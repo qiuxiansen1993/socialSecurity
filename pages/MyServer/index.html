@@ -9,24 +9,118 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="UTF-8" />
     <% for (var meta in htmlWebpackPlugin.options.files.meta) { %>
-      <meta name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>" content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>" />
-      <% } %>
-
-    <% for (var css in htmlWebpackPlugin.options.files.css) { %>
-      <link href="<%=htmlWebpackPlugin.options.files.css[css] %>" rel="stylesheet" />
-      <% } %>
-
-      <% for (var js in htmlWebpackPlugin.options.files.js) { %>
-        <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
-      <% } %>
+    <meta
+      name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>"
+      content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>"
+    />
+    <% } %> <% for (var css in htmlWebpackPlugin.options.files.css) { %>
+    <link
+      href="<%=htmlWebpackPlugin.options.files.css[css] %>"
+      rel="stylesheet"
+    />
+    <% } %> <% for (var js in htmlWebpackPlugin.options.files.js) { %>
+    <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
+    <% } %>
+    <script type="text/javascript" charset="utf-8">
+      window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
+    </script>
+    
   </head>
-<body>
+  <body>
     <header class="mui-bar mui-bar-nav">
-        <a
-          class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
-          id="home-menu"
-        ></a>
-        <h1 class="mui-title">我的服务</h1>
-      </header>
-</body>
+      <a
+        class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
+        id="home-menu"
+      ></a>
+      <h1 class="mui-title">我的服务</h1>
+      <a
+        class="mui-icon mui-icon-gear mui-action-menu mui-pull-right"
+        id="more-set"
+      ></a>
+    </header>
+    <div class="myserver-content">
+      <div class="selectCity-content" >
+        <div class="mui-card">
+          <!--页眉，放置标题-->
+          <div class="mui-card-header" style="background-color: #fff">
+            <i
+              class="mui-icon mui-icon-contact"
+              style="font-size: 50px; color: #1199ff"
+            ></i>
+            <div class="select-city-info">
+              <p style="font-size: 16px">邱成林</p>
+              <p>231**********</p>
+            </div>
+          </div>
+          <!--内容区-->
+          <div class="mui-card-content" style="padding: 15px">
+            <div class="mui-row">
+              <div class="mui-col-sm-4 mui-col-xs-4">手机号</div>
+              <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right">
+                18910319561
+              </div>
+            </div>
+            <div class="mui-row">
+              <div class="mui-col-sm-4 mui-col-xs-4">户籍</div>
+              <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right">
+                北京市 北京市（城镇户口）
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mui-card">
+          <!--页眉，放置标题-->
+          <div class="mui-card-header">人事外包</div>
+          <!--内容区-->
+          <div class="mui-card-content">
+            <ul class="mui-table-view">
+              <li class="mui-table-view-cell">
+                <a id="showUserPicker" class="mui-navigate-right">
+                  工作城市
+                  <span id="userResult"></span>
+                </a>
+              </li>
+              <li class="mui-table-view-cell">
+                <div class="mui-row">
+                  <div class="mui-col-sm-4 mui-col-xs-4">办理单位</div>
+                  <div
+                    class="mui-col-sm-8 mui-col-xs-8 create-order-info__right"
+                  ></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="select-city-agreement">
+          <div style="border: 8px solid#F0F8FF;padding:14px 8px;border-radius: 5px;">
+            <h5>自主就业协议</h5>
+            <p>北京社保协议北京社保协议北京社保协议北京社保协议北京社保协议北京社保协议北京社保协议北京社保协议北京社保协议北京社保协议</p>
+          </div>
+          <button id="agreement-btn" type="button" class="mui-btn agreement-btn">已阅读详情并办理服务</button>
+        </div>
+      </div>
+      
+    </div>
+    <div
+      id="set-popover"
+      class="mui-popover mui-popover-bottom mui-popover-action"
+    >
+      <!-- 可选择菜单 -->
+      <ul class="mui-table-view">
+        <li
+          id="to-updataUserInfo"
+          data-href="/AddUserInfo/index.html"
+          class="mui-table-view-cell"
+        >
+          <a>编辑信息</a>
+        </li>
+      </ul>
+      <!-- 取消菜单 -->
+      <ul class="mui-table-view">
+        <li class="mui-table-view-cell" id="more-set-cancel">
+          <a>取消</a>
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>

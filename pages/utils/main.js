@@ -3,7 +3,6 @@ import Qs from 'qs'
 import './rem';
 import './main.css';
 
-
 const axios = OriginAxios.create({
   timeout: 60000,
   headers: {
@@ -58,3 +57,8 @@ _nav && _nav.addEventListener("tap", function () {
   window.history.go(-1);
 });
 export default axios;
+/**是否处于开发模式 */    
+const IS_DEV = window.NODE_ENV !== 'production';  
+if(IS_DEV){
+  require('../../mock/mocker')
+}

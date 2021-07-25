@@ -1,6 +1,10 @@
 .createOrder-content {
+    background-color: #1199ff;
+    padding: 45px 0 15px;
+    min-height: 100vh;
     .mui-input-row label{
-        padding: 11px 0;
+        padding: 11px 32px;
+        font-size: 15px;
     }
     .create-order-info{
         .mui-col-sm-6{
@@ -12,7 +16,39 @@
     }
     .mui-card-header{
         font-size: .35rem;
-        background-color:#1199FF;
+        // background-color:#1199FF;
         color: #fff;
     }
+    .display-flex{
+        display: flex !important;
+        justify-content: space-between;
+    }
+    .mui-checkbox.mui-left input[type=checkbox], .mui-radio.mui-left input[type=radio]{
+        left:0 !important;
+    }
+}
+.mui-switch{
+
+}
+.mui-switch-blue{
+    border: 2px solid #1199FF;
+    background-color: #fff;
+}
+.mui-switch-blue.mui-active{
+    background-color: #fff;
+    border: 2px solid #1199FF;
+}
+.mui-switch .mui-switch-handle{
+    background-color: #1199FF;
+}
+.mui-switch:before{
+    color: #1199FF;
+    content:'是'
+}
+.mui-switch.mui-active:before{
+    color: #1199FF;
+    content:'否'
+}
+.create-order-seleted{
+    display: none;
 }

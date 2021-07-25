@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const isProd = mode === 'production';
 const customPage = {
+  NODE_ENV:process.env.NODE_ENV,
   css:[
     (isProd ? '/asset/mui/css/mui.min.css':'http://localhost:8000/asset/mui/css/mui.min.css'),
     (isProd ? '/asset/mui/css/mui.picker.css':'http://localhost:8000/asset/mui/css/mui.picker.css'),
