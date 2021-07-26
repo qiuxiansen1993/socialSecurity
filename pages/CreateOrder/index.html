@@ -115,13 +115,13 @@
               <li class="mui-table-view-cell">
                 <div class="mui-row">
                   <div class="mui-col-sm-6 mui-col-xs-6">社保缴费方案</div>
-                  <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;">xxxx</div>
+                  <div class="mui-col-sm-6 mui-col-xs-6" id="sbPlan" style="text-align: right;"></div>
                 </div>
               </li>
               <li class="mui-table-view-cell">
                 <div class="mui-row">
                   <div class="mui-col-sm-6 mui-col-xs-6">社保缴费基数</div>
-                  <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;">xxxx</div>
+                  <div class="mui-col-sm-6 mui-col-xs-6" id="sbBase" style="text-align: right;"></div>
                 </div>
               </li>
             </ul>
@@ -148,13 +148,13 @@
               <li class="mui-table-view-cell">
                 <div class="mui-row">
                   <div class="mui-col-sm-6 mui-col-xs-6">公积金缴费方案</div>
-                  <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;">xxxx</div>
+                  <div class="mui-col-sm-6 mui-col-xs-6" id="gjjPlan" style="text-align: right;">xxxx</div>
                 </div>
               </li>
               <li class="mui-table-view-cell">
                 <div class="mui-row">
                   <div class="mui-col-sm-6 mui-col-xs-6">公积金缴费基数</div>
-                  <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;">xxxx</div>
+                  <div class="mui-col-sm-6 mui-col-xs-6" id="gjjBase" style="text-align: right;">xxxx</div>
                 </div>
               </li>
             </ul>
@@ -173,21 +173,63 @@
               <li class="mui-table-view-cell">
                 <div class="mui-row">
                   <div class="mui-col-sm-6 mui-col-xs-6">薪资所属方案</div>
-                  <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;">xxxx</div>
+                  <div class="mui-col-sm-6 mui-col-xs-6" id="xzPlan" style="text-align: right;">xxxx</div>
                 </div>
               </li>
               <li class="mui-table-view-cell">
                 <div class="mui-row">
                   <div class="mui-col-sm-6 mui-col-xs-6">工资发放日期</div>
-                  <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;">xxxx</div>
+                  <div class="mui-col-sm-6 mui-col-xs-6" id="gongziDate" style="text-align: right;">xxxx</div>
                 </div>
               </li>
             </ul>
           </div>
         </div>
-        <button id="calculate-btn" type="button" class="mui-btn" style="display:block;width:100px;border-radius: 20px;margin: 0 auto;;">计算费用</button>
+        <button id="calculate-btn" type="button" class="mui-btn" >计算费用</button>
       </div>
-      
+      <div class="submit-content" style="padding: 0 10px;">
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a id="" class="mui-navigate-right display-flex">
+              <span>当月社保费用
+                <p>截止扣费日期：2021-09-08</p>
+              </span>
+              <span id="sb-cost" style="padding-right: 15px"></span>
+            </a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a id="" class="mui-navigate-right display-flex">
+              <span>当月公积金费用
+                <p>截止扣费日期：2021-09-08</p>
+              </span>
+              <span id="gjj-cost" style="padding-right: 15px"></span>
+            </a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a id="" class="mui-navigate-right display-flex">
+              <span>当月实发工资及代扣个税
+                <p>截止扣费日期：2021-09-08</p>
+              </span>
+              <span id="salary-cost" style="padding-right: 15px"></span>
+            </a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a id="service-charge" class="mui-navigate-right display-flex">
+              <span>自主就业服务费
+                <p>2021-09-08</p>
+              </span>
+              <span id="service-charge-info" style="padding-right: 15px"></span>
+            </a>
+          </li>
+        </ul>
+        <h5 class="cost-view">《办理须知》点击查看</h5>
+        <div class="cost-totle">
+          <span>费用总计</span>
+          <span id="totle-cost" style="color:lightcoral"></span>
+        </div>
+        
+        <button class="submit-btn" id="" type="button" class="mui-btn" style="">提交订单</button>
+      </div>
       
     </div>
   </body>
