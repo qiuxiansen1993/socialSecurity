@@ -42,12 +42,10 @@ body{
     margin-top: .2rem;
     border-radius: .2rem;
     box-shadow:0 0 3px 2px #eee;
-    i{
+    .notice-icon{
         display: inline-block;
         width: .6rem;
         height: .6rem;
-        background: url('/asset/imgs/tz.png');
-        background-size: 100%;
         margin-left: .2rem;
     }
     span{
