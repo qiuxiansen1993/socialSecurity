@@ -79,11 +79,15 @@ const config = {
     MyInvite:"./pages/MyInvite/index.js",
     MyOrder:"./pages/MyOrder/index.js",
     MyServer:"./pages/MyServer/index.js",
-    SetInsured:"./pages/SetInsured/index.js",
+    Withdrawal:"./pages/Withdrawal/index.js",
     CreateOrder:"./pages/CreateOrder/index.js",
     PayCost:"./pages/PayCost/index.js",
     PayList:"./pages/PayList/index.js",
-    OrderDetails:"./pages/OrderDetails/index.js"
+    OrderDetails:"./pages/OrderDetails/index.js",
+    Offline:"./pages/Offline/index.js",
+    TransferNotice:"./pages/TransferNotice/index.js",
+    TransferRecord:"./pages/TransferRecord/index.js",
+    WithdrawalRecore:"./pages/WithdrawalRecore/index.js",
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -203,10 +207,10 @@ const config = {
       files:customPage
     }),
     new HtmlWebpackPlugin({
-      title: "SetInsured",
-      filename: "SetInsured/index.html",
-      template: "./pages/SetInsured/index.html",
-      chunks: ["SetInsured"],
+      title: "Withdrawal",
+      filename: "Withdrawal/index.html",
+      template: "./pages/Withdrawal/index.html",
+      chunks: ["Withdrawal"],
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -237,6 +241,35 @@ const config = {
       chunks: ["OrderDetails"],
       files:customPage
     }),
+    new HtmlWebpackPlugin({
+      title: "Offline",
+      filename: "Offline/index.html",
+      template: "./pages/Offline/index.html",
+      chunks: ["Offline"],
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "TransferNotice",
+      filename: "TransferNotice/index.html",
+      template: "./pages/TransferNotice/index.html",
+      chunks: ["TransferNotice"],
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "TransferRecord",
+      filename: "TransferRecord/index.html",
+      template: "./pages/TransferRecord/index.html",
+      chunks: ["TransferRecord"],
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "WithdrawalRecore",
+      filename: "WithdrawalRecore/index.html",
+      template: "./pages/WithdrawalRecore/index.html",
+      chunks: ["WithdrawalRecore"],
+      files:customPage
+    }),
+    
     new MiniCssExtractPlugin({
         filename: isProd ? '[name]/[name].[contenthash].css' : '[name]/[name].css',
     }),

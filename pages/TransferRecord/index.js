@@ -1,28 +1,25 @@
-import { get, post } from "../utils/main";
+import { post,get } from "../utils/main";
 import {
-    getUserOrderList,
-    viewUserOrderDetail,
-    cancelUserOrder
-  } from "../utils/api/orderList";
+    getBankOrderList
+  } from "../utils/api/transferNotice";
   import { format } from '../utils/tool'
 import './index.scss';
 let PageIdx = 0
 const viewContainer = document.querySelector('.mui-table-view');
-const getUserOrderListFunc = async(page = 0)=>{
-    const {code,data = [],msg} = await get(getUserOrderList,{
+const getBankOrderListFunc = async(page = 0)=>{
+    const {code,data = [],msg} = await get(getBankOrderList,{
         page,
         pageSize:10
     });
     if(code ===200){
         const { recordCount,pageNum,pageSize,resList } = data
         resList.map((item) => {
-            const {createTime = '',status,startMonth,duration} = item;
+            const {transferTime ,transferBank,transferMoney,tranferMan} = item;
             const _listDom = document.createElement(`LI`)
             _listDom.setAttribute('class','mui-table-view-cell');
-            _listDom.innerHTML = `${format(createTime)}  ${startMonth}起缴纳${duration}个月 ${status === '0' ?'<button data-id='+item.id+' type="button" class="mui-btn mui-btn-danger mui-btn-outlined handle-btn">取消</button>':status === '1' ?'已通过':'' }`;
+            _listDom.innerHTML = `时间：${transferTime?format(transferTime):'---'} | 汇款人：${tranferMan} <br/>银行：${transferBank} | 金额：${transferMoney}`;
             viewContainer.appendChild(_listDom);
         })
-        addEventCanle()
         PageIdx = pageNum;
         if(pageNum*pageSize >= recordCount){
             mui('#recordLoad').pullRefresh().disablePullupToRefresh();
@@ -30,25 +27,6 @@ const getUserOrderListFunc = async(page = 0)=>{
         if(recordCount < 1){
             viewContainer.innerHTML = '<li style="text-align:center;padding:20px;">您还没有订单</li>'
         }
-    }else{
-        mui.toast(msg||'请求异常，请稍后重试');
-    }
-}
-const addEventCanle = ()=>{
-    [...document.querySelectorAll('.handle-btn')].forEach((item)=>{
-        item.addEventListener("tap", function (e) {
-            cancelUserOrderFunc(this.getAttribute('data-id'))
-        })
-    })
-}
-const cancelUserOrderFunc = async(id)=>{
-    const {code,data,msg} = await post(cancelUserOrder,{
-        id
-    });
-    if(code === 200){
-        mui.toast('取消成功~');
-        viewContainer.innerHTML = ''
-        getUserOrderListFunc(0)
     }else{
         mui.toast(msg||'请求异常，请稍后重试');
     }
@@ -63,10 +41,10 @@ mui.init({
         contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
         contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
         callback :()=>{
-            getUserOrderListFunc(PageIdx+1);
+            getBankOrderListFunc(PageIdx+1);
         } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
       }
     }
 });
 
-getUserOrderListFunc();
+getBankOrderListFunc();

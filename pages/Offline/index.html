@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title></title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui"
+        />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="UTF-8" />
+        <% for (var meta in htmlWebpackPlugin.options.files.meta) { %>
+          <meta name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>" content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>" />
+          <% } %>
+    
+        <% for (var css in htmlWebpackPlugin.options.files.css) { %>
+          <link href="<%=htmlWebpackPlugin.options.files.css[css] %>" rel="stylesheet" />
+          <% } %>
+    
+          <% for (var js in htmlWebpackPlugin.options.files.js) { %>
+            <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
+          <% } %>
+          <script type="text/javascript" charset="utf-8">
+            window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
+          </script>
+      </head>
+  <body>
+    <header class="mui-bar mui-bar-nav">
+      <a
+        class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
+        id="home-menu"
+      ></a>
+      <h1 class="mui-title">线下支付</h1>
+    </header>
+    <div class="offline-container">
+      <h5 class="label">银行卡转账流程<span class="to-transfer-record">查看记录</span></h5>
+      <p class="describe">请正确填写转账申请，确保资金及时到账</p>
+      
+      <ul>
+        <li>
+          <div class="account-label">
+            <h5><span class="mui-badge mui-badge-primary" style="margin-right: 5px;">1</span>查看收款账号</h5>
+            <p>复制平台收款账号，完成银行卡转账</p>
+          </div>
+          <div class="account-box">
+            <p><span>账户名：<span class="account-name">北京xxxxxxxx1</span></span><span id="account-name" style="color:#1199ff">复制</span></p>
+            <p><span>开户行：<span class="opening-bank">北京xxxxxxxx2</span></span><span id="opening-bank" style="color:#1199ff">复制</span></p>
+            <p><span>账 号：<span class="account-number">北京xxxxxxxx3</span></span><span id="account-number" style="color:#1199ff">复制</span></p>
+          </div>
+          <input id="copyText" style="display: block;padding:0;height:2px;opacity: 0;" type="text">
+      </li>
+      <li>
+        <div class="account-label">
+          <h5><span class="mui-badge mui-badge-primary" style="margin-right: 5px;">2</span>填写转账申请</h5>
+          <p>正确填写信息，系统将及时并确认</p>
+          <button type="button" class="mui-btn mui-btn-primary" style="border-radius: 20px;margin: 10px 0;" id="toNotice">填写已转账通知</button>
+        </div>
+      </li>
+      <li>
+        <div class="account-label">
+          <h5><span class="mui-badge mui-badge-primary" style="margin-right: 5px;">3</span>填写转账申请</h5>
+          <p>转账成功后，资金预计在1~3个工作日内到账</p>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>

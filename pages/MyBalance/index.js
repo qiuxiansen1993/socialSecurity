@@ -57,9 +57,12 @@ mui.init({
     },
   },
 });
-// if (json.length <= 10) {
-//   mui("#recordLoad").pullRefresh().disablePullupToRefresh();
-// }
+document.getElementById('withdrawal').addEventListener("tap", async function () {
+  window.location=`${document.location.protocol}//${window.location.host}/Withdrawal/index.html`;
+})
+document.getElementById('top-up').addEventListener("tap", async function () {
+  window.location=`${document.location.protocol}//${window.location.host}/PayList/index.html`;
+})
 // 监听开关
 document
   .getElementById("mybalance-switch")

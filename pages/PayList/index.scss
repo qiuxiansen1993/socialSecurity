@@ -1,7 +1,24 @@
 .paylist-content{
     font-size: 12px;
     .paylist-label{
+        font-size: 10px;
+        line-height: 14px;
         padding: 10px;
         background-color: bisque;
+    }
+    .paylist-item>li{
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        color: #1b1b1b;
+        border-bottom: 1px solid #eee;
+    }
+    .paylist-item p{
+        color:#1b1b1b;
+    }
+    .label-icon{
+        margin-right:15px;
+        font-size: 35px;
+        color:#1199FF;
     }
 }

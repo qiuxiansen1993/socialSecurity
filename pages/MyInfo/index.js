@@ -42,7 +42,7 @@ const getMaterialListFunc = async() =>{
         materialLength = data.length
         document.querySelector('.material-list').innerHTML=data.map((item)=>{
             const {materialName} = item
-            return `<div class="material-item"><i class="mui-icon mui-icon-paperclip"></i>${materialName}</div>`
+            return `<div class="material-item"><i class="mui-icon mui-icon-paperclip"></i><span>${materialName}</span></div>`
         }).join('')
     }
 }

@@ -1,0 +1,38 @@
+.Withdrawal-container {
+  padding: 15px;
+  padding-top: 70px;
+  .account-label {
+    margin-bottom: 5px;
+    h5 {
+      text-align: center;
+      font-size: 18px;
+      color: #1b1b1b;
+      margin-bottom: 5px;
+      line-height: 20px;
+    }
+    p {
+    text-align: center;
+      font-size: 10px;
+    }
+  }
+  label {
+    font-size: 15px;
+  }
+  .userInfo-label {
+    font-size: 0.5rem;
+    text-align: center;
+    margin: 0.3rem 0;
+    color: #1b1b1b;
+  }
+}
+.add-user-btn{
+    display:block;
+    width: 80%;
+    margin: .3rem auto;
+}
+.view-withdrawal-record{
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    color: #1199ff;
+}

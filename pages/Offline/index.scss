@@ -1,0 +1,47 @@
+.offline-container{
+    padding-top: 60px;
+    .label{
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 5px;
+        color: #1b1b1b;
+    }
+    .describe{
+        text-align: center;
+    }
+    ul{
+        padding: 15px;
+    }
+    
+    .account-box{
+        padding: 12px;
+        border: 1px solid #eee;
+        p{
+            display: flex;
+            justify-content: space-between;
+            color: #1b1b1b;
+            padding: 2px;
+        }
+    }
+}
+.account-label{
+    margin-bottom: 5px;
+    h5{
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: #1b1b1b;
+        margin-bottom: 5px;
+        line-height: 20px;
+    }
+    p{
+        font-size: 10px;
+    }
+}
+.to-transfer-record{
+    position: absolute;
+    right:15px;
+    width:80px;
+    font-size: 14px;
+    color:#1199ff
+}
