@@ -6,108 +6,20 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="telephone=no" name="format-detection">
     <meta content="email=no" name="format-detection">
-    <link rel="stylesheet" href="https://act.weixin.qq.com/static/cdn/css/wepayui/0.1.1/wepayui.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/weui/1.1.1/style/weui.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/jquery-weui/1.0.1/css/jquery-weui.min.css">
-    <link rel="stylesheet" href="../001/css/demos.css">
-    <link rel="stylesheet" href="../001/css/pay.css">
+    <link rel="stylesheet" href="//act.weixin.qq.com/static/cdn/css/wepayui/0.1.1/wepayui.min.css">
+    <link rel="stylesheet" href="./css/weui.min.css">
+    <link rel="stylesheet" href="./jquery-weui.min.css">
+    <link rel="stylesheet" href="./css/demos.css">
+    <link rel="stylesheet" href="./css/pay.css">
     <title>商户模式-微信支付</title>
 </head>
 <body ontouchstart>
 <div class="weui-tab">
     <div class="weui-tab__bd">
-        <div id="tab0" class="weui-tab__bd-item weui-tab__bd-item--active">
+        <div id="tab3" class="weui-tab__bd-item" style="display: block;">
             <header class='demos-header'>
                 <h1 class="demos-title">微信支付</h1>
-                <p class='demos-sub-title'>IJPay 让支付触手可及，微信扫码支付模式一</p>
-            </header>
-            <div class="bd">
-                <div class="page__bd">
-                    <div class="weui-cell">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">产品ID</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" id="money1"
-                                   placeholder="请输入产品ID">
-                        </div>
-                    </div>
-                </div>
-                <div class="weui-btn-area">
-                    <a href="javascript:scanCode1();"
-                       class="weui-btn weui-btn_primary">确定支付</a>
-                </div>
-                <div style="text-align: center; margin-top: 30px">
-                    <img id="qrcode1" alt="" src="">
-                </div>
-            </div>
-        </div>
-        <div id="tab1" class="weui-tab__bd-item">
-            <header class='demos-header'>
-                <h1 class="demos-title">微信支付</h1>
-                <p class='demos-sub-title'>IJPay 让支付触手可及，微信扫码支付模式二</p>
-            </header>
-            <div class="bd">
-                <div class="page__bd">
-                    <div class="weui-cell">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">金额(￥)</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" id="money2"
-                                   placeholder="请输入数字金额,单位分">
-                        </div>
-                    </div>
-                </div>
-                <div class="weui-btn-area">
-                    <a href="javascript:scanCode2();"
-                       class="weui-btn weui-btn_primary">确定支付</a>
-                </div>
-                <div class="weui-btn-area">
-                    <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx520c15f417810387
-&redirect_uri=http%3A%2F%2F127.0.0.1%3A8080%2FwxPay%2FoAuth&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
-                       class="weui-btn weui-btn_warn">重新获取openId</a>
-                </div>
-                <div style="text-align: center; margin-top: 30px">
-                    <img id="qrcode2" alt="" src="">
-                </div>
-            </div>
-        </div>
-        <div id="tab2" class="weui-tab__bd-item">
-            <header class='demos-header'>
-                <h1 class="demos-title">微信支付</h1>
-                <p class='demos-sub-title'>IJPay 让支付触手可及，微信刷卡支付</p>
-            </header>
-            <div class="bd">
-                <div class="page__bd">
-                    <div class="weui-cell">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">金额(￥)</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" id="micropay_money"
-                                   placeholder="请输入数字金额,单位分">
-                        </div>
-                    </div>
-                    <div class="weui-cell">
-                        <div class="weui-cell__hd">
-                            <label class="weui-label">条形码</label>
-                        </div>
-                        <div class="weui-cell__bd">
-                            <input class="weui-input" type="number" id="auth_code"
-                                   placeholder="请输入条形码">
-                        </div>
-                    </div>
-                </div>
-                <div class="weui-btn-area">
-                    <a href="javascript:micropay();" class="weui-btn weui-btn_primary">确定支付</a>
-                </div>
-            </div>
-        </div>
-        <div id="tab3" class="weui-tab__bd-item">
-            <header class='demos-header'>
-                <h1 class="demos-title">微信支付</h1>
-                <p class='demos-sub-title'>IJPay 让支付触手可及，公众号支付</p>
+                <p class='demos-sub-title'></p>
             </header>
             <div class="bd">
                 <div class="weui-wepay-pay-wrap">
@@ -118,7 +30,7 @@
                                 <div class="weui-wepay-pay__inputs"><strong class="weui-wepay-pay__strong">￥</strong>
                                     <input type="number" class="weui-wepay-pay__input" id="web_money"
                                            placeholder="请输入金额"></div>
-                                <div class="weui-wepay-pay__intro">最多可输入金额500元</div>
+                                <div class="weui-wepay-pay__intro"></div>
                             </div>
 
                         </div>
@@ -130,78 +42,15 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="weui-btn-area">
-                    <a href="/weixin/toOauth.php?state=wxpay"
-                       class="weui-btn weui-btn_warn">重新获取openId</a>
-                </div>
-                <div class="weui-wepay-logos">
-                    <img src="https://act.weixin.qq.com/static/cdn/img/wepayui/0.1.1/wepay_logo_default_gray.svg" alt=""
-                         height="16">
-                </div>
             </div>
         </div>
-        <div id="tab4" class="weui-tab__bd-item">
-            <header class='demos-header'>
-                <h1 class="demos-title">微信支付</h1>
-                <p class='demos-sub-title'>IJPay 让支付触手可及 -By Javen</p>
-            </header>
-            <div style="text-align: center;">
-                如果对你有帮助,请任意打赏支持
-                <img width="200px" height="200px" alt=""
-                     src="../001/images/wxpay.png">
-            </div>
-            <div class="weui-msg__extra-area" style="margin-bottom: 100px">
-                <div class="weui-footer">
-                    <p class="weui-footer__links">
-                        <a
-                                href="http://wpa.qq.com/msgrd?v=3&uin=572839485&site=qq&menu=yes"
-                                target="_blank" class="weui-footer__link">Javen提供技术支持</a>
-                    </p>
-                    <p class="weui-footer__text">Copyright © 2015-2017</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="weui-tabbar">
-        <a href="#tab0" class="weui-tabbar__item weui-bar__item--on"> <!-- <span
-				class="weui-badge"
-				style="position: absolute; top: -.4em; right: 1em;">8</span> -->
-            <div class="weui-tabbar__icon">
-                <img src="../001/images/icon_nav_button.png" alt="">
-            </div>
-            <p class="weui-tabbar__label">扫码模式一</p>
-        </a> <a href="#tab1" class="weui-tabbar__item"> <!-- <span
-				class="weui-badge"
-				style="position: absolute; top: -.4em; right: 1em;">6</span> -->
-        <div class="weui-tabbar__icon">
-            <img src="../001/images/icon_nav_button.png" alt="">
-        </div>
-        <p class="weui-tabbar__label">扫码模式二</p>
-    </a> <a href="#tab2" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../001/images/icon_nav_msg.png" alt="">
-        </div>
-        <p class="weui-tabbar__label">刷卡支付</p>
-    </a> <a href="#tab3" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../001/images/icon_nav_article.png" alt="">
-        </div>
-        <p class="weui-tabbar__label">公众号支付</p>
-    </a> <a href="#tab4" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../001/images/icon_nav_cell.png" alt="">
-        </div>
-        <p class="weui-tabbar__label">我</p>
-    </a>
     </div>
 </div>
 </body>
-<script src="//cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
-<script src="../001/layer/layer.js"></script>
-<script type="text/javascript" src="../001/jquery.qrcode.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery-weui/1.0.1/js/jquery-weui.min.js"></script>
+<script src="./layer/layer.js"></script>
+<script type="text/javascript" src="./jquery.qrcode.min.js"></script>
 <script type="text/javascript">
     /* 微信扫码支付 */
     function scanCode1() {
@@ -330,7 +179,7 @@
                     shift: 6
                 });
 
-                self.location = "/success.php";
+                self.location = "/MyBalance/index.html";
 
             } else {
                 layer.msg("支付失败", {
