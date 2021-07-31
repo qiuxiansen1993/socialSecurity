@@ -1,5 +1,5 @@
 // 获取邀请二维码
-const getQrCode = '/invite/getQrCode.php';
+const getQrCode = '/weixin/getQrCodeJson.php';
 // 被邀请用户统计
 const invitedUsersStat = '/invite/invitedUsersStat.php';
 // 被邀请用户列表

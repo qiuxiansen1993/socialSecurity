@@ -1,5 +1,6 @@
 .paycost-list{
-    margin-top: 1.5rem;
+    padding: 45px 0 15px;
+    min-height: 100vh;
     .mui-table-view{
         border-radius: 0;
         font-size: 14px;
@@ -16,4 +17,10 @@
     justify-content: space-around;
     font-size: 16px;
     margin-bottom: 10px;
+}
+.mui-table-view-cell{
+    border-bottom: 1px solid #ddd;
+    .mui-btn{
+        padding:3px 6px;
+    }
 }

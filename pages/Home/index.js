@@ -1,6 +1,11 @@
 import { get, post } from "../utils/main";
 import "./index.scss";
+window.__isreload = false
 window.onload = () => {
+  if(!window.__isreload){
+    // window.location.reload()
+    window.__isreload = true
+  }
   const homeMenu = document.getElementById("home-menu");
   const homeBody = document.getElementById("home-body");
   //监听点击事件

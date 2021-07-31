@@ -10,6 +10,8 @@ const calSbData = '/order/calSbData.php';
 const getFeeInfo = '/order/getFeeInfo.php';
 // 提交订单
 const submitOrder = '/order/submitOrder.php';
+// 参保设置
+const getSalaryMonthList = '/baseData/getSalaryMonthList.php';
 
 export {
     getRandomCompany,
@@ -17,5 +19,6 @@ export {
     getSolution,
     calSbData,
     getFeeInfo,
-    submitOrder
+    submitOrder,
+    getSalaryMonthList
 }

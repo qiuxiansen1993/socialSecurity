@@ -43,41 +43,39 @@
         <div class="mui-card">
           <!--页眉，放置标题-->
           <div class="mui-card-header" style="background-color: #fff">
-            <i
+            <div id="headimg">
+              <i
               class="mui-icon mui-icon-contact"
               style="font-size: 50px; color: #1199ff"
             ></i>
+            </div>
             <div class="select-city-info">
-              <p style="font-size: 16px">邱成林</p>
-              <p>231**********</p>
+              <p style="font-size: 16px" id="userName"></p>
+              <p id="userIdCard"><p>
             </div>
           </div>
           <!--内容区-->
           <div class="mui-card-content" style="padding: 15px">
             <div class="mui-row">
               <div class="mui-col-sm-4 mui-col-xs-4">手机号</div>
-              <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right">
-                18910319561
-              </div>
+              <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right" id="userMobile"></div>
             </div>
             <div class="mui-row">
               <div class="mui-col-sm-4 mui-col-xs-4">户籍</div>
-              <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right">
-                北京市 北京市（城镇户口）
-              </div>
+              <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right" id="userHouseHold"></div>
             </div>
           </div>
         </div>
         <div class="mui-card">
           <!--页眉，放置标题-->
-          <div class="mui-card-header">人事外包</div>
+          <div class="mui-card-header">自主就业</div>
           <!--内容区-->
           <div class="mui-card-content">
             <ul class="mui-table-view">
               <li class="mui-table-view-cell">
-                <a id="showUserPicker" class="mui-navigate-right">
+                <a id="workCity" class="mui-navigate-right display-flex">
                   工作城市
-                  <span id="userResult"></span>
+                  <span id="workCityResult" style="padding-right: 15px"></span>
                 </a>
               </li>
               <li class="mui-table-view-cell">
@@ -85,6 +83,7 @@
                   <div class="mui-col-sm-4 mui-col-xs-4">办理单位</div>
                   <div
                     class="mui-col-sm-8 mui-col-xs-8 create-order-info__right"
+                    id="workAdree"
                   ></div>
                 </div>
               </li>

@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const isProd = mode === 'production';
 const customPage = {
-  NODE_ENV:process.env.NODE_ENV,
+  NODE_ENV:'production'||process.env.NODE_ENV,
   css:[
     (isProd ? '/asset/mui/css/mui.min.css':'http://localhost:8000/asset/mui/css/mui.min.css'),
     (isProd ? '/asset/mui/css/mui.picker.css':'http://localhost:8000/asset/mui/css/mui.picker.css'),
@@ -68,7 +68,6 @@ const config = {
   mode,
   devtool:'inline-source-map',
   entry: {
-    // main: './pages/utils/main.js',
     Home: "./pages/Home/index.js", // home页面
     Personal: "./pages/Personal/index.js", // personal页面,
     AddUserInfo: "./pages/AddUserInfo/index.js", // personal页面
@@ -84,6 +83,7 @@ const config = {
     CreateOrder:"./pages/CreateOrder/index.js",
     PayCost:"./pages/PayCost/index.js",
     PayList:"./pages/PayList/index.js",
+    OrderDetails:"./pages/OrderDetails/index.js"
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -228,6 +228,13 @@ const config = {
       filename: "PayList/index.html",
       template: "./pages/PayList/index.html",
       chunks: ["PayList"],
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "OrderDetails",
+      filename: "OrderDetails/index.html",
+      template: "./pages/OrderDetails/index.html",
+      chunks: ["OrderDetails"],
       files:customPage
     }),
     new MiniCssExtractPlugin({

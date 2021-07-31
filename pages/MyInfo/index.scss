@@ -1,8 +1,22 @@
 .myinfo-content{
-    margin-top: .5rem;
+    margin-top: .2rem;
     .mui-card-header{
-        font-size: .35rem;
+        font-size: .4rem;
         background-color:#1199FF;
         color: #fff;
+    }
+    .mui-card-content{
+        display: flex;
+        padding: .2rem;
+    }
+    .material-item{
+        padding:0px 15px;
+        padding-bottom: 3px;
+    }
+    .mui-table-view-cell{
+        padding:0;
+    }
+    #materialName{
+        margin-bottom: 0;
     }
 }

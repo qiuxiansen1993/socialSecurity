@@ -21,6 +21,9 @@
     <% } %> <% for (var js in htmlWebpackPlugin.options.files.js) { %>
     <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
     <% } %>
+    <script type="text/javascript" charset="utf-8">
+      window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
+    </script>
   </head>
   <body>
     <header class="mui-bar mui-bar-nav">
@@ -43,7 +46,7 @@
               <div id="userName"></div>
             </div>
             <div class="mui-row">
-              <div id="useIdCard"></div>
+              <div id="userIdCard"></div>
             </div>
             <div class="mui-row">
               <div id="userHouseHold"></div>
@@ -80,13 +83,13 @@
           <ul class="mui-table-view">
             <li class="mui-table-view-cell">
               <a id="paymonth" class="mui-navigate-right display-flex">
-                <span>工资标准</span>
+                <span>工资所属月份</span>
                 <span id="month" style="padding-right: 15px"></span>
               </a>
             </li>
             <li class="mui-table-view-cell">
               <a id="paywage" class="mui-navigate-right display-flex">
-                <span>工资所属月份</span>
+                <span>工资标准</span>
                 <span id="wage" style="padding-right: 15px"></span>
               </a>
             </li>
@@ -190,7 +193,7 @@
       <div class="submit-content" style="padding: 0 10px;">
         <ul class="mui-table-view">
           <li class="mui-table-view-cell">
-            <a id="" class="mui-navigate-right display-flex">
+            <a id="sbView" class="mui-navigate-right display-flex">
               <span>当月社保费用
                 <p>截止扣费日期：2021-09-08</p>
               </span>
@@ -198,7 +201,7 @@
             </a>
           </li>
           <li class="mui-table-view-cell">
-            <a id="" class="mui-navigate-right display-flex">
+            <a id="gjjView" class="mui-navigate-right display-flex">
               <span>当月公积金费用
                 <p>截止扣费日期：2021-09-08</p>
               </span>
@@ -206,7 +209,7 @@
             </a>
           </li>
           <li class="mui-table-view-cell">
-            <a id="" class="mui-navigate-right display-flex">
+            <a id="gzView" class="mui-navigate-right display-flex">
               <span>当月实发工资及代扣个税
                 <p>截止扣费日期：2021-09-08</p>
               </span>
@@ -228,7 +231,7 @@
           <span id="totle-cost" style="color:lightcoral"></span>
         </div>
         
-        <button class="submit-btn" id="" type="button" class="mui-btn" style="">提交订单</button>
+        <button class="submit-btn" id="submit-btn-click" type="button" class="mui-btn" >提交订单</button>
       </div>
       
     </div>

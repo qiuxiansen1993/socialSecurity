@@ -13,11 +13,11 @@ config.devServer = {
       target: "http://localhost:8000",
       changeOrigin: true,
     },
-    // '/': {
-    //   target: 'http://user.liweirenli.com',//'http://shizhongwei.com'
-    //   changeOrigin: true,
-    //   // pathRewrite: {'^/api' : ''}
-    // },
+    '/': {
+      target: 'http://shizhongwei.com',//'http://user.liweirenli.com',//'http://shizhongwei.com'
+      changeOrigin: true,
+      // pathRewrite: {'^/api' : ''}
+    },
   },
 };
 module.exports = config;

@@ -1,32 +1,59 @@
-import "../utils/main"
+import { get, post } from "../utils/main";
+import {
+    getUserOrderList,
+    viewUserOrderDetail,
+    cancelUserOrder
+  } from "../utils/api/orderList";
+  import { format } from './tool'
 import './index.scss';
-let json = [
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-    '线上支付订单：2019-01-10 14:15:20',
-]
-document.querySelector('.mui-table-view').innerHTML= json.map((item)=>{
-    return `<li class="mui-table-view-cell">${item}</li>`
-}).join('');
+let PageIdx = 0
+const viewContainer = document.querySelector('.mui-table-view');
+const getUserOrderListFunc = async(page = 0)=>{
+    const {code,data = [],msg} = await get(getUserOrderList,{
+        page,
+        pageSize:10
+    });
+    if(code ===200){
+        const { recordCount,pageNum,pageSize,resList } = data
+        resList.map((item) => {
+            const {createTime = '',status,startMonth,duration} = item;
+            const _listDom = document.createElement(`LI`)
+            _listDom.setAttribute('class','mui-table-view-cell');
+            _listDom.innerHTML = `${format(createTime)}  ${startMonth}起缴纳${duration}个月 ${status === '0' ?'<button data-id='+item.id+' type="button" class="mui-btn mui-btn-danger mui-btn-outlined handle-btn">取消</button>':status === '1' ?'已通过':'' }`;
+            viewContainer.appendChild(_listDom);
+        })
+        addEventCanle()
+        PageIdx = pageNum;
+        if(pageNum*pageSize >= recordCount){
+            mui('#recordLoad').pullRefresh().disablePullupToRefresh();
+        }
+        if(recordCount < 1){
+            viewContainer.innerHTML = '<li style="text-align:center;padding:20px;">您还没有订单</li>'
+        }
+    }else{
+        mui.toast(msg||'请求异常，请稍后重试');
+    }
+}
+const addEventCanle = ()=>{
+    [...document.querySelectorAll('.handle-btn')].forEach((item)=>{
+        item.addEventListener("tap", function (e) {
+            cancelUserOrderFunc(this.getAttribute('data-id'))
+        })
+    })
+}
+const cancelUserOrderFunc = async(id)=>{
+    const {code,data,msg} = await post(cancelUserOrder,{
+        id
+    });
+    if(code === 200){
+        mui.toast('取消成功~');
+        viewContainer.innerHTML = ''
+        getUserOrderListFunc(0)
+    }else{
+        mui.toast(msg||'请求异常，请稍后重试');
+    }
+}
+
 mui.init({
     pullRefresh : {
       container:'#recordLoad',//待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
@@ -36,22 +63,20 @@ mui.init({
         contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
         contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
         callback :()=>{
-            console.log('中')
+            getUserOrderListFunc(PageIdx+1);
         } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
       }
     }
 });
-if(json.length<=10){
-    mui('#recordLoad').pullRefresh().disablePullupToRefresh();
-}
-document.querySelector('.paycost-nav').addEventListener('click',(e)=>{
-    const el = e.target;
-    console.log(el)
-    if(el.tagName === 'SPAN'){
-        [...document.querySelectorAll('.paycost-nav>span')].forEach((item)=>{
-            item.setAttribute('class','')
-        })
-        el.setAttribute('class','paycost-nav_active')
-    }
-    
-},false)
+
+// document.querySelector('.paycost-nav').addEventListener('click',(e)=>{
+//     const el = e.target;
+//     console.log(el)
+//     if(el.tagName === 'SPAN'){
+//         [...document.querySelectorAll('.paycost-nav>span')].forEach((item)=>{
+//             item.setAttribute('class','')
+//         })
+//         el.setAttribute('class','paycost-nav_active')
+//     }
+// },false)
+getUserOrderListFunc();

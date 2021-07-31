@@ -94,3 +94,36 @@
     margin-top: 10px;
     color: rgba(0, 38, 255, 0.308);
 }
+.mui-popup-text br{
+  display: none;
+}
+.mui-popup{
+  width:90%;
+}
+.alert-content{
+  font-size: 9px;
+  .mui-row>[class*=mui-col-]{
+    width: 25%;
+  }
+  .mui-table-view-cell{
+    padding:6px;
+  }
+}
+.sb-label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  margin-top: 10px;
+  .sb-label_title{
+    text-align: left;
+    p{
+      color:#000;
+      font-size: 12px;
+    }
+  }
+  .sb-label_total{
+    font-size: 14px;
+    color:red;
+  }
+}

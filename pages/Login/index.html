@@ -19,6 +19,9 @@
       <% for (var js in htmlWebpackPlugin.options.files.js) { %>
         <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
       <% } %>
+      <script type="text/javascript" charset="utf-8">
+        window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
+      </script>
   </head>
   <body>
     <form class="mui-input-group login-content">
