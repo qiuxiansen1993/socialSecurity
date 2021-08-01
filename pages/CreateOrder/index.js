@@ -112,6 +112,7 @@ const initSubmitEvent = async() => {
       <ul class="mui-table-view mui-table-view-radio service-charge-sel">${renderServerChargeLi()}</ul>
     `);
     var list = document.querySelector('.mui-table-view.mui-table-view-radio');
+    list.removeEventListener('selected',()=>{});
     list.addEventListener('selected',function(e){
       serverCostIdx = e.detail.el.getAttribute('data-idx')
       const TotleNum = mainTotleCost+Number(e.detail.el.getAttribute('data-sum'))
