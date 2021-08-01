@@ -114,7 +114,9 @@ const initSubmitEvent = async() => {
     var list = document.querySelector('.mui-table-view.mui-table-view-radio');
     list.addEventListener('selected',function(e){
       serverCostIdx = e.detail.el.getAttribute('data-idx')
-      document.getElementById("totle-cost").innerHTML = mainTotleCost+Number(e.detail.el.getAttribute('data-sum'))
+      const TotleNum = mainTotleCost+Number(e.detail.el.getAttribute('data-sum'))
+      document.getElementById("totle-cost").innerHTML = TotleNum
+      document.getElementById("service-charge-info").innerHTML = TotleNum
     }); 
     });
     document
