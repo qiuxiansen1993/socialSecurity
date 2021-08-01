@@ -38,9 +38,9 @@
                   <li class="mui-table-view-cell" style="font-size: 20px">
                     导航
                   </li>
-                  <li data-href="/Personal/index.html" class="mui-table-view-cell nav-item__click">
+                  <!-- <li data-href="/Personal/index.html" class="mui-table-view-cell nav-item__click">
                     <span href="/" class="mui-navigate-right">个人中心</span>
-                  </li>
+                  </li> -->
                   <li data-href="/MyServer/index.html" class="mui-table-view-cell nav-item__click">
                     <span class="mui-navigate-right">我的服务</span>
                   </li>
@@ -56,7 +56,7 @@
                   <li data-href="/MyInfo/index.html" class="mui-table-view-cell nav-item__click">
                     <span class="mui-navigate-right">我的资料</span>
                   </li>
-                  <li data-href="/AddUserInfo/index.html" class="mui-table-view-cell nav-item__click">
+                  <!-- <li data-href="/AddUserInfo/index.html" class="mui-table-view-cell nav-item__click">
                     <span class="mui-navigate-right">添加参保信息</span>
                   </li>
                   <li data-href="/CreateOrder/index.html" class="mui-table-view-cell nav-item__click">
@@ -66,7 +66,7 @@
                     <span class="mui-navigate-right">我的缴费订单</span>
                   </li>
                   <li data-href="/PayList/index.html" class="mui-table-view-cell nav-item__click">
-                    <span class="mui-navigate-right">支付列表</span>
+                    <span class="mui-navigate-right">支付列表</span> -->
                   </li>
                   
                 </ul>
@@ -88,26 +88,26 @@
           ></a>
         </header>
         <!-- 主页面内容容器 -->
-        <div class="mui-content mui-scroll-wrapper" style="background:#fff;" id="home-body">
-          <div class="mui-scroll">
+        <div class="mui-content mui-scroll-wrapper" style="background:#fff;overflow-y: auto;" id="home-body">
+          <div class="mui-scroll" style="overflow-y: auto;">
             <!-- 主界面具体展示内容 -->
-            <img class="banner-home" src="/asset/imgs/banner_sb.jpeg" alt="">
+            <img class="banner-home" src="/asset/imgs/home-banner.png" alt="">
             <div class="content-home">
               <div class="content-info">
                 <img
-                  src="data:image/jpeg;base64,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"
+                  id="headimg"
                   alt=""
                 />
                 <div class="content-info__label">
-                  <h5>欢迎你，张小宝</h5>
-                  <h5>身份证：370000000000000</h5>
+                  <h5 id="welcome-to-language"></h5>
+                  <h5 id="userIdCard"></h5>
                 </div>
               </div>
               <div class="content-notice">
-                <img src="/asset/imgs/tz.png" class="notice-icon" alt=""><span>您202106社保已经缴纳成功</span>
+                <img src="/asset/imgs/tz.png" class="notice-icon" alt=""><span id="topMessage"></span>
               </div>
               <div class="content-details">
-                <div class="mui-row business-list">
+                <div class="mui-row business-list" id="toMyServer">
                   <div class="mui-col-sm-4 mui-col-xs-4">
                     <li class="mui-table-view-cell business-item">
                       <img
@@ -139,18 +139,18 @@
                     </li>
                   </div>
                 </div>
-                <div class="details-amount">
+                <div class="details-amount" id="toPayCost">
                   <div>
                     <p>余额</p>
-                    <p>7753</p>
+                    <p id="mybalance-num"></p>
                   </div>
                   <div>
                     <p>待支付金额</p>
-                    <p>7753</p>
+                    <p id="order-sum"></p>
                   </div>
                   <div>
                     <p>立伟币</p>
-                    <p>7753</p>
+                    <p id="lwcion-num"></p>
                   </div>
                 </div>
                 <div class="query-group">
@@ -168,7 +168,7 @@
                   </button>
                 </div>
                 <div class="details-share">
-                  <img src="/asset/imgs/bgshare.png" alt="" />
+                  <img src="/asset/imgs/songhongbao.png" alt="" />
                 </div>
               </div>
             </div>

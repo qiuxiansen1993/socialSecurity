@@ -21,4 +21,30 @@
     #materialName{
         margin-bottom: 0;
     }
+    .mui-input-row{
+        input{
+            width:60%;
+            font-size: .4rem;
+        }
+        label{
+            width:40%;
+        }
+    }
 }
+.display-flex{
+    display: flex;
+    align-items: center;
+}
+.head-portrait{
+    display: block;
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+  }
+  .user-info{
+      margin-left: 10px;
+      p{
+          font-size: 15px;
+          color:#1b1b1b;
+      }
+  }

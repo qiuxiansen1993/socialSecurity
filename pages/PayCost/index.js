@@ -21,6 +21,9 @@ const getUserOrderListFunc = async(page = 0)=>{
             _listDom.setAttribute('class','mui-table-view-cell');
             _listDom.innerHTML = `${format(createTime)}  ${startMonth}起缴纳${duration}个月 ${status === '0' ?'<button data-id='+item.id+' type="button" class="mui-btn mui-btn-danger mui-btn-outlined handle-btn">取消</button>':status === '1' ?'已通过':'' }`;
             viewContainer.appendChild(_listDom);
+            _listDom.addEventListener("tap", function (e) {
+                window.location = `${document.location.protocol}//${window.location.host}/PayDetails/index.html?id=${item.id}`;
+            })
         })
         addEventCanle()
         PageIdx = pageNum;
@@ -38,6 +41,7 @@ const addEventCanle = ()=>{
     [...document.querySelectorAll('.handle-btn')].forEach((item)=>{
         item.addEventListener("tap", function (e) {
             cancelUserOrderFunc(this.getAttribute('data-id'))
+            e.stopPropagation()
         })
     })
 }

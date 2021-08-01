@@ -9,12 +9,14 @@ const customPage = {
   css:[
     (isProd ? '/asset/mui/css/mui.min.css':'http://localhost:8000/asset/mui/css/mui.min.css'),
     (isProd ? '/asset/mui/css/mui.picker.css':'http://localhost:8000/asset/mui/css/mui.picker.css'),
-    (isProd ? '/asset/mui/css/mui.poppicker.css':'http://localhost:8000/asset/mui/css/mui.poppicker.css')
+    (isProd ? '/asset/mui/css/mui.poppicker.css':'http://localhost:8000/asset/mui/css/mui.poppicker.css'),
+    (isProd ? '/asset/mui/css/mui.picker.min.css':'http://localhost:8000/asset/mui/css/mui.picker.min.css')
   ],
   js:[
     (isProd ? '/asset/mui/js/mui.min.js':'http://localhost:8000/asset/mui/js/mui.min.js'),
     (isProd ? '/asset/mui/js/mui.picker.js':'http://localhost:8000/asset/mui/js/mui.picker.js'),
-    (isProd ? '/asset/mui/js/mui.poppicker.js':'http://localhost:8000/asset/mui/js/mui.poppicker.js')
+    (isProd ? '/asset/mui/js/mui.poppicker.js':'http://localhost:8000/asset/mui/js/mui.poppicker.js'),
+    (isProd ? '/asset/mui/js/mui.picker.min.js':'http://localhost:8000/asset/mui/js/mui.picker.min.js')
   ],
   meta:[
     {
@@ -88,6 +90,8 @@ const config = {
     TransferNotice:"./pages/TransferNotice/index.js",
     TransferRecord:"./pages/TransferRecord/index.js",
     WithdrawalRecore:"./pages/WithdrawalRecore/index.js",
+    PayDetails:"./pages/PayDetails/index.js",
+    
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -269,7 +273,13 @@ const config = {
       chunks: ["WithdrawalRecore"],
       files:customPage
     }),
-    
+    new HtmlWebpackPlugin({
+      title: "PayDetails",
+      filename: "PayDetails/index.html",
+      template: "./pages/PayDetails/index.html",
+      chunks: ["PayDetails"],
+      files:customPage
+    }),
     new MiniCssExtractPlugin({
         filename: isProd ? '[name]/[name].[contenthash].css' : '[name]/[name].css',
     }),

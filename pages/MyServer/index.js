@@ -71,6 +71,15 @@ window.onload = () => {
   document.getElementById("more-set").addEventListener("tap", function () {
     mui("#set-popover").popover("toggle");
   });
+  document.getElementById("view-order").addEventListener("tap", function () {
+    window.location = `${document.location.protocol}//${window.location.host}/PayCost/index.html`
+  });
+  document.getElementById("create-order").addEventListener("tap", function () {
+    document.getElementById("handle-order").style= 'display:none;';
+    document.getElementById("create-content").style= 'display:block;'
+    
+  });
+  
   document
     .getElementById("more-set-cancel")
     .addEventListener("tap", function () {

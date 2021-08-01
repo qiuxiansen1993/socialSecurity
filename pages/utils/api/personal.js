@@ -10,11 +10,15 @@ const updateUserInfo = '/user/updateUserinfo.php';
 const uploadMaterial = '/user/uploadMaterial.php';
 // 资料列表
 const getMaterialList = '/user/getMaterialList.php';
+// 消息top3
+const getTopMessage = '/user/getTopMessage.php';
+
 export {
     getCarrerInfo,
     getUserProperty,
     getUserInfo,
     updateUserInfo,
     uploadMaterial,
-    getMaterialList
+    getMaterialList,
+    getTopMessage
 }

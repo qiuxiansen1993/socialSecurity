@@ -10,11 +10,11 @@ config.devServer = {
   index: "Home/index.html",
   proxy: {
     "/asset": {
-      target: "http://localhost:8000",
+      target: "http://localhost:8000",//"http://localhost:8000",
       changeOrigin: true,
     },
     '/': {
-      target: 'http://user.liweirenli.com',//'http://user.liweirenli.com',//'http://shizhongwei.com'
+      target: 'http://user.liweirenli.com',//'http://user.liweirenli.com',//'http://user.liweirenli.com',//'http://shizhongwei.com'
       changeOrigin: true,
       // pathRewrite: {'^/api' : ''}
     },

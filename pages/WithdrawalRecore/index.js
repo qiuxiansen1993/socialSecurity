@@ -9,10 +9,10 @@ const getBalanceChangeListFunc = async()=>{
     const {code,data = [],msg} = await get(getBalanceChangeList);
     if(code ===200){
         data.map((item) => {
-            const {createDate ,totalMoney} = item;
+            const {createDate ,totalMoney,status} = item;
             const _listDom = document.createElement(`LI`)
             _listDom.setAttribute('class','mui-table-view-cell');
-            _listDom.innerHTML = `时间：${createDate?format(createDate):'---'} | 金额：${totalMoney}`;
+            _listDom.innerHTML = `时间：${createDate?format(createDate):'---'} | 金额：${totalMoney} | 状态：${status === '0' ? '待审核':status === '1'?'审核通过':''}`;
             viewContainer.appendChild(_listDom);
         })
     }else{

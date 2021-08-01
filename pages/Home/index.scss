@@ -59,7 +59,7 @@ body{
     margin-top: .2rem;
     border-radius: .2rem;
     background-color: #fff;
-    padding:.2rem .5rem;
+    padding:.2rem;
     box-shadow:0 0 3px 2px #eee;
     .business-list{
         display: block;
@@ -79,10 +79,12 @@ body{
         display: flex;
         align-items: center;
         justify-content: space-around;
-        border: 0.01rem #1199FF solid;
-        border-top: #1199FF .2rem solid;
+        border: 0.01rem #007aff solid;
+        border-top: #007aff .2rem solid;
         border-top-left-radius: .2rem;
         border-top-right-radius: .2rem;
+        border-bottom-left-radius: .1rem;
+        border-bottom-right-radius: .1rem;
         text-align: center;
         div{
             font-size: .35rem;
@@ -97,16 +99,21 @@ body{
         .mui-btn{
             display: block;
             width: 100%;
-            border-color: #1199FF !important;
-            color: #1199FF !important;
+            border-color: #007aff !important;
+            color: #007aff !important;
             margin-top: .1rem;
         }
     }
     .details-share{
         margin-top: .2rem;
         img{
+            border-radius: 5px;
             display: block;
             width:100%;
         }
     }
+}
+.nav-item__click{
+    display: flex;
+    align-items: center;
 }

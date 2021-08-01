@@ -125,8 +125,13 @@ const initSubmitEvent = async() => {
       });
       if (code === 200) {
         mui.toast(msg || '提交成功~');
+        window.location = `${document.location.protocol}//${window.location.host}${'/MyServer/index.html?city='+escape('北京')}`;
       }else{
-        mui.toast('提交失败，请稍后重试！');
+        if(code === 400 || code === 500){
+          mui.toast(msg||'提交失败，请稍后重试！');
+        }else{
+          mui.toast('提交失败，请稍后重试！');
+        }
       }
     });
     document.getElementById('sbView').addEventListener("tap", function (event) {
@@ -305,11 +310,9 @@ const initSwitchFunc = () => {
     .getElementById("shebao-switch")
     .addEventListener("toggle", function (event) {
       if (event.detail.isActive) {
-        console.log("你启动了开关");
         calculateData["sbIsNew"] = false;
       } else {
         calculateData["sbIsNew"] = true;
-        console.log("你关闭了开关");
       }
     });
   document
@@ -317,10 +320,8 @@ const initSwitchFunc = () => {
     .addEventListener("toggle", function (event) {
       if (event.detail.isActive) {
         calculateData["gjjIsNew"] = false;
-        console.log("你启动了开关");
       } else {
         calculateData["gjjIsNew"] = true;
-        console.log("你关闭了开关");
       }
     });
   document

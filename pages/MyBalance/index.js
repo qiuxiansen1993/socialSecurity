@@ -15,8 +15,7 @@ const getLocalTime = (nS) =>{
         <span>${getLocalTime(item.orderDate)}</span>
         <span>充值 ${(item.orderBalance || item.orderLwCoin)}</span>
         </li>`;
-      })
-      .join("");
+      }).join("") || '<div style="text-align:center;padding:20px;">您还没有订单</div>';
  }
 const getBalanceListFunc = async()=>{
     const { data:{resList},code,msg } = await get(getBalanceList);
