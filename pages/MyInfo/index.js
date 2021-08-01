@@ -1,5 +1,5 @@
 import { get, post } from "../utils/main";
-
+import { GetRequest } from "../utils/tool";
 import {
   updateUserInfo,
   uploadMaterial,
@@ -35,7 +35,8 @@ const updateUserInfoFunc = async () => {
   const { code, msg } = await post(updateUserInfo, { ...param, userHouseHold });
   if (code === 200) {
     mui.toast("提交成功");
-    window.history.back();
+    const {back} = GetRequest()
+    window.location = `${document.location.protocol}//${window.location.host}${'/'+back+'/index.html'}`;
   } else {
     mui.toast(msg || "提交异常~");
   }
