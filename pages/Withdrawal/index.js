@@ -1,7 +1,6 @@
 import { post,get } from "../utils/main";
 import {
     createBalanceChange,
-    getBalanceChangeList
   } from "../utils/api/balanceChange";
 import './index.scss';
 const createBalanceChangeFunc = async()=>{
