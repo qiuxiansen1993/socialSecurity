@@ -15,7 +15,7 @@ const submitMap = [
   "userHouseCity",
   "userName",
   "userBankCard",
-  "bankName",
+  "userBankName",
 ];
 let userHouseHold = "";
 const updateUserInfoFunc = async () => {
