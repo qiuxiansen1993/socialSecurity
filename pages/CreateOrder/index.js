@@ -117,7 +117,7 @@ const initSubmitEvent = async() => {
       serverCostIdx = e.detail.el.getAttribute('data-idx')
       const TotleNum = mainTotleCost+Number(e.detail.el.getAttribute('data-sum'))
       document.getElementById("totle-cost").innerHTML = TotleNum
-      document.getElementById("service-charge-info").innerHTML = TotleNum
+      document.getElementById("service-charge-info").innerHTML = Number(e.detail.el.getAttribute('data-sum'))
     }); 
     });
     document
