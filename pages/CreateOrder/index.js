@@ -20,6 +20,7 @@ const calculateData = {
   gjjIsNew: true,
   addSalary: true,
 };
+let cityNameinfo = '';
 let FeeInfo = [];
 let CalSbDataInfo = {};
 let canSelectWage = true;
@@ -41,6 +42,7 @@ const getRandomCompanyFunc = async () => {
   });
   if (code === 200) {
     const { cityName, corpName } = data;
+    cityNameinfo = cityName
     document.getElementById("cityName").innerHTML = cityName || "";
     document.getElementById("corpName").innerHTML = corpName || "";
   }
@@ -251,15 +253,15 @@ const initSubmitEvent = async() => {
     <div style="margin-bottom:10px;border:1px solid #eee;padding:10px;">
       <div class="alert-display-flex">
         <span>工资所属方案</span>
-        <span>北京职工个税</span>
+        <span>${cityNameinfo}职工个税</span>
       </div>
       <div class="alert-display-flex">
         <span>工资发放日期</span>
-        <span>当月收入</span>
+        <span>当月25日</span>
       </div>
       <div class="alert-display-flex">
-        <span>工资所属方案</span>
-        <span>北京职工个税</span>
+        <span>当月收入</span>
+        <span>-</span>
       </div>
     </div>
     <div style="border:1px solid #eee;padding:10px;">
