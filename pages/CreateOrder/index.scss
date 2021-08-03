@@ -19,9 +19,9 @@
     // background-color:#1199FF;
     color: #fff;
   }
-  .display-flex {
+  .display-flex{
     display: flex !important;
-    justify-content: space-between;
+  justify-content: space-between;
   }
   .mui-checkbox.mui-left input[type="checkbox"],
   .mui-radio.mui-left input[type="radio"] {
@@ -100,7 +100,16 @@
   width:90%;
 }
 .alert-content{
-  font-size: 9px;
+  font-size: 10px;
+  h5{
+    font-size: 14px;
+    font-weight: 600;
+    color:#1b1b1b;
+    margin-bottom: 5px;
+  }
+  br{
+    display: none;
+  }
   .mui-row>[class*=mui-col-]{
     width: 25%;
   }
@@ -125,4 +134,16 @@
     font-size: 14px;
     color:red;
   }
+}
+.alert-display-flex {
+  display: flex !important;
+  justify-content: space-between;
+  padding:2px 0;
+  span{
+    font-size: 14px;
+  }
+}
+.date-as-of{
+  text-align: left;
+  font-size: 10px;
 }

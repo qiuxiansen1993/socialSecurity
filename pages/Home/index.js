@@ -9,6 +9,11 @@ import {
 import "./index.scss";
 window.__isreload = false
 let timer = null
+mui(document).on('tap', 'a', function() {
+  var a = document.createElement('a');
+  a = this.cloneNode(true);
+  a.click();
+})
 const getUserInfoFunc = async()=>{
   const { code,data } = await get(getUserInfo);
   if(code ===200){
@@ -91,13 +96,6 @@ window.onload = () => {
   });
   detailsShare.addEventListener("tap", function () {
     window.location = `${document.location.protocol}//${window.location.host}/MyInvite/index.html`;
-  })
-  contactUser.addEventListener("tap", function () {
-    mui.alert(`
-    <div style="text-align:left;">
-    <p style="font-size:16px;text-align:center;">联系我们：13764567708</p>
-    </div>
-    `);
   })
   getUserInfoFunc()
   getUserPropertyFunc()

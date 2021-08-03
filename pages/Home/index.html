@@ -11,7 +11,6 @@
     <% for (var meta in htmlWebpackPlugin.options.files.meta) { %>
       <meta name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>" content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>" />
       <% } %>
-
     <% for (var css in htmlWebpackPlugin.options.files.css) { %>
       <link href="<%=htmlWebpackPlugin.options.files.css[css] %>" rel="stylesheet" />
       <% } %>

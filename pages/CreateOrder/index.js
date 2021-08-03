@@ -110,7 +110,7 @@ const initSubmitEvent = async() => {
     .addEventListener("tap", function (event) {
       mui.confirm(`
       <ul class="mui-table-view mui-table-view-radio service-charge-sel">${renderServerChargeLi()}</ul>
-    `);
+    `,'服务详情');
     var list = document.querySelector('.mui-table-view.mui-table-view-radio');
     list.removeEventListener('selected',()=>{});
     list.addEventListener('selected',function(e){
@@ -217,7 +217,7 @@ const initSubmitEvent = async() => {
       <div class="sb-label_total">￥${total}</div>
     </div>
     </div>
-    `);
+    `,'社保明细');
     })
     document.getElementById('gjjView').addEventListener("tap", function (event) {
       if(!CalSbDataInfo.gjj){
@@ -239,7 +239,7 @@ const initSubmitEvent = async() => {
       <p style="color:#000;font-size:10px;">个人缴纳：${personalValue}</p>
     </div>
     </div>
-    `);
+    `,'公积金明细');
     })
     document.getElementById('gzView').addEventListener("tap", async function (event) {
       if(!CalSbDataInfo.salary){
@@ -248,20 +248,45 @@ const initSubmitEvent = async() => {
       const { salary:{baseSalary,salaryDate,total,tax,salary,otherFee} } = CalSbDataInfo;
       mui.alert(`
     <div class="alert-content">
-    <div class="sb-label">
-      <div class="sb-label_title">
-        <p style="font-size:14px;font-weight:600;">订单金额</p>
-        <p>截止扣费日期：${salaryDate || '-'}</p>
+    <div style="margin-bottom:10px;border:1px solid #eee;padding:10px;">
+      <div class="alert-display-flex">
+        <span>工资所属方案</span>
+        <span>北京职工个税</span>
       </div>
-      <div class="sb-label_total">￥${total}</div>
+      <div class="alert-display-flex">
+        <span>工资发放日期</span>
+        <span>当月收入</span>
+      </div>
+      <div class="alert-display-flex">
+        <span>工资所属方案</span>
+        <span>北京职工个税</span>
+      </div>
     </div>
-    <div style="color:#000;text-align:left;">
-      <p style="color:#000;font-size:10px;">当月应缴税额：${baseSalary}</p>
-      <p style="color:#000;font-size:10px;">当月实发金额：${total}</p>
-      <p style="color:#000;font-size:10px;">其他费用：${otherFee}</p>
+    <div style="border:1px solid #eee;padding:10px;">
+      <div>
+        <div class="alert-display-flex">
+          <span>订单金额</span>
+          <span style="color:#f0ad4e;font-size:15px;font-weight:500;">￥${total}</span>
+        </div>
+        <p class="date-as-of">截止扣费日期：2021-08-23</p>
+      </div>
+      <div>
+        <div class="alert-display-flex">
+          <span>当月应缴税额</span>
+          <span>￥${baseSalary}</span>
+        </div>
+        <div class="alert-display-flex">
+          <span>当月实发金额</span>
+          <span>￥${total}</span>
+        </div>
+        <div class="alert-display-flex">
+          <span>其他费用</span>
+          <span>￥${otherFee}</span>
+        </div>
+      </div>
     </div>
     </div>
-    `);
+    `,'工资个税明细');
     })
 };
 

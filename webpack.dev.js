@@ -14,11 +14,11 @@ config.devServer = {
       target: "http://192.168.2.11:8000",//"http://localhost:8000",
       changeOrigin: true,
     },
-    // '/': {
-    //   target: 'http://user.liweirenli.com',//'http://user.liweirenli.com',//'http://user.liweirenli.com',//'http://shizhongwei.com'
-    //   changeOrigin: true,
-    //   // pathRewrite: {'^/api' : ''}
-    // },
+    '/': {
+      target: 'http://user.liweirenli.com',//'http://user.liweirenli.com',//'http://user.liweirenli.com',//'http://shizhongwei.com'
+      changeOrigin: true,
+      // pathRewrite: {'^/api' : ''}
+    },
   },
 };
 module.exports = config;
