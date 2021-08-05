@@ -275,11 +275,11 @@ const initSubmitEvent = async() => {
       <div>
         <div class="alert-display-flex">
           <span>当月应缴税额</span>
-          <span>￥${baseSalary}</span>
+          <span>￥${tax}</span>
         </div>
         <div class="alert-display-flex">
           <span>当月实发金额</span>
-          <span>￥${total}</span>
+          <span>￥${salary}</span>
         </div>
         <div class="alert-display-flex">
           <span>其他费用</span>
