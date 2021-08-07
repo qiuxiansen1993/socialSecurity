@@ -86,7 +86,9 @@ window.onload = () => {
   document.getElementById("view-myBanlance").addEventListener("tap", function () {
     window.location = `${document.location.protocol}//${window.location.host}/MyBalance/index.html`
   });
-  
+  document.getElementById("contract-management").addEventListener("tap", function () {
+    mui.toast("暂不支持");
+  });
   document
     .getElementById("more-set-cancel")
     .addEventListener("tap", function () {
