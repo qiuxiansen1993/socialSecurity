@@ -10,7 +10,6 @@ import {
 } from "../utils/api/createOrder";
 import { getUserInfo } from "../utils/api/personal";
 import "../utils/main";
-// import { wage, month } from "./config";
 import "./index.scss";
 const configData = {};
 const calculateData = {

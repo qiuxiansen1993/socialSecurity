@@ -70,6 +70,47 @@
   width:50px;
   height:50px;
 }
-.handle-order{
+.handle-info{
   font-size: 16px;
+  .mui-table-view-cell{
+    display: flex;
+    align-items: center;
+  }
+  img{
+    width:30px;
+    height:30px;
+    margin-right: 10px;
+  }
+}
+.order-operation{
+  display: flex;
+  padding: 10px;
+  .order-operation-item{
+    width:50%;
+    text-align: center;
+    font-size: 16px;
+    img{
+      display: block;
+      width:50px;
+      height:50px;
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
+  }
+}
+.handle-tools-content{
+  display: flex;
+  padding: 20px;
+  .handle-tools-item{
+    width:33.33%;
+    text-align: center;
+    font-size: 14px;
+    img{
+      display: block;
+      width:40px;
+      height:40px;
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
+  }
 }

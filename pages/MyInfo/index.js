@@ -1,5 +1,6 @@
 import { get, post } from "../utils/main";
 import { GetRequest } from "../utils/tool";
+import { IdCardValidate,bankCardValidate } from "../utils/rules";
 import {
   updateUserInfo,
   uploadMaterial,
@@ -17,26 +18,35 @@ const submitMap = [
   "userBankCard",
   "userBankName",
 ];
-let userHouseHold = "";
+
 const updateUserInfoFunc = async () => {
   let param = {};
   let canSave = true;
+  let userHouseHold = document.getElementById('userHouseHold').innerText;
   submitMap.forEach((item) => {
     const value = document.getElementById(item).value;
     if (!value) {
       mui.toast("请填写全部信息");
       canSave = false;
-    } else {
+    } else if(item === 'userIdCard' && !IdCardValidate(value)){
+      mui.toast("您填写的身份证号有误");
+      canSave = false;
+    } else if(item === 'userBankCard' && !bankCardValidate(value)){
+      mui.toast("您填写的银行卡号有误");
+      canSave = false;
+    }else{
       param[item] = value;
     }
   });
+  console.log(canSave,userHouseHold)
   if (!userHouseHold) return mui.toast("请填写全部信息");
   if (!canSave) return;
   const { code, msg } = await post(updateUserInfo, { ...param, userHouseHold });
   if (code === 200) {
     mui.toast("提交成功");
     const {back} = GetRequest()
-    window.location = `${document.location.protocol}//${window.location.host}${'/'+back+'/index.html'}`;
+    window.history.back(); 
+    //window.location = `${document.location.protocol}//${window.location.host}${'/'+back+'/index.html'}`;
   } else {
     mui.toast(msg || "提交异常~");
   }
@@ -52,6 +62,7 @@ const getUserInfoFunc = async () => {
         document.getElementById('headimg').innerHTML = headimg ? `<img class="head-portrait" src="${headimg}"/>` : `<i id="headimg" class="mui-icon mui-icon-contact" style="font-size: 50px; color: #1199ff"></i>`
         document.getElementById("nickname").innerHTML = '昵称：' + (userInfo?.nickname || '');
         document.getElementById("userMobile").innerHTML = '电话号码：'+userInfo?.userMobile || '';
+        document.getElementById("userHouseHold").innerHTML = userInfo?.userHouseHold || '';
       }catch(e){
           console.log(e)
       }

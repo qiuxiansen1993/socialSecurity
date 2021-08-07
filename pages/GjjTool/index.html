@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title></title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui"
+        />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/asset/tools/tools.css">
+        <% for (var meta in htmlWebpackPlugin.options.files.meta) { %>
+          <meta name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>" content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>" />
+          <% } %>
+    
+        <% for (var css in htmlWebpackPlugin.options.files.css) { %>
+          <link href="<%=htmlWebpackPlugin.options.files.css[css] %>" rel="stylesheet" />
+          <% } %>
+    
+          <% for (var js in htmlWebpackPlugin.options.files.js) { %>
+            <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
+          <% } %>
+          <script type="text/javascript" charset="utf-8">
+            window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
+          </script>
+      </head>
+  <body>
+    <header class="mui-bar mui-bar-nav">
+      <a
+        class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left"
+        id="home-menu"
+      ></a>
+      <h1 class="mui-title">公积金工具</h1>
+    </header>
+    <div style="padding-top: 50px;">
+      <div class="wagesresult-box">
+        <div class="wagesresult-top color-background">
+            <div class="wagesresult-top1">
+                <p style="text-align: center;">您共需缴纳(元)</p>
+                <h1 style="padding-top:1rem;">
+                    <span>￥</span><span id="sumPay" style="font-size: 3.6rem">700.00</span>
+                </h1>
+                <div class="socialresult-top-flex">
+                    <div class="items">
+                        <p>个人缴纳(元)</p>
+                        <h2><span>￥</span><span class="personPayToatl">350.00</span></h2>
+                    </div>
+                    <div class="items">
+                        <p>公司缴纳(元)</p>
+                        <h2><span>￥</span><span class="enterprisePayToatl">350.00</span></h2>
+                    </div>
+                </div>
+            </div>
+            <div class="wagesresult-top2">
+                <p>
+                    <span>缴费项目</span>
+                    <span>公积金</span>
+                </p>
+                <p>
+                    <span>缴费城市</span>
+                    <span id="cityName">北京市-北京市</span>
+                </p>
+            </div>
+        </div>
+        <div class="wagesresult-bottom qqxb-tools-table">
+            <table class="z-CAT-section-money-table">
+                <tbody><tr>
+                    <th style="width:23%;">项目</th>
+                    <th style="width:20%;">基数</th>
+                    <th>公司</th>
+                    <th>个人</th>
+                </tr>
+                <tr>
+                    <td id="categoryName">公积金</td>
+                    <td id="enterpriseBase">7000.00</td>
+                    <td><span class="personPayToatl" style="color: #969699">350.00</span>(<span id="enterpriseRatio" style="color: #969699">5.00</span>%)</td>
+                    <td><span class="enterprisePayToatl" style="color: #969699">350.00</span>(<span id="personalRatio" style="color: #969699">5.00</span>%)</td>
+                </tr>
+                <tr class="orange-tr">
+                    <td>总计</td>
+                    <td>-</td>
+                    <td class="personPayToatl">350.00</td>
+                    <td class="enterprisePayToatl">350.00</td>
+                </tr>
+            </tbody></table>
+        </div>
+        <h5 class="wagesresult-bottom-h5">
+            此结果仅供参考
+        </h5>
+    </div>
+    </div>
+  </body>
+</html>

@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
 const isProd = mode === 'production';
 const customPage = {
-  NODE_ENV:process.env.NODE_ENV,
+  NODE_ENV:'production' || process.env.NODE_ENV,
   css:[
     (isProd ? '/asset/mui/css/mui.min.css':'http://localhost:8000/asset/mui/css/mui.min.css'),
     (isProd ? '/asset/mui/css/mui.picker.css':'http://localhost:8000/asset/mui/css/mui.picker.css'),
@@ -91,7 +91,7 @@ const config = {
     TransferRecord:"./pages/TransferRecord/index.js",
     WithdrawalRecore:"./pages/WithdrawalRecore/index.js",
     PayDetails:"./pages/PayDetails/index.js",
-    
+    GjjTool:"./pages/GjjTool/index.js",
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -278,6 +278,13 @@ const config = {
       filename: "PayDetails/index.html",
       template: "./pages/PayDetails/index.html",
       chunks: ["PayDetails"],
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "GjjTool",
+      filename: "GjjTool/index.html",
+      template: "./pages/GjjTool/index.html",
+      chunks: ["GjjTool"],
       files:customPage
     }),
     new MiniCssExtractPlugin({

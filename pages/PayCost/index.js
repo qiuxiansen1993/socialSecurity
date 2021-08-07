@@ -6,6 +6,7 @@ import {
   } from "../utils/api/orderList";
   import { format } from '../utils/tool'
 import './index.scss';
+
 let PageIdx = 0
 const viewContainer = document.querySelector('.mui-table-view');
 const getUserOrderListFunc = async(page = 0)=>{

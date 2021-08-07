@@ -11,7 +11,7 @@ config.devServer = {
   index: "Home/index.html",
   proxy: {
     "/asset": {
-      target: "http://192.168.2.11:8000",//"http://localhost:8000",
+      target: 'http://localhost:8000', //""http://192.168.2.11:8000"",
       changeOrigin: true,
     },
     '/': {

@@ -54,11 +54,11 @@ axios.interceptors.response.use(
 );
 const _nav = document.querySelector('.mui-icon-arrowleft');
 _nav && _nav.addEventListener("tap", function () {
-  window.history.go(-1);
+  window.history.back(); 
 });
 export default axios;
 /**是否处于开发模式 */    
-const IS_DEV = window.NODE_ENV !== 'production';  
+const IS_DEV = window.NODE_ENV !== 'production';
 if(IS_DEV){
   require('../../mock/mocker')
 }

@@ -6,6 +6,10 @@ import {
 import './index.scss';
 let PageIdx = 0
 const viewContainer = document.querySelector('.mui-table-view');
+ // 结束下拉刷新
+ const endPullRefresh = ()=>{
+    mui('#recordLoad').pullRefresh().endPullupToRefresh(false);
+  }
 const getBankOrderListFunc = async(page = 0)=>{
     const {code,data = [],msg} = await get(getBankOrderList,{
         page,
@@ -20,6 +24,7 @@ const getBankOrderListFunc = async(page = 0)=>{
             _listDom.innerHTML = `<span class="span_width">时间：${transferTime?format(transferTime):'---'}</span>  <span class="span_width">汇款人：${tranferMan}</span><span class="span_width">银行：${transferBank}</span>  <span class="span_width">金额：${transferMoney}</span>`;
             viewContainer.appendChild(_listDom);
         })
+        endPullRefresh()
         PageIdx = pageNum;
         if(pageNum*pageSize >= recordCount){
             mui('#recordLoad').pullRefresh().disablePullupToRefresh();

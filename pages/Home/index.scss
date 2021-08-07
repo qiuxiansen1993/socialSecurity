@@ -116,4 +116,17 @@ body{
 .nav-item__click{
     display: flex;
     align-items: center;
+    img{
+        width:20px;
+        height:20px;
+        margin-right: 10px;
+    }
+}
+.menu-icon{
+    width: 20px;
+    height: 20px;
+    top: 12px;
+    left: 12px;
+    background: url(/asset/imgs/menu-icon.png);
+    background-size: 100%;
 }

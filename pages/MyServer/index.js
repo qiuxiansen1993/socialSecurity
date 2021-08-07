@@ -76,8 +76,15 @@ window.onload = () => {
   });
   document.getElementById("create-order").addEventListener("tap", function () {
     document.getElementById("handle-order").style= 'display:none;';
+    document.getElementById("order-operation").style= 'display:none;';
+    document.getElementById("handle-tools").style= 'display:none;';
     document.getElementById("create-content").style= 'display:block;'
-    
+  });
+  document.getElementById("view-myInfo").addEventListener("tap", function () {
+    window.location = `${document.location.protocol}//${window.location.host}/MyInfo/index.html`
+  });
+  document.getElementById("view-myBanlance").addEventListener("tap", function () {
+    window.location = `${document.location.protocol}//${window.location.host}/MyBalance/index.html`
   });
   
   document
