@@ -87,7 +87,7 @@ window.onload = () => {
   homeBody &&
     homeBody.addEventListener("tap", function () {
       //mui(".mui-off-canvas-wrap").offCanvas().close();
-      mui('.mui-popover').popover('toggle');
+      mui('.mui-popover').popover('close');
     });
   [...document.querySelectorAll(".nav-item__click")].map((item) => {
     item.addEventListener("tap", function (e) {
