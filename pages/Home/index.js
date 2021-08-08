@@ -41,7 +41,10 @@ const getTopMessageFunc = async()=>{
   const { code,data } = await get(getTopMessage);
   if(code ===200){
     const topMessage = document.getElementById('topMessage');
-    
+    if(!data || data?.length < 1){
+      document.querySelector('.content-notice').style="display:none;";
+      return
+    }
     clearInterval(timer)
     timer = null;
     let timer_num = 0;
@@ -76,12 +79,15 @@ window.onload = () => {
     window.location = `${document.location.protocol}//${window.location.host}/MyServer/index.html`;
     });
   homeMenu &&
-    homeMenu.addEventListener("tap", function () {
-      mui(".mui-off-canvas-wrap").offCanvas().toggle();
+    homeMenu.addEventListener("tap", function (event) {
+      //mui(".mui-off-canvas-wrap").offCanvas().toggle();
+      mui('.mui-popover').popover('toggle');
+      event.stopPropagation()
     });
   homeBody &&
     homeBody.addEventListener("tap", function () {
-      mui(".mui-off-canvas-wrap").offCanvas().close();
+      //mui(".mui-off-canvas-wrap").offCanvas().close();
+      mui('.mui-popover').popover('toggle');
     });
   [...document.querySelectorAll(".nav-item__click")].map((item) => {
     item.addEventListener("tap", function (e) {

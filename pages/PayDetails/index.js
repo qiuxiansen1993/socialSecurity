@@ -12,17 +12,13 @@ const viewUserOrderDetailFunc = async () => {
     document.getElementById("pay-details-container").innerHTML = detailList.map((item)=>{
         const {month,sbMoney,fund,salaryTax,status} = item
         return `
-        <div>
-            缴费月份: ${month}
-            <br/>
-            社保金额: ${sbMoney}
-            <br/>
-            公积金金额: ${fund}
-            <br/>
-            工资金额: ${salaryTax}
-            <br/>
-            状态：${status === '0'?'待审核':status === '1'?'已审核':'已拒绝'}
-        </div>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell" style="background-color: #1199FF;color:#fff;">缴费月份: ${month}</li>
+            <li class="mui-table-view-cell">社保金额: ${sbMoney}元</li>
+            <li class="mui-table-view-cell">公积金金额: ${fund}元</li>
+            <li class="mui-table-view-cell">工资金额: ${salaryTax}元</li>
+            <li class="mui-table-view-cell">状态：${status === '0'?'待审核':status === '1'?'已审核':'已拒绝'}</li>
+        </ul>
         `
     }).join('');
   }

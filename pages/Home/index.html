@@ -24,63 +24,57 @@
   </head>
   <body>
     <!-- 侧滑导航根容器 -->
-    <div class="mui-off-canvas-wrap mui-draggable">
+    <div>
+      <!-- 菜单容器 -->
+      <div class="mui-popover">
+        <div style="background:#fff;height:100vh;">
+          <ul class="mui-table-view">
+            <li class="mui-table-view-cell" style="font-size: 20px">
+              导航
+            </li>
+            <li data-href="/MyServer/index.html" class="mui-table-view-cell nav-item__click">
+              <img src="/asset/imgs/zhaofuwu.png" alt="">
+              <span class="mui-navigate-right">我的服务</span>
+            </li>
+            <li data-href="/MyBalance/index.html" class="mui-table-view-cell nav-item__click">
+              <img src="/asset/imgs/zichan.png" alt="">
+              <span class="mui-navigate-right">我的资产</span>
+            </li>
+            <li data-href="/MyInfo/index.html?back=Home" class="mui-table-view-cell nav-item__click">
+              <img src="/asset/imgs/gerenguanli.png" alt="">
+              <span class="mui-navigate-right">我的资料</span>
+            </li>
+            <li data-href="/MyInvite/index.html" class="mui-table-view-cell nav-item__click">
+              <img src="/asset/imgs/yaoqingfenxiang.png" alt="">
+              <span class="mui-navigate-right">我的邀请</span>
+            </li>
+            <li data-href="/Feedback/index.html" class="mui-table-view-cell nav-item__click">
+              <img src="/asset/imgs/help.png" alt="">
+              <span class="mui-navigate-right">帮助中心</span>
+            </li>
+          </ul>
+        </div>
+      </div>
       <!-- 主页面容器 -->
-      <div class="mui-inner-wrap">
-        <!-- 菜单容器 -->
-        <aside class="mui-off-canvas-left">
-          <div class="mui-scroll-wrapper">
-            <div class="mui-scroll">
-              <!-- 菜单具体展示内容 -->
-              <div style="height:100vh;background:#fff;">
-                <ul class="mui-table-view">
-                  <li class="mui-table-view-cell" style="font-size: 20px">
-                    导航
-                  </li>
-                  <li data-href="/MyServer/index.html" class="mui-table-view-cell nav-item__click">
-                    <img src="/asset/imgs/zhaofuwu.png" alt="">
-                    <span class="mui-navigate-right">我的服务</span>
-                  </li>
-                  <li data-href="/MyBalance/index.html" class="mui-table-view-cell nav-item__click">
-                    <img src="/asset/imgs/zichan.png" alt="">
-                    <span class="mui-navigate-right">我的资产</span>
-                  </li>
-                  <li data-href="/MyInfo/index.html?back=Home" class="mui-table-view-cell nav-item__click">
-                    <img src="/asset/imgs/gerenguanli.png" alt="">
-                    <span class="mui-navigate-right">我的资料</span>
-                  </li>
-                  <li data-href="/MyInvite/index.html" class="mui-table-view-cell nav-item__click">
-                    <img src="/asset/imgs/yaoqingfenxiang.png" alt="">
-                    <span class="mui-navigate-right">我的邀请</span>
-                  </li>
-                  <li data-href="/Feedback/index.html" class="mui-table-view-cell nav-item__click">
-                    <img src="/asset/imgs/help.png" alt="">
-                    <span class="mui-navigate-right">帮助中心</span>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-        </aside>
-        <!-- 主页面标题 -->
-        <header class="mui-bar mui-bar-nav">
-          <a
-            class="mui-icon mui-pull-left menu-icon"
-            id="home-menu"
-          >
-            <img src="/asset/imgs/menu-icon.png" alt="">
-          </a>
-          <h1 class="mui-title">大话社保</h1>
-          <a
-            href="tel:13764567708"
-            class="mui-icon mui-icon-phone mui-action-menu mui-pull-right"
-            id="contact-user"
-          ></a>
-        </header>
+      <div >
         <!-- 主页面内容容器 -->
-        <div class="mui-content mui-scroll-wrapper" style="background:#fff;overflow-y: auto;" id="home-body">
-          <div class="mui-scroll" style="overflow-y: auto;">
+        <div style="background:#fff;" id="home-body">
+          <!-- 主页面标题 -->
+          <header class="mui-bar mui-bar-nav">
+            <a
+              class="mui-icon mui-pull-left menu-icon"
+              id="home-menu"
+            >
+              <img src="/asset/imgs/menu-icon.png" alt="">
+            </a>
+            <h1 class="mui-title">大话社保</h1>
+            <a
+              href="tel:13764567708"
+              class="mui-icon mui-icon-phone mui-action-menu mui-pull-right"
+              id="contact-user"
+            ></a>
+          </header>
+          <div style="padding-top: 45px;">
             <!-- 主界面具体展示内容 -->
             <img class="banner-home" src="/asset/imgs/home-banner.png" alt="">
             <div class="content-home">

@@ -20,7 +20,19 @@ const getUserOrderListFunc = async(page = 0)=>{
             const {createTime = '',status,startMonth,duration} = item;
             const _listDom = document.createElement(`LI`)
             _listDom.setAttribute('class','mui-table-view-cell');
-            _listDom.innerHTML = `${format(createTime)}  ${startMonth}起缴纳${duration}个月 ${status === '0' ?'<button data-id='+item.id+' type="button" class="mui-btn mui-btn-danger mui-btn-outlined handle-btn">取消</button>':status === '1' ?'已通过':'' }`;
+            _listDom.innerHTML = `
+            <div class="mui-row">
+              <div class="mui-col-sm-3 mui-col-xs-3">
+              ${format(createTime)}
+              </div>
+              <div class="mui-col-sm-6 mui-col-xs-6">
+              ${startMonth}起缴纳${duration}个月
+              </div>
+              <div class="mui-col-sm-3 mui-col-xs-3">
+              ${status === '0' ?'<button data-id='+item.id+' type="button" class="mui-btn mui-btn-danger mui-btn-outlined handle-btn">取消</button>':status === '1' ?'已通过':'' }
+              </div>
+            </div>
+               `;
             viewContainer.appendChild(_listDom);
             _listDom.addEventListener("tap", function (e) {
                 window.location = `${document.location.protocol}//${window.location.host}/PayDetails/index.html?id=${item.id}`;

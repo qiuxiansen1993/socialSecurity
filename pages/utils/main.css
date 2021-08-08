@@ -13,9 +13,9 @@ h1,h2,h3,h4,h5,p,ul,li{
 .mui-navigate-right{
     font-size: 15px;
 }
-.mui-off-canvas-wrap,.mui-scroll-wrapper{
+/* .mui-off-canvas-wrap,.mui-scroll-wrapper{
     overflow-y: auto;
-}
+} */
 .mui-active{
     overflow:hidden;
 }

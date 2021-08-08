@@ -12,7 +12,19 @@ const getBalanceChangeListFunc = async()=>{
             const {createDate ,totalMoney,status} = item;
             const _listDom = document.createElement(`LI`)
             _listDom.setAttribute('class','mui-table-view-cell');
-            _listDom.innerHTML = `时间：${createDate?format(createDate):'---'} | 金额：${totalMoney} | 状态：${status === '0' ? '待审核':status === '1'?'审核通过':''}`;
+            _listDom.innerHTML = `
+            <div class="mui-row">
+              <div class="mui-col-sm-4 mui-col-xs-4">
+              ${createDate?format(createDate):'---'}
+              </div>
+              <div class="mui-col-sm-4 mui-col-xs-4">
+              ${totalMoney}
+              </div>
+              <div class="mui-col-sm-4 mui-col-xs-4">
+              ${status === '0' ? '待审核':status === '1'?'审核通过':''}
+              </div>
+            </div>
+            `;
             viewContainer.appendChild(_listDom);
         })
     }else{

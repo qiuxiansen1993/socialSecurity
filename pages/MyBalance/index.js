@@ -16,8 +16,9 @@ const orderTypeMap = {
   '05':'管理员手动调整',
   '06':'余额提现',
 }
-const getLocalTime = (nS) =>{     
-    return new Date(parseInt(nS)).toLocaleString().replace(/:\d{1,2}$/,' ');     
+const getLocalTime = (nS) =>{    
+  console.log(new Date(parseInt(nS))) 
+    return new Date(parseInt(nS)).toLocaleString().split(' ')[0]//.replace(/:\d{1,2}$/,' ');     
  }
 const viewContainer = document.querySelector('.mui-table-view');
  const renderBalance = (resList)=>{
@@ -25,9 +26,17 @@ const viewContainer = document.querySelector('.mui-table-view');
         const _listDom = document.createElement(`LI`)
         _listDom.setAttribute('class','mui-table-view-cell');
         _listDom.innerHTML = `
-        <span>${getLocalTime(item.orderDate)}</span>
-        <span>${orderTypeMap[item.orderType]}: </span>
-        <span>充值 ${(item.orderBalance || item.orderLwCoin)}</span>`;
+        <div class="mui-row">
+                <div class="mui-col-sm-4 mui-col-xs-4">
+                ${getLocalTime(item.orderDate)}
+                </div>
+                <div class="mui-col-sm-4 mui-col-xs-4" style="border-left: 1px solid #fff;border-right: 1px solid #fff;">
+                ${orderTypeMap[item.orderType]}
+                </div>
+                <div class="mui-col-sm-4 mui-col-xs-4">
+                充值 ${(item.orderBalance || item.orderLwCoin)}
+                </div>
+              </div>`;
         viewContainer.appendChild(_listDom);
     })
  }

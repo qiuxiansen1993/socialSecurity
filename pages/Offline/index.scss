@@ -10,7 +10,7 @@
         text-align: center;
     }
     ul{
-        padding: 15px;
+        padding:15px 15px 15px 40px;
     }
     
     .account-box{
@@ -33,15 +33,17 @@
         color: #1b1b1b;
         margin-bottom: 5px;
         line-height: 20px;
+        position: relative;
+        left: -25px;
     }
     p{
         font-size: 10px;
     }
 }
 .to-transfer-record{
-    position: absolute;
-    right:15px;
+    display: block;
     width:80px;
+    margin:0 auto;
     font-size: 14px;
     color:#1199ff
 }
