@@ -59,6 +59,6 @@ _nav && _nav.addEventListener("tap", function () {
 export default axios;
 /**是否处于开发模式 */    
 const IS_DEV = window.NODE_ENV !== 'production';
-if(IS_DEV){
-  require('../../mock/mocker')
-}
+// if(IS_DEV){
+//   require('../../mock/mocker')
+// }
