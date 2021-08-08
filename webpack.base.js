@@ -13,6 +13,7 @@ const customPage = {
     (isProd ? '/asset/mui/css/mui.picker.min.css':'http://localhost:8000/asset/mui/css/mui.picker.min.css')
   ],
   js:[
+    (isProd ? '/asset/tools/rem.js':'http://localhost:8000/asset/tools/rem.js'),
     (isProd ? '/asset/mui/js/mui.min.js':'http://localhost:8000/asset/mui/js/mui.min.js'),
     (isProd ? '/asset/mui/js/mui.picker.js':'http://localhost:8000/asset/mui/js/mui.picker.js'),
     (isProd ? '/asset/mui/js/mui.poppicker.js':'http://localhost:8000/asset/mui/js/mui.poppicker.js'),

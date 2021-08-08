@@ -1,6 +1,6 @@
 import OriginAxios from 'axios';
 import Qs from 'qs'
-import './rem';
+// import './rem';
 import './main.css';
 
 const axios = OriginAxios.create({
