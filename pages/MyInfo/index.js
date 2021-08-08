@@ -15,14 +15,22 @@ const submitMap = [
   "userIdCard",
   "userHouseCity",
   "userName",
+  // "userBankCard",
+  // "userBankName",
+];
+const getMap = [
+  "userIdCard",
+  "userHouseCity",
+  "userName",
   "userBankCard",
   "userBankName",
 ];
-
 const updateUserInfoFunc = async () => {
   let param = {};
   let canSave = true;
   let userHouseHold = document.getElementById('userHouseHold').innerText;
+  const userBankCard = document.getElementById('userBankCard').value;
+  const userBankName = document.getElementById('userBankName').value;
   submitMap.forEach((item) => {
     const value = document.getElementById(item).value;
     if (!value) {
@@ -38,10 +46,13 @@ const updateUserInfoFunc = async () => {
       param[item] = value;
     }
   });
-  console.log(canSave,userHouseHold)
+  
+  if(userBankCard && !bankCardValidate(userBankCard)){
+    return
+  }
   if (!userHouseHold) return mui.toast("请填写全部信息");
   if (!canSave) return;
-  const { code, msg } = await post(updateUserInfo, { ...param, userHouseHold });
+  const { code, msg } = await post(updateUserInfo, { ...param, userHouseHold,userBankCard,userBankName });
   if (code === 200) {
     mui.toast("提交成功");
     const {back} = GetRequest()
@@ -55,12 +66,12 @@ const getUserInfoFunc = async () => {
   const { code, data } = await get(getUserInfo);
   if (code === 200) {
       try{
-          const {userInfo = {},user : {headimg}} = data
-        submitMap.forEach((item) => {
+          const {userInfo = {},user : {headimg,nickname}} = data
+          getMap.forEach((item) => {
             document.getElementById(item).value = userInfo[item] || '';
         });
         document.getElementById('headimg').innerHTML = headimg ? `<img class="head-portrait" src="${headimg}"/>` : `<i id="headimg" class="mui-icon mui-icon-contact" style="font-size: 50px; color: #1199ff"></i>`
-        document.getElementById("nickname").innerHTML = '昵称：' + (userInfo?.nickname || '');
+        document.getElementById("nickname").innerHTML = '昵称：' + (nickname || '');
         document.getElementById("userMobile").innerHTML = '电话号码：'+userInfo?.userMobile || '';
         document.getElementById("userHouseHold").innerHTML = userInfo?.userHouseHold || '';
       }catch(e){

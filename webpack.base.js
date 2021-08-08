@@ -138,6 +138,7 @@ const config = {
       filename: "Home/index.html",
       template: "./pages/Home/index.html",
       chunks: ["Home"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -145,6 +146,7 @@ const config = {
       filename: "Personal/index.html",
       template: "./pages/Personal/index.html",
       chunks: ["Personal"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -152,6 +154,7 @@ const config = {
       filename: "AddUserInfo/index.html",
       template: "./pages/AddUserInfo/index.html",
       chunks: ["AddUserInfo"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -159,6 +162,7 @@ const config = {
       filename: "Login/index.html",
       template: "./pages/Login/index.html",
       chunks: ["Login"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -166,6 +170,7 @@ const config = {
       filename: "MyInvite/index.html",
       template: "./pages/MyInvite/index.html",
       chunks: ["MyInvite"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -173,6 +178,7 @@ const config = {
       filename: "MyBalance/index.html",
       template: "./pages/MyBalance/index.html",
       chunks: ["MyBalance"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -180,6 +186,7 @@ const config = {
       filename: "Feedback/index.html",
       template: "./pages/Feedback/index.html",
       chunks: ["Feedback"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -187,6 +194,7 @@ const config = {
       filename: "MyInfo/index.html",
       template: "./pages/MyInfo/index.html",
       chunks: ["MyInfo"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -194,6 +202,7 @@ const config = {
       filename: "MyInvite/index.html",
       template: "./pages/MyInvite/index.html",
       chunks: ["MyInvite"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -201,6 +210,7 @@ const config = {
       filename: "MyOrder/index.html",
       template: "./pages/MyOrder/index.html",
       chunks: ["MyOrder"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -208,6 +218,7 @@ const config = {
       filename: "MyServer/index.html",
       template: "./pages/MyServer/index.html",
       chunks: ["MyServer"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -215,6 +226,7 @@ const config = {
       filename: "Withdrawal/index.html",
       template: "./pages/Withdrawal/index.html",
       chunks: ["Withdrawal"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -222,6 +234,7 @@ const config = {
       filename: "CreateOrder/index.html",
       template: "./pages/CreateOrder/index.html",
       chunks: ["CreateOrder"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -229,6 +242,7 @@ const config = {
       filename: "PayCost/index.html",
       template: "./pages/PayCost/index.html",
       chunks: ["PayCost"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -236,6 +250,7 @@ const config = {
       filename: "PayList/index.html",
       template: "./pages/PayList/index.html",
       chunks: ["PayList"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -243,6 +258,7 @@ const config = {
       filename: "OrderDetails/index.html",
       template: "./pages/OrderDetails/index.html",
       chunks: ["OrderDetails"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -250,6 +266,7 @@ const config = {
       filename: "Offline/index.html",
       template: "./pages/Offline/index.html",
       chunks: ["Offline"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -257,6 +274,7 @@ const config = {
       filename: "TransferNotice/index.html",
       template: "./pages/TransferNotice/index.html",
       chunks: ["TransferNotice"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -264,6 +282,7 @@ const config = {
       filename: "TransferRecord/index.html",
       template: "./pages/TransferRecord/index.html",
       chunks: ["TransferRecord"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -271,6 +290,7 @@ const config = {
       filename: "WithdrawalRecore/index.html",
       template: "./pages/WithdrawalRecore/index.html",
       chunks: ["WithdrawalRecore"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -278,6 +298,7 @@ const config = {
       filename: "PayDetails/index.html",
       template: "./pages/PayDetails/index.html",
       chunks: ["PayDetails"],
+      inject:'body',
       files:customPage
     }),
     new HtmlWebpackPlugin({
@@ -285,6 +306,7 @@ const config = {
       filename: "GjjTool/index.html",
       template: "./pages/GjjTool/index.html",
       chunks: ["GjjTool"],
+      inject:'body',
       files:customPage
     }),
     new MiniCssExtractPlugin({

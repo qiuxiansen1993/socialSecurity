@@ -29,6 +29,8 @@ const getUserInfoFunc = async () => {
   const { code, data } = await get(getUserInfo);
   if (code === 200) {
     const { userName, userHouseHold, userIdCard } = data.userInfo;
+    const { headimg } = data.user;
+    document.getElementById('headimg').innerHTML = headimg ? `<img class="head-portrait" src="${headimg}"/>` : `<i id="headimg" class="mui-icon mui-icon-contact" style="font-size: 50px; color: #1199ff;margin-right: 10px;"></i>`
     document.getElementById("userName").innerHTML = userName;
     document.getElementById("userIdCard").innerHTML = userIdCard;
     document.getElementById("userHouseHold").innerHTML = userHouseHold;
