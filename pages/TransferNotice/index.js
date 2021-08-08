@@ -1,4 +1,5 @@
 import { post } from "../utils/main";
+import { IdCardValidate,bankCardValidate } from "../utils/rules";
 import { createBankOrder } from "../utils/api/transferNotice";
 import "./index.scss";
 const submitMap = [
@@ -17,6 +18,9 @@ const createBankOrderFunc = async () => {
     if (!value) {
       mui.toast("请填写全部信息");
       canSave = false;
+    }else if(item === 'account' && !bankCardValidate(value)){
+      mui.toast("您填写的银行卡号有误");
+      canSave = false;
     } else {
       param[item] = value;
     }
@@ -25,7 +29,7 @@ const createBankOrderFunc = async () => {
   if (!canSave) return;
   const { code, msg } = await post(createBankOrder, {...param,transferTime});
   if (code === 200) {
-    mui.toast("提交成功");
+    mui.toast("您已提交成功");
     window.location = `${document.location.protocol}//${window.location.host}/Offline/index.html`;
   } else {
     mui.toast(msg || "提交异常~");
