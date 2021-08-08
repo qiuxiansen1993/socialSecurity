@@ -108,7 +108,7 @@ window.onload = () => {
         }
         const {userName,corpName,userHouseHold} = UserInfos
         console.log(UserInfos)
-        mui.confirm(`<div class="agreement-confirm"><p>手机号：${userName}</p><p>户籍：${userHouseHold}</p><p>工作城市：${city}</p><p>办理单位：${corpName}</p></div>
+        mui.confirm(`<div class="agreement-confirm"><p>姓名：${userName}</p><p>户籍：${userHouseHold}</p><p>工作城市：${city}</p><p>办理单位：${corpName}</p></div>
         `, '确认前往办理？', ['否', '是'], function(e) {
             if (e.index == 1) {
                 console.log('前往提交')
