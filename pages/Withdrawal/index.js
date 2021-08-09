@@ -5,7 +5,7 @@ import {
 import './index.scss';
 const createBalanceChangeFunc = async()=>{
     const totalMoney = document.getElementById('totalMoney').value
-    if(!totalMoney)return mui.toast("请填写金额");
+    if(!totalMoney && !/^[0-9]*$/.test(totalMoney))return mui.toast("请填写金额");
     const memo = document.getElementById('memo').value
     const {code,msg} = await post(createBalanceChange,{
         totalMoney,
@@ -13,6 +13,7 @@ const createBalanceChangeFunc = async()=>{
     });
     if(code === 200){
         mui.toast("提交成功");
+        window.location=`${document.location.protocol}//${window.location.host}/WithdrawalRecore/index.html`;
     }else{
         mui.toast(msg || "提交异常~");
     }

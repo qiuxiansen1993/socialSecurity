@@ -72,7 +72,7 @@ window.onload = () => {
   const toPayCost = document.getElementById('toPayCost');
   toPayCost &&
   toPayCost.addEventListener("tap", function () {
-    window.location = `${document.location.protocol}//${window.location.host}/PayCost/index.html`;
+    window.location = `${document.location.protocol}//${window.location.host}/MyBalance/index.html`;
     });
   toMyServer &&
   toMyServer.addEventListener("tap", function () {
