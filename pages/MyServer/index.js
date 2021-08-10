@@ -121,4 +121,10 @@ window.onload = () => {
             }
         })
     });
+    [...document.querySelectorAll(".handle-tools-item")].map((item) => {
+      item.addEventListener("tap", function (e) {
+        const _url = this.getAttribute("data-href");
+        window.location = `${document.location.protocol}//${window.location.host}${_url}`;
+      });
+    });
 };

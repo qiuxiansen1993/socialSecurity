@@ -19,9 +19,14 @@ const getBankOrderListFunc = async(page = 0)=>{
         const { recordCount,pageNum,pageSize,resList } = data
         resList.map((item) => {
             const {transferTime ,transferBank,transferMoney,tranferMan} = item;
-            const _listDom = document.createElement(`LI`)
-            _listDom.setAttribute('class','mui-table-view-cell');
-            _listDom.innerHTML = `<span class="span_width">时间：${transferTime?format(transferTime):'---'}</span>  <span class="span_width">汇款人：${tranferMan}</span><span class="span_width">银行：${transferBank}</span>  <span class="span_width">金额：${transferMoney}</span>`;
+            const _listDom = document.createElement(`UL`)
+            _listDom.setAttribute('class','mui-table-view');
+            _listDom.innerHTML = `
+            <li class="mui-table-view-cell" style="background-color:#1199FF;color:#fff;">时间：${transferTime?format(transferTime):'---'}</li>
+            <li class="mui-table-view-cell">汇款人：${tranferMan}</li>
+            <li class="mui-table-view-cell">银行：${transferBank}</li>
+            <li class="mui-table-view-cell">金额：${transferMoney}</li>
+            `;
             viewContainer.appendChild(_listDom);
         })
         endPullRefresh()

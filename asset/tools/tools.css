@@ -38,7 +38,7 @@ input[type=button],input[type=text],input[type=password]{
 	color:#2f7dcd;
 }
 .color-background{
-	background:#2f7dcd;
+	background:#1199FF;
 }
 .color-border{
 	border-color:#2f7dcd!important;
@@ -215,6 +215,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	color: #C4C4CC;
 	text-align: center;
 	font-weight: 400;
+	background-color: #fff;
 }
 /*最新贷款利率*/
 .interest-rate-bigbox{

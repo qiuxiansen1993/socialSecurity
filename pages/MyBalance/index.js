@@ -20,7 +20,7 @@ const getLocalTime = (nS) =>{
   console.log(new Date(parseInt(nS))) 
     return new Date(parseInt(nS)).toLocaleString().split(' ')[0]//.replace(/:\d{1,2}$/,' ');     
  }
-const viewContainer = document.querySelector('.mui-table-view');
+const viewContainer = document.querySelector('.banlance-container');
  const renderBalance = (resList)=>{
       resList.map((item) => {
         const _listDom = document.createElement(`LI`)
@@ -34,7 +34,7 @@ const viewContainer = document.querySelector('.mui-table-view');
                 ${orderTypeMap[item.orderType]}
                 </div>
                 <div class="mui-col-sm-4 mui-col-xs-4">
-                充值 ${(item.orderBalance || item.orderLwCoin)}
+                ${(item.orderBalance || item.orderLwCoin)}元
                 </div>
               </div>`;
         viewContainer.appendChild(_listDom);

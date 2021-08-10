@@ -1,0 +1,12 @@
+.display-flex {
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .alert-display-flex {
+    display: flex !important;
+    justify-content: space-between;
+    padding:5px;
+    span{
+      font-size: 14px;
+    }
+  }
