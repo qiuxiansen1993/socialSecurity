@@ -115,7 +115,7 @@ window.onload = () => {
         `, '确认前往办理？', ['否', '是'], function(e) {
             if (e.index == 1) {
                 console.log('前往提交')
-                window.location = `${document.location.protocol}//${window.location.host}${'/CreateOrder/index.html?city='+escape('北京')}`;
+                window.location = `${document.location.protocol}//${window.location.host}${'/CreateOrder/index.html?city='+escape(city)}`;
             } else {
                 console.log('取消提交')
             }
