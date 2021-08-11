@@ -244,6 +244,7 @@ const initFunc = () => {
   toolBtn.addEventListener(
     "tap",
     function (event) {
+      var rootHtml = document.documentElement;rootHtml.style.fontSize = `${10}px`;
       const baseSalary = document.getElementById("baseSalary").value;
       if (!baseSalary || !city) {
         return mui.toast("请填全信息");
