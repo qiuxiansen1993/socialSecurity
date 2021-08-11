@@ -5,7 +5,7 @@ import {
   import { format } from '../utils/tool'
 import './index.scss';
 let PageIdx = 0
-const viewContainer = document.querySelector('.mui-table-view');
+const viewContainer = document.getElementById('record-content');
  // 结束下拉刷新
  const endPullRefresh = ()=>{
     mui('#recordLoad').pullRefresh().endPullupToRefresh(false);
@@ -19,13 +19,24 @@ const getBankOrderListFunc = async(page = 0)=>{
         const { recordCount,pageNum,pageSize,resList } = data
         resList.map((item) => {
             const {transferTime ,transferBank,transferMoney,tranferMan} = item;
-            const _listDom = document.createElement(`UL`)
-            _listDom.setAttribute('class','mui-table-view');
+            const _listDom = document.createElement(`DIV`)
             _listDom.innerHTML = `
-            <li class="mui-table-view-cell" style="background-color:#1199FF;color:#fff;">时间：${transferTime?format(transferTime):'---'}</li>
-            <li class="mui-table-view-cell">汇款人：${tranferMan}</li>
-            <li class="mui-table-view-cell">银行：${transferBank}</li>
-            <li class="mui-table-view-cell">金额：${transferMoney}</li>
+            <div class="mui-card" style="width: 90%;margin: 5% auto;">
+        <div class="mui-card-header mui-card-media">
+          <img src="/asset/imgs/zichan.png">
+          <div class="mui-media-body">
+            订单ID:${123}
+            <p>时间：${transferTime?format(transferTime):'---'}</p>
+          </div>
+        </div>
+        <div class="mui-card-content">
+        <ul>
+        <li class="mui-table-view-cell">汇款人：${tranferMan}</li>
+        <li class="mui-table-view-cell">银行：${transferBank}</li>
+        <li class="mui-table-view-cell">金额：${transferMoney}</li>
+        </ul>
+        </div>
+      </div>
             `;
             viewContainer.appendChild(_listDom);
         })

@@ -10,7 +10,15 @@ import {
 import "./index.scss";
 let city = '' // 城市
 let UserInfos = {} // 信息
-
+let isPageHide = false; 
+  window.addEventListener('pageshow', function () { 
+    if (isPageHide) { 
+      window.location.reload(); 
+    } 
+  }); 
+  window.addEventListener('pagehide', function () { 
+    isPageHide = true; 
+  });
 const getCityListFunc = async()=>{
   const {code,data} = await get(getCityList);
   if(code === 200){
