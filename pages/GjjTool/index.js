@@ -90,8 +90,8 @@ const calSbFunc = async (pram) => {
                     <tr>
                         <td id="categoryName">${itemName}</td>
                         <td id="enterpriseBase">${base}</td>
-                        <td><span class="personPayToatl" style="color: #969699">${company}</span>(<span id="enterpriseRatio" style="color: #969699">5.00</span>%)</td>
-                        <td><span class="enterprisePayToatl" style="color: #969699">${personal}</span>(<span id="personalRatio" style="color: #969699">5.00</span>%)</td>
+                        <td><span class="personPayToatl" style="color: #969699">${company}</span></td>
+                        <td><span class="enterprisePayToatl" style="color: #969699">${personal}</span></td>
                     </tr>
                     `;
                   })

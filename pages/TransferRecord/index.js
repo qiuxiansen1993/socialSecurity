@@ -18,14 +18,14 @@ const getBankOrderListFunc = async(page = 0)=>{
     if(code ===200){
         const { recordCount,pageNum,pageSize,resList } = data
         resList.map((item) => {
-            const {transferTime ,transferBank,transferMoney,tranferMan} = item;
+            const {transferTime ,transferBank,transferMoney,tranferMan,id} = item;
             const _listDom = document.createElement(`DIV`)
             _listDom.innerHTML = `
             <div class="mui-card" style="width: 90%;margin: 5% auto;">
         <div class="mui-card-header mui-card-media">
           <img src="/asset/imgs/zichan.png">
           <div class="mui-media-body">
-            订单ID:${123}
+            订单ID:${id}
             <p>时间：${transferTime?format(transferTime):'---'}</p>
           </div>
         </div>
