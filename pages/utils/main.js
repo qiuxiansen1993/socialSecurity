@@ -52,9 +52,16 @@ axios.interceptors.response.use(
     return {}
   }
 );
-const _nav = document.querySelector('.mui-icon-arrowleft');
-_nav && _nav.addEventListener("tap", function () {
-  window.history.back(); 
+const _nav = document.querySelector('.nav-bar-handle');
+_nav && _nav.addEventListener("tap", function (e) {
+  const classNames = e.target.getAttribute('class');
+  console.log(classNames)
+  if(classNames.indexOf('mui-icon-home')>0){
+    window.location = `${document.location.protocol}//${window.location.host}${'/Home/index.html'}`;
+  }else{
+    window.history.back(); 
+  }
+  
 });
 export default axios;
 /**是否处于开发模式 */    

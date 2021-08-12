@@ -89,7 +89,7 @@ window.onload = () => {
     document.getElementById("create-content").style= 'display:block;'
   });
   document.getElementById("view-myInfo").addEventListener("tap", function () {
-    window.location = `${document.location.protocol}//${window.location.host}/MyInfo/index.html`
+    window.location = `${document.location.protocol}//${window.location.host}/MyInfo/index.html?back=MyServer`
   });
   document.getElementById("view-myBanlance").addEventListener("tap", function () {
     window.location = `${document.location.protocol}//${window.location.host}/MyBalance/index.html`

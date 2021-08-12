@@ -56,8 +56,8 @@ const updateUserInfoFunc = async () => {
   if (code === 200) {
     mui.toast("提交成功");
     const {back} = GetRequest()
-    window.history.back(); 
-    //window.location = `${document.location.protocol}//${window.location.host}${'/'+back+'/index.html'}`;
+    // window.history.back(); 
+    window.location = `${document.location.protocol}//${window.location.host}${'/'+back+'/index.html'}`;
   } else {
     mui.toast(msg || "提交异常~");
   }
