@@ -5,7 +5,8 @@ import {
 import './index.scss';
 const createBalanceChangeFunc = async()=>{
     const totalMoney = document.getElementById('totalMoney').value
-    if(!totalMoney && !/^[0-9]*$/.test(totalMoney))return mui.toast("请填写金额");
+    console.log(totalMoney)
+    if(!totalMoney || !/^[0-9]*$/.test(totalMoney))return mui.toast("请填写金额");
     const memo = document.getElementById('memo').value
     const {code,msg} = await post(createBalanceChange,{
         totalMoney,

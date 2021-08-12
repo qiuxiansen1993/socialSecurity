@@ -46,7 +46,7 @@ const getBankOrderListFunc = async(page = 0)=>{
             mui('#recordLoad').pullRefresh().disablePullupToRefresh();
         }
         if(recordCount < 1){
-            viewContainer.innerHTML = '<li style="text-align:center;padding:20px;">您还没有订单</li>'
+            viewContainer.innerHTML = '<div style="text-align:center;padding:20px;font-size:15px;">您还没有订单</div>'
         }
     }else{
         mui.toast(msg||'请求异常，请稍后重试');
