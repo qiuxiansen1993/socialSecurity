@@ -99,6 +99,7 @@ const getMaterialListFunc = async () => {
 const initUpload = () => {
   //首先监听input框的变动，选中一个新的文件会触发change事件
   uploadForm.addEventListener("change", function () {
+    console.log(11)
     //获取到选中的文件
     var file = uploadForm.files[0];
     // if(file.size > 5*1024*1024){
@@ -111,12 +112,16 @@ const initUpload = () => {
       "materialName",
       document.getElementById("materialName").value
     );
-
+    mui.showLoading("正在上传..","div");
     //创建xhr，使用ajax进行文件上传
     var xhr = new XMLHttpRequest();
     xhr.open("post", uploadMaterial);
     //回调
     xhr.onreadystatechange = function () {
+      uploadForm.value = '';
+      if(xhr.readyState == 4){
+       mui.hideLoading();
+      }
       if (xhr.readyState == 4 && xhr.status == 200) {
         const {code,msg} = JSON.parse(xhr?.responseText) || {}
         if(code !== 200){
@@ -125,6 +130,9 @@ const initUpload = () => {
         getMaterialListFunc();
         document.getElementById("materialName").value = "";
         mui.toast("上传成功~");
+      }
+      if(xhr.readyState == 4 && xhr.status != 200) {
+        mui.toast("提交异常~");
       }
     };
     //获取上传的进度
