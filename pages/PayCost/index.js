@@ -42,7 +42,7 @@ const getUserOrderListFunc = async(page = 0)=>{
                     <div>是否新缴纳社保：${item.baseSalary == 1?'是':'否'}</div>
                     <div>是否新缴纳公积金：${item.baseSalary == 1?'是':'否'}</div>
                     <div>基本工资：${item.baseSalary == 1?'是':'否'}</div>
-                    <i class="shenheState ${status === '0'?'ing':'suc'}"></i>
+                    <img src="${status === '0'?'/asset/imgs/shenheing.png':'/asset/imgs/shenheing.png'}" class="shenheState"></i>
             </div>     
                `;
             viewContainer.appendChild(_listDom);

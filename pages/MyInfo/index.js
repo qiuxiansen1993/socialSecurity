@@ -101,9 +101,9 @@ const initUpload = () => {
   uploadForm.addEventListener("change", function () {
     //获取到选中的文件
     var file = uploadForm.files[0];
-    if(file.size > 5*1024*1024){
-      return mui.toast("您上传的文件不要超过5M");
-    }
+    // if(file.size > 5*1024*1024){
+    //   return mui.toast("您上传的文件不要超过5M");
+    // }
     //创建formdata对象
     var formdata = new FormData();
     formdata.append("file", file);
@@ -118,8 +118,13 @@ const initUpload = () => {
     //回调
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
+        const {code,msg} = JSON.parse(xhr?.responseText) || {}
+        if(code !== 200){
+          return mui.toast(msg || "提交异常~");
+        }
         getMaterialListFunc();
         document.getElementById("materialName").value = "";
+        mui.toast("上传成功~");
       }
     };
     //获取上传的进度
