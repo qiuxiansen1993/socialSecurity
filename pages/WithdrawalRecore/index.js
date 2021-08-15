@@ -19,7 +19,7 @@ const getBalanceChangeListFunc = async()=>{
                   ${createDate?format(createDate):'---'}
                   </div>
                   <div class="mui-col-sm-4 mui-col-xs-4">
-                  ${totalMoney}
+                  ￥${totalMoney}
                   </div>
                   <div class="mui-col-sm-4 mui-col-xs-4">
                   ${status === '0' ? '待审核':status === '1'?'审核通过':''}

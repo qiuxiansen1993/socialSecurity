@@ -27,3 +27,27 @@
 .mui-row{
     text-align: center;
 }
+.item-otherinfo{
+    position: relative;
+    margin-top: 5px;
+    padding: 5px;
+    .shenheState{
+        position: absolute;
+        width:2rem;
+        height:2rem;
+        right:0;
+        top:0;
+        
+    }
+    .ing{
+        background: url(../../asset/imgs/shenheing.png) no-repeat;
+        background-size: 100%;
+    }
+    .suc{
+        background: url(../../asset/imgs/shenhesuc.png) no-repeat;
+        background-size: 100%;
+    }
+}
+.handle-btn{
+    color:#1199ff;
+}

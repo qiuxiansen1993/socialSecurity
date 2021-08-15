@@ -34,23 +34,21 @@ const updateUserInfoFunc = async () => {
   submitMap.forEach((item) => {
     const value = document.getElementById(item).value;
     if (!value) {
-      mui.toast("请填写全部信息");
+      setTimeout(()=>{mui.toast("请填写全部信息");},200)
       canSave = false;
     } else if(item === 'userIdCard' && !IdCardValidate(value)){
-      mui.toast("您填写的身份证号有误");
+      setTimeout(()=>{mui.toast("您填写的身份证号有误");},200)
       canSave = false;
-    } else if(item === 'userBankCard' && !bankCardValidate(value)){
-      mui.toast("您填写的银行卡号有误");
-      canSave = false;
-    }else{
+    } else if(item === 'userBankCard' && !bankCardValidate(value)){}else{
       param[item] = value;
     }
   });
   
   if(userBankCard && !bankCardValidate(userBankCard)){
+    setTimeout(()=>{mui.toast("您填写的银行卡号有误");},200)
     return
   }
-  if (!userHouseHold) return mui.toast("请填写全部信息");
+  if (!userHouseHold) return setTimeout(()=>{mui.toast("请填写全部信息");},200)
   if (!canSave) return;
   const { code, msg } = await post(updateUserInfo, { ...param, userHouseHold,userBankCard,userBankName });
   if (code === 200) {
@@ -103,6 +101,9 @@ const initUpload = () => {
   uploadForm.addEventListener("change", function () {
     //获取到选中的文件
     var file = uploadForm.files[0];
+    if(file.size > 5*1024*1024){
+      return mui.toast("您上传的文件不要超过5M");
+    }
     //创建formdata对象
     var formdata = new FormData();
     formdata.append("file", file);
@@ -141,7 +142,6 @@ document
     picker.show(function (selectItems) {
       const _userHouseHold = selectItems[0]?.value;
       document.getElementById("userHouseHold").innerHTML = _userHouseHold;
-      userHouseHold = _userHouseHold;
     });
   });
 initUpload();

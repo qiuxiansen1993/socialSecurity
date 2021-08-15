@@ -11,6 +11,7 @@ import "./index.scss";
 let city = '' // 城市
 let UserInfos = {} // 信息
 let isPageHide = false; 
+const xiyiTitle = document.getElementById('xiyi-title');
   window.addEventListener('pageshow', function () { 
     if (isPageHide) { 
       window.location.reload(); 
@@ -57,6 +58,11 @@ const initPickerCity = (data) => {
     function (event) {
       picker.show(async function (items) {
         city = items[0];
+        if(city === '北京'){
+          xiyiTitle.innerHTML = '自主就业'
+        }else{
+          xiyiTitle.innerHTML = '劳务派遣'
+        }
         result.innerText = items[0];
         getRandomCompanyFunc()
       });
