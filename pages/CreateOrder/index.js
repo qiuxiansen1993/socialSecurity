@@ -126,10 +126,12 @@ const initSubmitEvent = async() => {
     });
     document
     .getElementById("submit-btn-click").addEventListener("tap", async function (event) {
+      mui.showLoading("正在提交..","div");
       const { code,msg } = await post(submitOrder,{
         feeType:FeeInfo?.[serverCostIdx]?.id,
         otherinfo:''
       });
+      mui.hideLoading();
       if (code === 200) {
         mui.toast(msg || '提交成功~');
         window.location = `${document.location.protocol}//${window.location.host}${'/MyServer/index.html?city='+escape('北京')}`;
