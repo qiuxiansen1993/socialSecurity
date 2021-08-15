@@ -46,6 +46,7 @@ const getRandomCompanyFunc = async () => {
     cityNameinfo = cityName
     document.getElementById("cityName").innerHTML = cityName || "";
     document.getElementById("corpName").innerHTML = corpName || "";
+    document.getElementById("serverType").innerHTML = cityName === "北京"?"自主就业":"劳务派遣"
   }
 };
 const getFeeInfoFunc = () => {

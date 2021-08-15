@@ -12,6 +12,7 @@ let city = '' // 城市
 let UserInfos = {} // 信息
 let isPageHide = false; 
 const xiyiTitle = document.getElementById('xiyi-title');
+const xiyiContent = document.getElementById('xiyi-content');
   window.addEventListener('pageshow', function () { 
     if (isPageHide) { 
       window.location.reload(); 
@@ -45,12 +46,32 @@ const getUserInfoFunc = async()=>{
     })
   }
 }
+const setXiyiContent = (city)=>{
+  if(city === '北京'){
+    xiyiTitle.innerHTML = '自主就业';
+    xiyiContent.innerHTML = `
+          <p>感谢您对亲亲小保的支持与信赖。
+          </p>
 
+          <p>亲亲小保平台联合您所在城市的优质人力资源服务企业，为您提供<span class="highlight">规范的社保公积金缴纳、工资个税申报及相关人事服务</span>。无论您是自由职业者、个体创业者还是处于就业空档期，连续的社保、公积金缴纳记录对您都非常重要。我们把您的需求放在第一位，以规范、严谨的服务守护您的权益。
+          </p>
+    `
+  }else{
+    xiyiTitle.innerHTML = '劳务派遣'
+    xiyiContent.innerHTML = `
+    <p>因政策要求，2020年9月起，您选择的工作城市不再支持单纯的“社保代缴”服务，<span class="highlight">不合政策要求的社保代缴服务会导致您的权益得不到保障。 </span>
+        </p>
+        <p>亲亲小保平台的优质合作企业可按照“自主就业”的方式与您建立<span class="highlight">规范的劳动关系</span>，并由专业人事顾问为您<span class="highlight">办理工资、个税、社保、公积金等全面的服务</span>。从而帮您在一个城市保持连续的工作履历和社保、工资、个税记录，享受应有的社会福利。
+        </p>
+    `
+  }
+}
 const initPickerCity = (data) => {
   let picker = new mui.PopPicker();
   picker.setData(data);
   let workCity = document.getElementById('workCity');
   let result = document.getElementById('workCityResult');
+  setXiyiContent(city)
   result.innerHTML=city
   getRandomCompanyFunc()
   workCity.addEventListener(
@@ -58,11 +79,7 @@ const initPickerCity = (data) => {
     function (event) {
       picker.show(async function (items) {
         city = items[0];
-        if(city === '北京'){
-          xiyiTitle.innerHTML = '自主就业'
-        }else{
-          xiyiTitle.innerHTML = '劳务派遣'
-        }
+        setXiyiContent(city)
         result.innerText = items[0];
         getRandomCompanyFunc()
       });
