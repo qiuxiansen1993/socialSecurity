@@ -12,7 +12,6 @@ const uploadMaterial = '/user/uploadMaterial.php';
 const getMaterialList = '/user/getMaterialList.php';
 // 消息top3
 const getTopMessage = '/user/getTopMessage.php';
-
 export {
     getCarrerInfo,
     getUserProperty,

@@ -22,16 +22,28 @@ const getUserOrderListFunc = async(page = 0)=>{
             _listDom.setAttribute('class','mui-table-view-cell');
             _listDom.innerHTML = `
             <div class="mui-row">
-              <div class="mui-col-sm-3 mui-col-xs-3">
-              ${format(createTime)}
-              </div>
-              <div class="mui-col-sm-6 mui-col-xs-6">
-              ${startMonth}起缴纳${duration}个月
-              </div>
-              <div class="mui-col-sm-3 mui-col-xs-3">
-              ${status === '0' ?'<button data-id='+item.id+' type="button" class="mui-btn mui-btn-danger mui-btn-outlined handle-btn">取消</button>':status === '1' ?'已通过':'' }
-              </div>
-            </div>
+                <div class="mui-col-sm-3 mui-col-xs-3">
+                ${format(createTime)}
+                </div>
+                <div class="mui-col-sm-6 mui-col-xs-6">
+                ${startMonth}起缴纳${duration}个月
+                </div>
+                <div class="mui-col-sm-3 mui-col-xs-3">
+                ${status === '0' ?'审核中(<span data-id='+item.id+' class="handle-btn">取消</span>)':status === '1' ?'已通过':'' }
+                </div>
+                </div>
+                <div class="item-otherinfo">
+                    <div>服务费：￥${item.fee}</div>
+                    <div>城市信息：${item.cityName || '-'}</div>
+                    <div>公司信息：${item.corpName || '-'}</div>
+                    <div>是否缴纳社保：${item.includeSb == 1?'是':'否'}</div>
+                    <div>是否缴纳公积金：${item.includeGjj == 1?'是':'否'}</div>
+                    <div>是否代发工资：${item.includeSalary == 1?'是':'否'}</div>
+                    <div>是否新缴纳社保：${item.baseSalary == 1?'是':'否'}</div>
+                    <div>是否新缴纳公积金：${item.baseSalary == 1?'是':'否'}</div>
+                    <div>基本工资：${item.baseSalary == 1?'是':'否'}</div>
+                    <i class="shenheState ${status === '0'?'ing':'suc'}"></i>
+            </div>     
                `;
             viewContainer.appendChild(_listDom);
             _listDom.addEventListener("tap", function (e) {

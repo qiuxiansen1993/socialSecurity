@@ -83,7 +83,7 @@ const calSbDataFunc = async () => {
     document.getElementById("gjj-cost").innerHTML = gjj?.total || '-';
     document.getElementById("salary-cost").innerHTML = salary?.total || '-';
     document.getElementById("totle-cost").innerHTML =
-    '￥' + (mainTotleCost + (feeData?.[0]?.sum || 0));
+    '￥' + (mainTotleCost + (feeData?.[0]?.sum || 0)).toFixed(2);
       initSubmitEvent();
   }else{
     mui.toast(msg||'请求异常，请稍后重试');
@@ -118,7 +118,7 @@ const initSubmitEvent = async() => {
     list.removeEventListener('selected',()=>{});
     list.addEventListener('selected',function(e){
       serverCostIdx = e.detail.el.getAttribute('data-idx')
-      const TotleNum = mainTotleCost+Number(e.detail.el.getAttribute('data-sum'))
+      const TotleNum = (mainTotleCost+Number(e.detail.el.getAttribute('data-sum'))).toFixed(2)
       document.getElementById("totle-cost").innerHTML = '￥' + TotleNum
       document.getElementById("service-charge-info").innerHTML = Number(e.detail.el.getAttribute('data-sum'))
     }); 

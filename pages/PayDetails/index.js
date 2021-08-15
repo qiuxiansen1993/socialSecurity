@@ -10,13 +10,13 @@ const viewUserOrderDetailFunc = async () => {
   if(code === 200){
       const {detailList,userPayOrder:{fee = ''}} = data
     document.getElementById("pay-details-container").innerHTML = detailList.map((item,index)=>{
-        const {month,sbMoney,fund,salaryTax,status,payOrderId} = item
+        const {month,sbMoney,fund,salaryTax,status,id} = item
         return `
         <div class="mui-card" style="width: 95%;margin: 10px auto;">
         <div class="mui-card-header mui-card-media">
           <img src="/asset/imgs/zichan.png">
           <div class="mui-media-body">
-            订单ID:${payOrderId}
+            订单ID:${id}
             <p>缴费月份: ${month}</p>
           </div>
         </div>

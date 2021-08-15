@@ -18,7 +18,7 @@ const getBankOrderListFunc = async(page = 0)=>{
     if(code ===200){
         const { recordCount,pageNum,pageSize,resList } = data
         resList.map((item) => {
-            const {transferTime ,transferBank,transferMoney,tranferMan,id} = item;
+            const {transferTime ,transferBank,transferMoney,tranferMan,id,status,createTime} = item;
             const _listDom = document.createElement(`DIV`)
             _listDom.innerHTML = `
             <div class="mui-card" style="width: 90%;margin: 5% auto;">
@@ -26,14 +26,16 @@ const getBankOrderListFunc = async(page = 0)=>{
           <img src="/asset/imgs/zichan.png">
           <div class="mui-media-body">
             订单ID:${id}
-            <p>时间：${transferTime?format(transferTime):'---'}</p>
+            <p>创建时间：${createTime?format(createTime):'---'}</p>
           </div>
         </div>
         <div class="mui-card-content">
         <ul>
         <li class="mui-table-view-cell">汇款人：${tranferMan}</li>
-        <li class="mui-table-view-cell">银行：${transferBank}</li>
-        <li class="mui-table-view-cell">金额：${transferMoney}</li>
+        <li class="mui-table-view-cell">转账银行：${transferBank}</li>
+        <li class="mui-table-view-cell">转账金额：￥${transferMoney}</li>
+        <li class="mui-table-view-cell">转账状态：${status === '0' ? '待审核':status === '1'?'审核通过':''}</li>
+        <li class="mui-table-view-cell">转账时间：${transferTime?format(transferTime):'---'}</li>
         </ul>
         </div>
       </div>

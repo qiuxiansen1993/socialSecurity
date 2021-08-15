@@ -200,7 +200,7 @@ const calTaxFunc = async (pram) => {
     <div style="border:1px solid #eee;padding:10px;">
       <div>
         <div class="alert-display-flex">
-          <span>订单金额</span>
+          <span>缴费金额</span>
           <span style="color:#f0ad4e;font-size:15px;font-weight:500;">￥${total}</span>
         </div>
         <p class="date-as-of">截止扣费日期：2021-08-23</p>

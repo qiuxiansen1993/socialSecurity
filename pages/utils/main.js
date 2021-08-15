@@ -1,5 +1,8 @@
 import OriginAxios from 'axios';
 import Qs from 'qs'
+import {
+  getUserInfo,
+} from "../utils/api/personal";
 // import './rem';
 import './main.css';
 
@@ -69,3 +72,11 @@ const IS_DEV = window.NODE_ENV !== 'production';
 // if(IS_DEV){
 //   require('../../mock/mocker')
 // }
+const check = async()=>{
+  const {code} = await get(getUserInfo);
+  if(code === 402){
+    window.location = `${document.location.protocol}//${window.location.host}/Login/index.html`;
+    return
+  }
+}
+check();

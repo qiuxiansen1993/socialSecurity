@@ -43,7 +43,7 @@ const invitedUsersListFunc = async()=>{
     console.log(data)
     if(el){
         if(data && data.length>0){
-            el.innerHTML = ['<li class="mui-table-view-cell"><span style="display:inline-block;width:2rem;">昵称</span><span style="margin-left: 20px;">邀请时间</span></li>',...data.map((item)=>{
+            el.innerHTML = ['<li class="mui-table-view-cell invitelist-header"><span style="display:inline-block;width:2rem;">昵称</span><span style="margin-left: 20px;">邀请时间</span></li>',...data.map((item)=>{
                 const { nickname,regTime } = item;
                 return `<li class="mui-table-view-cell"><span style="display:inline-block;width:2rem;">${nickname}</span><span style="margin-left: 20px;">${getLocalTime(regTime)}</span></li>`
             })].join('');
