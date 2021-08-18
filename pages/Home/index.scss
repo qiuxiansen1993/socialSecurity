@@ -79,19 +79,22 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: 0.01rem #007aff solid;
+    border: 0.01rem #1199FF solid;
+    background-color: #1199FF;
     // border-top: #007aff 0.2rem solid;
     border-top-left-radius: 0.2rem;
     border-top-right-radius: 0.2rem;
     border-bottom-left-radius: 0.1rem;
     border-bottom-right-radius: 0.1rem;
+    // opacity: .9;
     text-align: center;
     div {
       font-size: 0.35rem;
       line-height: 1rem;
     }
     p {
-      color: #1b1b1b;
+      line-height: 28px;
+      color: #fff;
     }
   }
   .query-group {
@@ -101,9 +104,9 @@ body {
     .mui-btn {
       display: block;
       width: 100%;
-      border-color: #007aff !important;
       color: #007aff !important;
       margin-top: 0.1rem;
+      border: 1px solid #007aff;
     }
   }
   .details-share {

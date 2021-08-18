@@ -1,9 +1,16 @@
 .paycost-list{
     padding: 45px 0 15px;
-    min-height: 100vh;
+    background-color: #f1f1f1;
     .mui-table-view{
         border-radius: 0;
         font-size: 14px;
+        background-color: #f1f1f1;
+        li{
+            background-color: #fff;
+            width: 95%;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
     }
     .mui-table-view:after{
         background-color: #fff;
@@ -36,9 +43,15 @@
         width:2rem;
         height:2rem;
         right:0;
-        top:0;
+        bottom: 10px;
     }
 }
 .handle-btn{
     color:#1199ff;
+}
+.mui-table-view-cell:after{
+    display: none;
+}
+.mui-table-view:before{
+    display: none;
 }
