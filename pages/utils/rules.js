@@ -1,6 +1,6 @@
 // 银行卡校验
 export const bankCardValidate =(cardno) =>{
-    const validateBankCard = /^[1-9]{15,19}$/;
+    const validateBankCard = /^[0-9]{15,19}$/;
     return validateBankCard.test(cardno)
 }
 // 身份证校验（添加加权因子）

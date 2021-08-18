@@ -157,6 +157,7 @@ window.onload = () => {
         const {userName,corpName,userHouseHold} = UserInfos
         console.log(UserInfos)
         if(!corpName){
+          getRandomCompanyFunc();
           return mui.toast("您点的太快了，请稍后重试~");
         }
         mui.confirm(`<div class="agreement-confirm"><p>姓名：${userName}</p><p>户籍：${userHouseHold}</p><p>工作城市：${city}</p><p>办理单位：${corpName}</p></div>

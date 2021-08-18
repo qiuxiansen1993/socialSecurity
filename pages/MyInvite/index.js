@@ -6,14 +6,20 @@ const getLocalTime = (nS) =>{
  }
 // 获取邀请二维码
 const getQrCodeFunc = async()=>{
-    const { data,code,msg } = await get(getQrCode);
-    if(code !== 200){
-        mui.toast(msg || "获取失败");
-        return
-    }
-    const qrEl=document.getElementById('qrcode-img');
-    if(qrEl){
-        qrEl.setAttribute('src',data || '/asset/imgs/qrCode/1601627106666_.pic.jpg')
+    try{
+        mui.showLoading("正在提交..","div");
+        const { data,code,msg } = await get(getQrCode);
+        mui.hideLoading();
+        if(code !== 200){
+            mui.toast(msg || "获取失败");
+            return
+        }
+        const qrEl=document.getElementById('qrcode-img');
+        if(qrEl){
+            qrEl.setAttribute('src',data || '/asset/imgs/qrCode/1601627106666_.pic.jpg')
+        }
+    }catch(e){
+        mui.hideLoading();
     }
 }
 // 获取被邀请用户统计

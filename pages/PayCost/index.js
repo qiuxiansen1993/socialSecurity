@@ -29,13 +29,13 @@ const getUserOrderListFunc = async(page = 0)=>{
                 ${startMonth}起缴纳${duration}个月
                 </div>
                 <div class="mui-col-sm-3 mui-col-xs-3">
-                ${status === '0' ?'审核中(<span data-id='+item.id+' class="handle-btn">取消</span>)':status === '1' ?'已通过':'' }
+                ${status === '0' ?'<span data-id='+item.id+' class="handle-btn">取消订单</span>':status === '1' ?'':'' }
                 </div>
-                </div>
+                </div> 
                 <div class="item-otherinfo">
                     <div>服务费：￥${item.fee}</div>
                     <div>城市信息：${item.cityName || '-'}</div>
-                    <div>公司信息：${item.corpName || '-'}</div>
+                    <div>公司信息：${item.companyName || '-'}</div>
                     <div>是否缴纳社保：${item.includeSb == 1?'是':'否'}</div>
                     <div>是否缴纳公积金：${item.includeGjj == 1?'是':'否'}</div>
                     <div>是否代发工资：${item.includeSalary == 1?'是':'否'}</div>
@@ -43,7 +43,7 @@ const getUserOrderListFunc = async(page = 0)=>{
                     <div>是否新缴纳公积金：${item.baseSalary == 1?'是':'否'}</div>
                     <div>基本工资：${item.baseSalary == 1?'是':'否'}</div>
                     <img src="${status === '0'?'/asset/imgs/shenheing.png':'/asset/imgs/shenheing.png'}" class="shenheState"></i>
-            </div>     
+            </div>    
                `;
             viewContainer.appendChild(_listDom);
             _listDom.addEventListener("tap", function (e) {

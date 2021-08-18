@@ -50,7 +50,10 @@ const updateUserInfoFunc = async () => {
   }
   if (!userHouseHold) return setTimeout(()=>{mui.toast("请填写全部信息");},200)
   if (!canSave) return;
+  try{
+  mui.showLoading("正在提交..","div");
   const { code, msg } = await post(updateUserInfo, { ...param, userHouseHold,userBankCard,userBankName });
+  mui.hideLoading();
   if (code === 200) {
     mui.toast("提交成功");
     const {back} = GetRequest()
@@ -58,6 +61,9 @@ const updateUserInfoFunc = async () => {
     window.location = `${document.location.protocol}//${window.location.host}${'/'+back+'/index.html'}`;
   } else {
     mui.toast(msg || "提交异常~");
+  }
+  }catch(e){
+    mui.hideLoading();
   }
 };
 const getUserInfoFunc = async () => {
