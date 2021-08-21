@@ -22,6 +22,7 @@
           <script type="text/javascript" charset="utf-8">
             window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
           </script>
+          
       </head>
   <body>
     <header class="mui-bar mui-bar-nav">
@@ -31,5 +32,131 @@
       ></a>
       <h1 class="mui-title">公积金查询页</h1>
     </header>
+    <div style="padding-top: 50px;" id="content-box">
+        <div class="mui-card">
+            <!--内容区-->
+            <div class="mui-card-content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <div class="account-info">
+                          <div id="name"></div>
+                          <div><i class="mui-icon mui-icon-arrowright" id="toUser"></i></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="account-content">
+                    <div class="account-item">
+                        <p class="mark" id="grzhye"></p>
+                        <p>账户余额(元)</p>
+                    </div>
+                </div>
+                <span class="refresh" id="refresh"><i class="mui-icon mui-icon-refresh"></i>获取最新公积金数据</span>
+            </div>
+        </div>
+        <div class="mui-card">
+            <!--页眉，放置标题-->
+            <div class="mui-card-header" style="color: #8f8f94;">账户信息</div>
+            <!--内容区-->
+            <div class="mui-card-content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">身份证号</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="zjhm"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">缴纳状态</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="jczt"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">基数</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="grjcjs"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-4">缴纳单位</div>
+                          <div class="mui-col-sm-6 mui-col-xs-8" style="text-align: right;" id="dwmc"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mui-card">
+            <!--页眉，放置标题-->
+            <div class="mui-card-header" style="color: #8f8f94;">统计数据</div>
+            <!--内容区-->
+            <div class="mui-card-content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">累计缴纳月份</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;"><span id="monthCount"></span><i class="mui-icon mui-icon-arrowright" id="viewMonth"></i></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="user-info" style="">
+        <div class="mui-card">
+            <!--页眉，放置标题-->
+            <div class="mui-card-header" style="color: #8f8f94;">个人信息<div style="text-align: center;color:#1199ff;" id="back">返回查询</div></div>
+            <!--内容区-->
+            <div class="mui-card-content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">姓名</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6 name" style="text-align: right;" id="name"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">证件类型</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6 zjlx" style="text-align: right;" id="zjlx"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">身份证号</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6 zjhm" style="text-align: right;" id="zjhm"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">单位名称</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6 dwmc" style="text-align: right;" id="dwmc"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mui-card">
+            <!--页眉，放置标题-->
+            <div class="mui-card-header" style="color: #8f8f94;">账户信息</div>
+            <!--内容区-->
+            <div class="mui-card-content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">当前余额</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6 grzhye" style="text-align: right;" id="grzhye"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-6">缴存状态</div>
+                          <div class="mui-col-sm-6 mui-col-xs-6 jczt" style="text-align: right;" id="jczt"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
   </body>
 </html>

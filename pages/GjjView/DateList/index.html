@@ -22,6 +22,8 @@
           <script type="text/javascript" charset="utf-8">
             window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
           </script>
+          <link rel="stylesheet" href="/asset/swiper/index.css">
+          <script src="/asset/swiper/index.js"></script>
       </head>
   <body>
     <header class="mui-bar mui-bar-nav">
@@ -29,7 +31,15 @@
         class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left nav-bar-handle"
         id="home-menu"
       ></a>
-      <h1 class="mui-title">个人中心</h1>
+      <h1 class="mui-title">公积金列表</h1>
     </header>
+    <div style="padding-top: 45px;">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+            </div>
+        </div>
+    </div>
+    <div id="data-list">
+    </div>
   </body>
 </html>

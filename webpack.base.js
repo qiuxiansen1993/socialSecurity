@@ -99,7 +99,8 @@ const config = {
     SbView:"./pages/SbView/index.js",
     GjjView:"./pages/GjjView/index.js",
     SbViewDateList:"./pages/SbView/DateList/index.js",
-    
+    SbViewMonthDetail:"./pages/SbView/MonthDetail/index.js",
+    GjjViewDateList:"./pages/GjjView/DateList/index.js",
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -357,6 +358,23 @@ const config = {
       inject:'body',
       files:customPage
     }),
+    new HtmlWebpackPlugin({
+      title: "MonthDetail",
+      filename: "MonthDetail/index.html",
+      template: "./pages/SbView/MonthDetail/index.html",
+      chunks: ["SbViewMonthDetail"],
+      inject:'body',
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "GjjViewDateList",
+      filename: "GjjViewDateList/index.html",
+      template: "./pages/GjjView/DateList/index.html",
+      chunks: ["GjjViewDateList"],
+      inject:'body',
+      files:customPage
+    }),
+    
     new MiniCssExtractPlugin({
         filename: isProd ? '[name]/[name].[contenthash].css' : '[name]/[name].css',
     }),
