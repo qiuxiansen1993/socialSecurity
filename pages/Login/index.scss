@@ -26,5 +26,18 @@
     display: block;
     width:3rem;
     margin-left: auto;
-
+}
+.agreement-box{
+    display: flex;
+}
+.mui-input-group .mui-input-row:after{
+    display: none;
+}
+.mui-input-group .mui-input-row{
+    label{
+        font-size: 16px;
+        line-height: 28px;
+        padding-left: 30px;
+        color: #1199FF;
+    }
 }

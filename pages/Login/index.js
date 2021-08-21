@@ -6,6 +6,17 @@ const reg = /^1[0-9]{10}$/;
 let token = null;
 let canSmsCode = true;
 let canBind = true;
+const agreement = document.getElementById("select-agreement");
+const handleAgreement = () =>{
+  document.getElementById("agreement").addEventListener("tap", function (event) {
+    mui.alert(`
+    协议如下：11111
+    `,'协议');
+      event.stopPropagation();
+      event.preventDefault();
+  });
+}
+handleAgreement()
 const countdownFunc = () => {
   const _verificationCode = document.getElementById("verificationCode");
   let numbers = 60;
@@ -54,6 +65,10 @@ document
     try {
       const mobile = document.getElementById("login-phone").value;
       const smsCode = document.getElementById("login-code").value;
+      if(!agreement.checked){
+        mui.toast("请填写阅读协议并勾选");
+        return;
+      }
       if (!reg.test(mobile)) {
         mui.toast("请填写正确的手机号");
         return;
