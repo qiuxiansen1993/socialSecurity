@@ -71,7 +71,7 @@ const setXiyiContent = (city)=>{
                 交给签约公司。大话e保的专业人事服务团队则
                 负责为您办理工资发放、社保公积金缴纳、个税申报等事务，并充当您的“专属人事顾问”。</p>
                 <p class="offset-top text-bold"> 合法合规，您的权益才有保障！以上事宜非常重要，请您务必仔细阅读，充分理解后做出决定。 </p>
-                <a style="color:#1199ff;" href="/asset/doc/agreement.pdf">《劳务派遣协议》</a>
+                <a style="color:#1199ff;" href="/asset/doc/agreement.pdf">同意《劳务派遣协议》</a>
     `
   }else{
     xiyiTitle.innerHTML = '劳务派遣'
@@ -79,7 +79,7 @@ const setXiyiContent = (city)=>{
     <p>感谢您对大话e保的支持与信赖。
           </p>
           <p>大话e保平台联合您所在城市的优质人力资源服务企业，为您提供<span class="highlight">规范的社保公积金缴纳、工资个税申报及相关人事服务</span>。无论您是自由职业者、个体创业者还是处于就业空档期，连续的社保、公积金缴纳记录对您都非常重要。我们把您的需求放在第一位，以规范、严谨的服务守护您的权益。
-          </p><a target="_blank" style="color:#1199ff;" href="/asset/doc/agreement.pdf">《劳务派遣协议》</a>
+          </p><a target="_blank" style="color:#1199ff;" href="/asset/doc/agreement.pdf">同意《劳务派遣协议》</a>
     `
   }
 }

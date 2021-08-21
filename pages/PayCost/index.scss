@@ -1,11 +1,13 @@
 .paycost-list{
     padding: 45px 0 15px;
-    background-color: #f1f1f1;
+    //background-color: #f1f1f1;
     .mui-table-view{
         border-radius: 0;
         font-size: 14px;
-        background-color: #f1f1f1;
+        //background-color: #f1f1f1;
         li{
+            border: 1px solid #f1f1f1;
+            box-shadow: 0 0 3px 2px #eee;
             background-color: #fff;
             width: 95%;
             margin: 10px auto;
