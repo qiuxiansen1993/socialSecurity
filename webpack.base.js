@@ -93,6 +93,7 @@ const config = {
     WithdrawalRecore:"./pages/WithdrawalRecore/index.js",
     PayDetails:"./pages/PayDetails/index.js",
     GjjTool:"./pages/GjjTool/index.js",
+    Marketing:"./pages/Marketing/index.js",
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -307,6 +308,14 @@ const config = {
       filename: "GjjTool/index.html",
       template: "./pages/GjjTool/index.html",
       chunks: ["GjjTool"],
+      inject:'body',
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "Marketing",
+      filename: "Marketing/index.html",
+      template: "./pages/Marketing/index.html",
+      chunks: ["Marketing"],
       inject:'body',
       files:customPage
     }),

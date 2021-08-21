@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title></title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui"
+        />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="UTF-8" />
+        <% for (var meta in htmlWebpackPlugin.options.files.meta) { %>
+          <meta name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>" content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>" />
+          <% } %>
+    
+        <% for (var css in htmlWebpackPlugin.options.files.css) { %>
+          <link href="<%=htmlWebpackPlugin.options.files.css[css] %>" rel="stylesheet" />
+          <% } %>
+    
+          <% for (var js in htmlWebpackPlugin.options.files.js) { %>
+            <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
+          <% } %>
+          <script type="text/javascript" charset="utf-8">
+            window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
+          </script>
+      </head>
+<body>
+    <!-- 主页面标题 -->
+    <header class="mui-bar mui-bar-nav" style="position: inherit;">
+        <a
+          class="mui-icon mui-icon-home mui-pull-left nav-bar-handle"
+          id="home-menu"
+        ></a>
+        <h1 class="mui-title">邀请好友</h1>
+        <!-- <a
+          class="mui-icon mui-icon-weixin mui-action-menu mui-pull-right"
+          id="contact-user"
+        ></a> -->
+      </header>
+      <div id="yixing">
+        <ul>
+          <li class="denghou"><img src="/asset/imgs/marketing/0.png"></li>
+          <li class="denghou"><img src="/asset/imgs/marketing/1.png"></li>
+          <li class="no0"><img src="/asset/imgs/marketing/2.png"></li>
+          <li class="no1"><img src="/asset/imgs/marketing/3.png"></li>
+          <li class="no2"><img src="/asset/imgs/marketing/4.png"></li>
+          <li class="no3"><img src="/asset/imgs/marketing/5.png"></li>
+          <li class="no4"><img src="/asset/imgs/marketing/6.png"></li>
+          <li class="no5"><img src="/asset/imgs/marketing/7.png"></li>
+          <li class="no6"><img src="/asset/imgs/marketing/8.png"></li>
+          <li class="denghou"><img src="/asset/imgs/marketing/9.png"></li>
+          <li class="denghou"><img src="/asset/imgs/marketing/10.png"></li>
+        </ul>
+    
+        <div class="anniu">
+          <span class="zuoanniu"></span>
+          <span class="youanniu"></span>
+        </div>
+      </div>
+      
+        <div class="mui-card invite-qrcode">
+            <!--内容区-->
+            <div class="mui-card-content">
+                <img id="qrcode-img" class="qrcode-img" src="/asset/imgs/qrCode/t1.jpg" alt="">
+            </div>
+        </div>
+        
+</body>
+</html>
