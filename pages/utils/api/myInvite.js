@@ -5,7 +5,7 @@ const invitedUsersStat = '/invite/invitedUsersStat.php';
 // 被邀请用户列表
 const invitedUsersList = '/invite/invitedUsersList.php';
 // 修改分享奖励类型
-const updateUserShareType = '/user/updateUserShareType'
+const updateUserShareType = '/user/updateUserShareType.php'
 export {
     getQrCode,
     invitedUsersStat,

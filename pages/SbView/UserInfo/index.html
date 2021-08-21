@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title></title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui"
+        />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="UTF-8" />
+        <% for (var meta in htmlWebpackPlugin.options.files.meta) { %>
+          <meta name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>" content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>" />
+          <% } %>
+    
+        <% for (var css in htmlWebpackPlugin.options.files.css) { %>
+          <link href="<%=htmlWebpackPlugin.options.files.css[css] %>" rel="stylesheet" />
+          <% } %>
+    
+          <% for (var js in htmlWebpackPlugin.options.files.js) { %>
+            <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
+          <% } %>
+          <script type="text/javascript" charset="utf-8">
+            window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
+          </script>
+      </head>
+  <body>
+    <header class="mui-bar mui-bar-nav">
+      <a
+        class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left nav-bar-handle"
+        id="home-menu"
+      ></a>
+      <h1 class="mui-title">个人中心</h1>
+    </header>
+  </body>
+</html>
