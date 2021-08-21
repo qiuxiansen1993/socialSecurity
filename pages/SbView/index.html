@@ -99,17 +99,18 @@
                     <li class="mui-table-view-cell">
                         <div class="mui-row">
                           <div class="mui-col-sm-6 mui-col-xs-6">累计缴纳月份</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;"><span id="monthCount"></span><i class="mui-icon mui-icon-arrowright"></i></div>
+                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;"><span id="monthCount"></span><i class="mui-icon mui-icon-arrowright" id="viewMonth"></i></div>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div id="user-info">
+    <div id="user-info" style="">
+        
         <div class="mui-card">
             <!--页眉，放置标题-->
-            <div class="mui-card-header" style="color: #8f8f94;">个人信息</div>
+            <div class="mui-card-header" style="color: #8f8f94;">个人信息<div style="text-align: center;color:#1199ff;" id="back">返回查询</div></div>
             <!--内容区-->
             <div class="mui-card-content">
                 <ul class="mui-table-view">
@@ -122,13 +123,13 @@
                     <li class="mui-table-view-cell">
                         <div class="mui-row">
                           <div class="mui-col-sm-6 mui-col-xs-6">身份证号</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="month"></div>
+                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="idNumber"></div>
                         </div>
                     </li>
                     <li class="mui-table-view-cell">
                         <div class="mui-row">
                           <div class="mui-col-sm-6 mui-col-xs-6">性别</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="base"></div>
+                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="gender"></div>
                         </div>
                     </li>
                 </ul>
@@ -142,8 +143,32 @@
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell">
                         <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6"></div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
+                          <div class="mui-col-sm-6 mui-col-xs-4">定点医院</div>
+                          <div class="mui-col-sm-6 mui-col-xs-8" style="text-align: right;" id="ddyljg1"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-4">定点医院</div>
+                          <div class="mui-col-sm-6 mui-col-xs-8" style="text-align: right;" id="ddyljg2"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-4">定点医院</div>
+                          <div class="mui-col-sm-6 mui-col-xs-8" style="text-align: right;" id="ddyljg3"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-4">定点医院</div>
+                          <div class="mui-col-sm-6 mui-col-xs-8" style="text-align: right;" id="ddyljg4"></div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="mui-row">
+                          <div class="mui-col-sm-6 mui-col-xs-4">定点医院</div>
+                          <div class="mui-col-sm-6 mui-col-xs-8" style="text-align: right;" id="ddyljg5"></div>
                         </div>
                     </li>
                 </ul>
@@ -156,94 +181,7 @@
             <div class="mui-card-content">
                 <ul class="mui-table-view">
                     <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">单位名称</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id=""></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">组织机构代码</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id=""></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">社会保险登记证</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id=""></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">所属区县</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id=""></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="mui-card">
-            <!--页眉，放置标题-->
-            <div class="mui-card-header" style="color: #8f8f94;">参加险种状态</div>
-            <!--内容区-->
-            <div class="mui-card-content">
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">养老</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">医疗</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">失业</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">工商</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">生育</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="mui-card">
-            <!--页眉，放置标题-->
-            <div class="mui-card-header" style="color: #8f8f94;">外籍人员信息</div>
-            <!--内容区-->
-            <div class="mui-card-content">
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">护照号码</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">外国人证件类型</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        <div class="mui-row">
-                          <div class="mui-col-sm-6 mui-col-xs-6">外国人证件号码</div>
-                          <div class="mui-col-sm-6 mui-col-xs-6" style="text-align: right;" id="type"></div>
-                        </div>
+                        <div style="text-align: left;" id="companyInfo"></div>
                     </li>
                 </ul>
             </div>

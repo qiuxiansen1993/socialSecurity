@@ -79,10 +79,10 @@ document
     try {
       const mobile = document.getElementById("login-phone").value;
       const smsCode = document.getElementById("login-code").value;
-      if(!agreement.checked){
-        mui.toast("请填写阅读协议并勾选");
-        return;
-      }
+      // if(!agreement.checked){
+      //   mui.toast("请填写阅读协议并勾选");
+      //   return;
+      // }
       if (!reg.test(mobile)) {
         mui.toast("请填写正确的手机号");
         return;

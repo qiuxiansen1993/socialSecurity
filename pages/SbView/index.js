@@ -7,7 +7,18 @@ import {
 } from "../utils/api/viewTool";
 import "./index.scss";
 const VSbSumDataMap = ["yanglao", "yiliao"];
-const TDetailYangLaoMap = ['type', 'month', 'base', 'companyName']
+const TDetailYangLaoMap = ["type", "month", "base", "companyName"];
+const TInfoShebaoMap = [
+  "name",
+  "gender",
+  "idNumber",
+  "ddyljg1",
+  "ddyljg2",
+  "ddyljg3",
+  "ddyljg4",
+  "ddyljg5",
+  "companyInfo",
+];
 const handleRefreshEvent = () => {
   document
     .getElementById("refresh")
@@ -17,19 +28,26 @@ const handleRefreshEvent = () => {
       }${"/sbinfo/querySbData.php?refresh=1"}`;
     });
 };
-const handleUserEvent = ()=>{
-    document
-    .getElementById("toUser")
-    .addEventListener("tap", async function (e) {
-      mui('#content-box')[0].classList.add('hidden');
-      document.getElementById("user-info").style = 'display:block;'
-    });
-}
+const handleUserEvent = () => {
+  document.getElementById("toUser").addEventListener("tap", async function (e) {
+    mui("#content-box")[0].classList.add("hidden");
+    document.getElementById("user-info").style = "display:block;";
+  });
+  document.getElementById("back").addEventListener("tap", async function (e) {
+    document.getElementById("user-info").style = "display:none;";
+    mui("#content-box")[0].classList.remove("hidden");
+  })
+  document.getElementById("viewMonth").addEventListener("tap", async function (e) {
+    window.location = `${document.location.protocol}//${
+        window.location.host
+      }${"/SbViewDateList/index.html"}`;
+  })
+};
 const getSbBasicInfoFunc = async () => {
   const { code, data } = await get(getSbBasicInfo);
   if (code == 200) {
     const {
-      TInfoShebao: { name, idNumber },
+      TInfoShebao,
       monthCount,
       VSbSumData,
       TDetailYangLao,
@@ -38,11 +56,13 @@ const getSbBasicInfoFunc = async () => {
       document.getElementById(item).innerHTML = VSbSumData?.[item + ""];
     });
     TDetailYangLaoMap.forEach((item) => {
-        document.getElementById(item).innerHTML = TDetailYangLao?.[item + ""];
+      document.getElementById(item).innerHTML = TDetailYangLao?.[item + ""];
+    });
+    TInfoShebaoMap.forEach((item) => {
+        document.getElementById(item).innerHTML = TInfoShebao?.[item + ""] || '-';
       });
-    document.getElementById("userInfo").innerHTML = `${name} (${idNumber})`;
+    document.getElementById("userInfo").innerHTML = `${TInfoShebao.name} (${TInfoShebao.idNumber})`;
     document.getElementById("monthCount").innerHTML = `${monthCount}个月`;
-    
   }
 };
 const init = () => {
