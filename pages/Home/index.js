@@ -6,6 +6,9 @@ import {
 import {
   getUserProperty,
 } from "../utils/api/mybalance";
+import {
+  getUserServiceLimit,
+} from "../utils/api/createOrder";
 import "./index.scss";
 window.__isreload = false
 let timer = null
@@ -26,6 +29,12 @@ const getUserInfoFunc = async()=>{
     }else{
       headimgDom.style='display:none;'
     }
+  }
+}
+const getUserServiceLimitFunc = async()=>{
+  const { code,data } = await get(getUserServiceLimit);
+  if(code ===200){
+    document.getElementById('serviceLimit').innerHTML = '服务期限：'+data
   }
 }
 const getUserPropertyFunc = async()=>{
@@ -102,19 +111,18 @@ window.onload = () => {
     window.location = `${document.location.protocol}//${window.location.host}/MyInvite/index.html`;
   })
   SbView.addEventListener("tap", function () {
-    window.location = `${document.location.protocol}//${window.location.host}/SbView/index.html`;
+    window.location = `${document.location.protocol}//${window.location.host}/sbinfo/querySbData.php?type=sb`;
   })
   GjjView.addEventListener("tap", function () {
-    window.location = `${document.location.protocol}//${window.location.host}/GjjView/index.html`;
+    window.location = `${document.location.protocol}//${window.location.host}/sbinfo/querySbData.php?type=gjj`;
   })
   getUserInfoFunc()
   getUserPropertyFunc()
   getTopMessageFunc()
+  getUserServiceLimitFunc()
   setTimeout(function(){
-    var gallery = mui('.mui-slider');
-    gallery.slider({
-         isAuto:true,
-         interval:1800//自动轮播周期，若为0则不自动播放，默认为0；
-    });
+    new Swiper('.swiper-container',{
+      autoplay : 3000,
+      })
 },300)
 };

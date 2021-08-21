@@ -1,38 +1,35 @@
-.invite-qrcode{
-    margin: 0;
-    background-color:#1199FF;
-    .mui-card-header{
-        color:#fff;
-    }
-    .qrcode-img{
-        display: block;
-        width:100%;
-    }
-    .qrcode-title{
-        text-align: center;
-        color: #fff;
-        margin-bottom: 5px;
-    }
-    .mui-card-footer:before, .mui-card-header:after{
-        background-color: #fff !important;
-    }
-    .mui-card-content img{
-        border: 1px solid #fff;
-    }
-    
+.slide-img{
+    width: 85%;
+    margin: 0 auto;
+    display: block;
 }
-
-#yixing{ width: 670px; height: 221px; background: url('/asset/imgs/marketing/pic_bg.gif') no-repeat; margin: 100px auto; position: relative; overflow: hidden; }
-.anniu .zuoanniu{display: block; width: 43px; height: 43px; position: absolute; top:150px;left:23px; cursor: pointer;}
-.anniu .youanniu{display: block; width: 43px; height: 43px; position: absolute; top:150px;right:23px; cursor: pointer;}
-#yixing ul{ list-style: none; }
-#yixing ul li{ position: absolute; }
-#yixing ul li img{ width: 100%; height: 100%; }
-#yixing ul li.no0{ width:48px; height:32px; top:93px; left:-70px; }
-#yixing ul li.no1{ width:80px; height:54px; top:71px; left:23px; }
-#yixing ul li.no2{ width:100px; height:78px; top:47px; left:127px; }
-#yixing ul li.no3{ width:144px; height:109px; top:16px; left:254px; }
-#yixing ul li.no4{ width:100px; height:78px; top:47px; left:426px; }
-#yixing ul li.no5{ width:80px; height:54px; top:71px; left:556px; }
-#yixing ul li.no6{ width:48px; height:32px; top:93px; left:693px; }
-#yixing ul li.denghou{display: none;}
+// .swiper-pagination i {
+//     display: inline-block;
+//     width: 30px;
+//     height: 30px;
+//     line-height: 30px;
+//     font-size: 15px;
+//     background-color: red;
+//     color: #fff;
+// }
+.swiper-pagination-bullet{
+    width:20px;
+    height:20px;
+    line-height: 20px;
+    font-size: 14px;
+    opacity: 1;
+    color: #fff;
+    margin: 5px;
+}
+body {
+    height: 100%;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    bottom: -30px;
+}
+.swiper-pagination{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    margin: 0 auto;
+}

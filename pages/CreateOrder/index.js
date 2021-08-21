@@ -23,7 +23,7 @@ let cityNameinfo = '';
 let FeeInfo = [];
 let CalSbDataInfo = {};
 let canSelectWage = true;
-let serverCostIdx = 0;
+let serverCostIdx = null;
 let mainTotleCost = 0;// 社保+公积金+工资总数
 const getUserInfoFunc = async () => {
   const { code, data } = await get(getUserInfo);
@@ -54,7 +54,7 @@ const getFeeInfoFunc = () => {
     const { code, data } = await post(getFeeInfo, {});
     if (code === 200) {
       resove(data);
-      document.getElementById("service-charge-info").innerHTML = data[0]?.sum;
+      //document.getElementById("service-charge-info").innerHTML = data[0]?.sum;
       FeeInfo = data;
     } else {
       reject(null);
@@ -92,7 +92,7 @@ const calSbDataFunc = async () => {
 };
 const renderServerChargeLi = ()=>{
   const render = FeeInfo.map((item,index)=>{
-    return `<li data-id="${item.id}" data-sum="${item.sum}" data-idx="${index}" class="mui-table-view-cell ${index===Number(serverCostIdx)&&'mui-selected'}"><a class="mui-navigate-right"><div style="display:flex;justify-content: space-between;"><div style="text-align:left;"><span>${item.title}</span><p>${item.fromM2M}</p></div><div><span style="color:lightcoral;">${item.sum}元</span></div></div></a></li>`
+    return `<li data-id="${item.id}" data-sum="${item.sum}" data-idx="${index}" class="mui-table-view-cell ${serverCostIdx!==null && index===Number(serverCostIdx)&&'mui-selected'}"><a class="mui-navigate-right"><div style="display:flex;justify-content: space-between;"><div style="text-align:left;"><span>${item.title}</span><p>${item.fromM2M}</p></div><div><span style="color:lightcoral;">${item.sum}元</span></div></div></a></li>`
   }).join('')
   return render
 }
@@ -113,6 +113,7 @@ const initSubmitEvent = async() => {
     .getElementById("service-charge")
     .addEventListener("tap", function (event) {
       mui.confirm(`
+      <div style="color:lightcoral;font-weight:700;padding:5px;">首次下单服务费交几个月送几个月</div>
       <ul class="mui-table-view mui-table-view-radio service-charge-sel">${renderServerChargeLi()}</ul>
     `,'服务详情');
     var list = document.querySelector('.mui-table-view.mui-table-view-radio');
@@ -126,6 +127,12 @@ const initSubmitEvent = async() => {
     });
     document
     .getElementById("submit-btn-click").addEventListener("tap", async function (event) {
+      if(serverCostIdx === null){
+        setTimeout(()=>{
+          mui.toast('请您选择服务期限');
+        },50)
+        return
+      }
       mui.showLoading("正在提交..","div");
       const { code,msg } = await post(submitOrder,{
         feeType:FeeInfo?.[serverCostIdx]?.id,
@@ -265,7 +272,7 @@ const initSubmitEvent = async() => {
       </div>
       <div class="alert-display-flex">
         <span>当月收入</span>
-        <span>-</span>
+        <span>${baseSalary}</span>
       </div>
     </div>
     <div style="border:1px solid #eee;padding:10px;">
@@ -274,7 +281,7 @@ const initSubmitEvent = async() => {
           <span>订单金额</span>
           <span style="color:#f0ad4e;font-size:15px;font-weight:500;">￥${total}</span>
         </div>
-        <p class="date-as-of">截止扣费日期：2021-08-23</p>
+        <p class="date-as-of">截止扣费日期：${salaryDate}</p>
       </div>
       <div>
         <div class="alert-display-flex">

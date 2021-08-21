@@ -73,11 +73,13 @@ const IS_DEV = window.NODE_ENV !== 'production';
 //   require('../../mock/mocker')
 // }
 const check = async()=>{
-  const {code} = await get(getUserInfo);
+  const {code,data} = await get(getUserInfo);
   const pathname = window.location.pathname;
   if(code === 402 && pathname.indexOf('/Login')<0){
     window.location = `${document.location.protocol}//${window.location.host}/Login/index.html`;
     return
+  }else{
+    window.UserCallback && window.UserCallback(data)
   }
 }
 check();

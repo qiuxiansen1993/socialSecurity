@@ -1,19 +1,41 @@
 import { get, post } from "../utils/main";
 import { GetRequest } from "../utils/tool";
-import { calSb, calGjj, calTax } from "../utils/api/tool";
+import { calSb, calGjj, calTax, getCsi } from "../utils/api/tool";
 import { getCityList } from "../utils/api/createOrder";
 import "./index.scss";
 let city = "";
 let typeInfo = "";
+let csi = "";
 const wagesresult = document.querySelector(".wagesresult-box");
-const viewContent = document.getElementById('view-content');
-
+const viewContent = document.getElementById("view-content");
+const csiBtn = document.getElementById("csi-btn");
+const baseSalary = document.getElementById("baseSalary");
 const getCityListFunc = async () => {
   const { code, data } = await get(getCityList);
   if (code === 200) {
     initPicker("cityopen", "city", data);
   }
 };
+const getCsiFunc = async () => {
+  const { type } = GetRequest();
+  if (type == 1) {
+    return;
+  }
+  const { code, data } = await get(getCsi, { city });
+  baseSalary.value = '';
+  if (code === 200) {
+    const { baseGjj, baseYanglao } = data;
+    csi = type == 3 ? baseYanglao : type == 2 ? baseGjj : "";
+    csiBtn.style = "display:block;";
+  }
+};
+csiBtn.addEventListener(
+  "tap",
+  function (event) {
+    document.getElementById("baseSalary").value = csi;
+  },
+  false
+);
 const initPicker = (buttonId, resultId, data) => {
   let picker = new mui.PopPicker();
   picker.setData(data);
@@ -26,6 +48,7 @@ const initPicker = (buttonId, resultId, data) => {
       picker.show(function (items) {
         result.innerText = items[0];
         city = items[0];
+        getCsiFunc();
       });
     },
     false
@@ -33,9 +56,9 @@ const initPicker = (buttonId, resultId, data) => {
 };
 
 const calSbFunc = async (pram) => {
-  const { code,data, msg } = await post(calSb, pram);
+  const { code, data, msg } = await post(calSb, pram);
   if (code === 200) {
-    viewContent.style="display:none;"
+    viewContent.style = "display:none;";
     wagesresult.style = "display:block;";
     wagesresult.innerHTML = `
     <div class="wagesresult-top color-background">
@@ -117,9 +140,9 @@ const calSbFunc = async (pram) => {
   }
 };
 const calGjjFunc = async (pram) => {
-  const { code,data, msg } = await post(calGjj, pram);
+  const { code, data, msg } = await post(calGjj, pram);
   if (code === 200) {
-    viewContent.style="display:none;"
+    viewContent.style = "display:none;";
     wagesresult.style = "display:block;";
     wagesresult.innerHTML = `
     <div class="wagesresult-top color-background">
@@ -176,11 +199,11 @@ const calGjjFunc = async (pram) => {
 };
 const calTaxFunc = async (pram) => {
   const { code, msg, data } = await post(calTax, pram);
-  
+
   if (code === 200) {
-    viewContent.style="display:none;"
+    viewContent.style = "display:none;";
     wagesresult.style = "display:block;";
-    const {salaryDate,baseSalary,total,tax,salary,otherFee} = data;
+    const { salaryDate, baseSalary, total, tax, salary, otherFee } = data;
     wagesresult.innerHTML = `
     <div class="alert-content">
     <div style="margin-bottom:10px;border:1px solid #eee;padding:10px;">
@@ -224,7 +247,7 @@ const calTaxFunc = async (pram) => {
     <h5 class="wagesresult-bottom-h5">
             此结果仅供参考
         </h5>
-    `
+    `;
   } else {
     mui.toast(msg);
   }
@@ -244,7 +267,8 @@ const initFunc = () => {
   toolBtn.addEventListener(
     "tap",
     function (event) {
-      var rootHtml = document.documentElement;rootHtml.style.fontSize = `${10}px`;
+      var rootHtml = document.documentElement;
+      rootHtml.style.fontSize = `${10}px`;
       const baseSalary = document.getElementById("baseSalary").value;
       if (!baseSalary || !city) {
         return mui.toast("请填全信息");

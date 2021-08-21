@@ -19,6 +19,8 @@
           <% for (var js in htmlWebpackPlugin.options.files.js) { %>
             <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
           <% } %>
+          <link rel="stylesheet" href="/asset/swiper/index.css">
+          <script src="/asset/swiper/index.js"></script>
           <script type="text/javascript" charset="utf-8">
             window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
           </script>
@@ -36,33 +38,11 @@
           id="contact-user"
         ></a> -->
       </header>
-      <div id="yixing">
-        <ul>
-          <li class="denghou"><img src="/asset/imgs/marketing/0.png"></li>
-          <li class="denghou"><img src="/asset/imgs/marketing/1.png"></li>
-          <li class="no0"><img src="/asset/imgs/marketing/2.png"></li>
-          <li class="no1"><img src="/asset/imgs/marketing/3.png"></li>
-          <li class="no2"><img src="/asset/imgs/marketing/4.png"></li>
-          <li class="no3"><img src="/asset/imgs/marketing/5.png"></li>
-          <li class="no4"><img src="/asset/imgs/marketing/6.png"></li>
-          <li class="no5"><img src="/asset/imgs/marketing/7.png"></li>
-          <li class="no6"><img src="/asset/imgs/marketing/8.png"></li>
-          <li class="denghou"><img src="/asset/imgs/marketing/9.png"></li>
-          <li class="denghou"><img src="/asset/imgs/marketing/10.png"></li>
-        </ul>
-    
-        <div class="anniu">
-          <span class="zuoanniu"></span>
-          <span class="youanniu"></span>
+      <!-- 主界面具体展示内容 -->
+      <div class="swiper-container" style="margin-top: 10px;">
+        <div class="swiper-wrapper">
         </div>
       </div>
-      
-        <div class="mui-card invite-qrcode">
-            <!--内容区-->
-            <div class="mui-card-content">
-                <img id="qrcode-img" class="qrcode-img" src="/asset/imgs/qrCode/t1.jpg" alt="">
-            </div>
-        </div>
-        
+      <div class="swiper-pagination" id="pagination"></div>
 </body>
 </html>

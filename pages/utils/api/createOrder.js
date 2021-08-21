@@ -12,7 +12,8 @@ const getFeeInfo = '/order/getFeeInfo.php';
 const submitOrder = '/order/submitOrder.php';
 // 参保设置
 const getSalaryMonthList = '/baseData/getSalaryMonthList.php';
-
+// 获取订单状态
+const getUserServiceLimit = '/order/getUserServiceLimit.php'
 export {
     getRandomCompany,
     getCityList,
@@ -20,5 +21,7 @@ export {
     calSbData,
     getFeeInfo,
     submitOrder,
-    getSalaryMonthList
+    getSalaryMonthList,
+    getUserServiceLimit
+
 }

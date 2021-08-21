@@ -4,8 +4,11 @@ const getSmsCode = '/login/getSmsCode.php';
 const bindMobile = '/login/bindMobile.php';
 // 注册
 const login = '/login.php';
+// 图片验证码
+const validateCode = '/validateCode';
 export {
     login,
     getSmsCode,
-    bindMobile
+    bindMobile,
+    validateCode
 }

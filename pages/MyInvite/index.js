@@ -1,5 +1,5 @@
 import { get, post } from "../utils/main";
-import { getQrCode,invitedUsersStat,invitedUsersList } from "../utils/api/myInvite";
+import { getQrCode,invitedUsersStat,invitedUsersList,updateUserShareType } from "../utils/api/myInvite";
 import './index.scss';
 const getLocalTime = (nS) =>{     
     return new Date(parseInt(nS)).toLocaleString().replace(/:\d{1,2}$/,' ');     
@@ -62,10 +62,46 @@ const invitedUsersListFunc = async()=>{
 const handleRulesEvent =()=>{
     document.getElementById("rules").addEventListener("tap", function () {
         mui.alert(`
-      规则如下：11111
+        1.活动时间：<b>2021.8.29 - 2021.9.30</b>
+        2.活动期间，您通过自己的二维码邀请的好友成为新用户，您将获得二选一以下奖励：
+         &nbsp;&nbsp;a.您可选择“顺延服务期限”，获得新用户所交服务费总月数顺延（基于已经扣费的订单顺延）。
+         &nbsp;&nbsp;b.您也可选择“服务费返现”，获得新用户缴纳服务费的30%额度的现金，可在公众号“我的资产——余额”查看返利金额，并发起提现；
+        3.本活动禁止任何形式的违法违规操作，否则平台有权取消参与活动并扣除所得。
+        <b>长期活动：</b>
+        1.买一送一：所有用户首次下单交几个月的服务费，额外再送几个月的服务期限。
+        2.合伙人：您通过自己的二维码邀请的好友成为新用户，新用户交服务费成功后您可获得30%服务费的返利；
     `,'邀请规则');
       });
 }
+window.UserCallback = (info) => {
+    const { userInfo:{ userShareType } } = info;
+    let picker = new mui.PopPicker();
+    picker.setData(['顺延服务期限','服务费返现']);
+    let showUserPickerButton = document.getElementById('reward-way');
+    let result = document.getElementById('reward-way-txt');
+    result.innerHTML = userShareType === '01'? '顺延服务期限':userShareType === '02'?'服务费返现' : '顺延服务期限';
+    showUserPickerButton.addEventListener(
+      "tap",
+    function (event) {
+        picker.show(async function (items) {
+          result.innerText = items[0];
+          try{
+            mui.showLoading("正在修改..","div");
+            const { data = [],code,msg } = await get(updateUserShareType);
+            mui.hideLoading();
+            if(code == 200){
+              mui.toast("修改成功");
+              return
+            }
+            mui.toast(msg || "获取失败");
+          }catch(e){
+            mui.hideLoading();
+          }
+        });
+      },
+      false
+    );
+  };
 const init = ()=>{
     handleRulesEvent()
     getQrCodeFunc()

@@ -1,5 +1,5 @@
 import { get, post } from "../utils/main";
-import { getSmsCode, bindMobile, login } from "../utils/api/login";
+import { getSmsCode, bindMobile, login,validateCode } from "../utils/api/login";
 import "./index.scss";
 
 const reg = /^1[0-9]{10}$/;
@@ -16,7 +16,10 @@ const handleAgreement = () =>{
       event.preventDefault();
   });
 }
-handleAgreement()
+
+document.querySelector(".img-code").addEventListener("tap", function (event) {
+  this.src = "/validateCode"
+});
 const countdownFunc = () => {
   const _verificationCode = document.getElementById("verificationCode");
   let numbers = 60;
@@ -38,16 +41,27 @@ document
   .addEventListener("tap", async function () {
     try {
       const mobile = document.getElementById("login-phone").value;
+      const validateCode = document.getElementById("validateCode").value;
       if (!canSmsCode) return;
       if (!reg.test(mobile)) {
-        mui.toast("请填写正确的手机号");
+        setTimeout(()=>{
+          mui.toast("请填写正确的手机号");
+        },50)
+        return;
+      }
+      if(!validateCode){
+        setTimeout(()=>{
+          mui.toast("请填写图片验证码");
+        },50)
         return;
       }
       canSmsCode = false;
       const { data, code, msg } = await post(getSmsCode, {
         mobile,
+        validateCode
       });
       canSmsCode = true;
+      document.querySelector(".img-code").src = "/validateCode"
       if (code === 200) {
         token = data.token;
         countdownFunc();
