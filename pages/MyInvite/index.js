@@ -59,7 +59,15 @@ const invitedUsersListFunc = async()=>{
         
     }
 }
+const handleRulesEvent =()=>{
+    document.getElementById("rules").addEventListener("tap", function () {
+        mui.alert(`
+      规则如下：11111
+    `,'邀请规则');
+      });
+}
 const init = ()=>{
+    handleRulesEvent()
     getQrCodeFunc()
     invitedUsersStatFunc()
     invitedUsersListFunc()

@@ -70,6 +70,9 @@ window.onload = () => {
   const detailsShare = document.querySelector('.details-share');
   const toMyServer = document.getElementById('toMyServer');
   const toPayCost = document.getElementById('toPayCost');
+  const SbView = document.getElementById('SbView');
+  const GjjView = document.getElementById('GjjView');
+  
   toPayCost &&
   toPayCost.addEventListener("tap", function () {
     window.location = `${document.location.protocol}//${window.location.host}/MyBalance/index.html`;
@@ -98,7 +101,20 @@ window.onload = () => {
   detailsShare.addEventListener("tap", function () {
     window.location = `${document.location.protocol}//${window.location.host}/MyInvite/index.html`;
   })
+  SbView.addEventListener("tap", function () {
+    window.location = `${document.location.protocol}//${window.location.host}/SbView/index.html`;
+  })
+  GjjView.addEventListener("tap", function () {
+    window.location = `${document.location.protocol}//${window.location.host}/GjjView/index.html`;
+  })
   getUserInfoFunc()
   getUserPropertyFunc()
   getTopMessageFunc()
+  setTimeout(function(){
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+         isAuto:true,
+         interval:1800//自动轮播周期，若为0则不自动播放，默认为0；
+    });
+},300)
 };

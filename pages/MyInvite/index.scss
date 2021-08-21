@@ -2,7 +2,11 @@
     margin: 0;
     background-color:#1199FF;
     .mui-card-header{
-        color:#fff;
+        display: flex;
+        justify-content: space-between;
+        span{
+            color:#fff;
+        }
     }
     .qrcode-img{
         display: block;

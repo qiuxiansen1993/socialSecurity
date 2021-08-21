@@ -94,6 +94,12 @@ const config = {
     PayDetails:"./pages/PayDetails/index.js",
     GjjTool:"./pages/GjjTool/index.js",
     Marketing:"./pages/Marketing/index.js",
+    Announce:"./pages/Announce/index.js",
+    MyInviteRecommand:"./pages/MyInviteRecommand/index.js",
+    SbView:"./pages/SbView/index.js",
+    GjjView:"./pages/GjjView/index.js",
+    SbViewDateList:"./pages/SbView/DateList/index.js",
+    
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -316,6 +322,38 @@ const config = {
       filename: "Marketing/index.html",
       template: "./pages/Marketing/index.html",
       chunks: ["Marketing"],
+      inject:'body',
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "Announce",
+      filename: "Announce/index.html",
+      template: "./pages/Announce/index.html",
+      chunks: ["Announce"],
+      inject:'body',
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "GjjView",
+      filename: "GjjView/index.html",
+      template: "./pages/GjjView/index.html",
+      chunks: ["GjjView"],
+      inject:'body',
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "SbView",
+      filename: "SbView/index.html",
+      template: "./pages/SbView/index.html",
+      chunks: ["SbView"],
+      inject:'body',
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "SbViewDateList",
+      filename: "SbViewDateList/index.html",
+      template: "./pages/SbView/DateList/index.html",
+      chunks: ["SbViewDateList"],
       inject:'body',
       files:customPage
     }),
