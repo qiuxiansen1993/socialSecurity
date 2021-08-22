@@ -130,7 +130,7 @@ const initSubmitEvent = async() => {
     .getElementById("submit-btn-click").addEventListener("tap", async function (event) {
       if(serverCostIdx === null){
         setTimeout(()=>{
-          mui.toast('请您选择服务期限');
+          mui.toast('请您选择自主就业服务费');
         },50)
         return
       }
