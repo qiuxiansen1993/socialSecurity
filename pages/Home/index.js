@@ -77,7 +77,9 @@ window.onload = () => {
   const homeBody = document.getElementById("home-body");
   const contactUser = document.getElementById('contact-user');
   const detailsShare = document.querySelector('.details-share');
-  const toMyServer = document.getElementById('toMyServer');
+  const toMyServer1 = document.getElementById('toMyServer1');
+  const toMyServer2 = document.getElementById('toMyServer2');
+  const toMyServer3 = document.getElementById('toMyServer3');
   const toPayCost = document.getElementById('toPayCost');
   const SbView = document.getElementById('SbView');
   const GjjView = document.getElementById('GjjView');
@@ -86,8 +88,16 @@ window.onload = () => {
   toPayCost.addEventListener("tap", function () {
     window.location = `${document.location.protocol}//${window.location.host}/MyBalance/index.html`;
     });
-  toMyServer &&
-  toMyServer.addEventListener("tap", function () {
+  toMyServer1 &&
+  toMyServer1.addEventListener("tap", function () {
+    window.location = `${document.location.protocol}//${window.location.host}/MyServer/index.html`;
+  });
+  toMyServer2 &&
+    toMyServer2.addEventListener("tap", function () {
+      window.location = `${document.location.protocol}//${window.location.host}/MyServer/index.html`;
+      });
+  toMyServer3 &&
+  toMyServer3.addEventListener("tap", function () {
     window.location = `${document.location.protocol}//${window.location.host}/MyServer/index.html`;
     });
   homeMenu &&
