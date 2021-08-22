@@ -18,10 +18,7 @@ const createBankOrderFunc = async () => {
     if (!value) {
       mui.toast("请填写全部信息");
       canSave = false;
-    }else if(item === 'account' && !bankCardValidate(value)){
-      mui.toast("您填写的银行卡号有误");
-      canSave = false;
-    } else {
+    }else {//shizw修改，银行卡不做校验
       param[item] = value;
     }
   });
