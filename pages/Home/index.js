@@ -108,7 +108,7 @@ window.onload = () => {
     });
   });
   detailsShare.addEventListener("tap", function () {
-    window.location = `${document.location.protocol}//${window.location.host}/MyInvite/index.html`;
+    window.location = `${document.location.protocol}//${window.location.host}/Marketing/index.html`;
   })
   SbView.addEventListener("tap", function () {
     window.location = `${document.location.protocol}//${window.location.host}/sbinfo/querySbData.php?type=sb`;
