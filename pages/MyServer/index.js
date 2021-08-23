@@ -105,12 +105,18 @@ const initPickerCity = (data) => {
   );
 };
 const getRandomCompanyFunc = async()=>{
-  const {code,data} = await get(getRandomCompany,{
-    city
-  });
-  if(code === 200){
-    UserInfos.corpName = data.corpName
-    document.getElementById('workAdree').innerHTML = data.corpName
+  mui.showLoading("查询中","div");
+  try{
+    const {code,data} = await get(getRandomCompany,{
+      city
+    });
+    mui.hideLoading();
+    if(code === 200){
+      UserInfos.corpName = data.corpName
+      document.getElementById('workAdree').innerHTML = data.corpName
+    }
+  }catch(e){
+    mui.hideLoading();
   }
 }
 window.onload = () => {
@@ -158,7 +164,7 @@ window.onload = () => {
         console.log(UserInfos)
         if(!corpName){
           getRandomCompanyFunc();
-          return mui.toast("您点的太快了，请稍后重试~");
+          return
         }
         mui.confirm(`<div class="agreement-confirm"><p>姓名：${userName}</p><p>户籍：${userHouseHold}</p><p>工作城市：${city}</p><p>办理单位：${corpName}</p></div>
         `, '确认前往办理？', ['否', '是'], function(e) {

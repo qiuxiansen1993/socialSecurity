@@ -8,6 +8,8 @@ const getUserProperty = '/property/getUserProperty.php';
 const updateUserInfo = '/user/updateUserinfo.php';
 // 上传资料
 const uploadMaterial = '/user/uploadMaterial.php';
+// 删除资料
+const delMaterial = '/user/delMaterial.php';
 // 资料列表
 const getMaterialList = '/user/getMaterialList.php';
 // 消息top3
@@ -19,5 +21,6 @@ export {
     updateUserInfo,
     uploadMaterial,
     getMaterialList,
-    getTopMessage
+    getTopMessage,
+    delMaterial
 }

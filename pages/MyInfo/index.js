@@ -6,6 +6,7 @@ import {
   uploadMaterial,
   getMaterialList,
   getUserInfo,
+  delMaterial
 } from "../utils/api/personal";
 import "./index.scss";
 let materialLength = 0;
@@ -97,9 +98,23 @@ const getMaterialListFunc = async () => {
     document.querySelector(".material-list").innerHTML = data
       .map((item) => {
         const { materialName } = item;
-        return `<div class="material-item"><i class="mui-icon mui-icon-paperclip"></i><span>${materialName}</span></div>`;
+        return `<div class="material-item"><i class="mui-icon mui-icon-paperclip"></i><span>${materialName}</span><i data-mid="${item.id}" style="margin-left:20px;font-size:14px;" class="delet-material-btn mui-icon mui-icon-trash">删除</i></div>`;
       })
       .join("");
+    [...document.querySelectorAll('.delet-material-btn')].map((item)=>{
+      item.addEventListener("tap", async(e) => {
+        const mid = e.target.getAttribute('data-mid')
+        mui.showLoading("正在删除..","div");
+        const { code,msg } = await post(delMaterial,{mid});
+        mui.hideLoading();
+        if(code === 200){
+          mui.toast("删除成功");
+          getMaterialListFunc()
+        }else{
+          mui.toast(msg||'请求异常');
+        }
+      });
+    })
   }
 };
 const initUpload = () => {

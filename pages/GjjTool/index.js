@@ -24,9 +24,10 @@ const getCsiFunc = async () => {
   const { code, data } = await get(getCsi, { city });
   baseSalary.value = '';
   if (code === 200) {
-    const { baseGjj, baseYanglao } = data;
+    const { baseGjj, baseYanglao,maxBaseYanglao } = data;
     csi = type == 3 ? baseYanglao : type == 2 ? baseGjj : "";
     csiBtn.style = "display:block;";
+    document.getElementById("baseSalary").setAttribute('placeholder',`基数${baseYanglao}-${maxBaseYanglao}`)
   }
 };
 csiBtn.addEventListener(

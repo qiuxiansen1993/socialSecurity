@@ -86,6 +86,9 @@ const calSbDataFunc = async () => {
     document.getElementById("salary-cost").innerHTML = salary?.total || '-';
     document.getElementById("totle-cost").innerHTML =
     '￥' + (mainTotleCost + (feeData?.[0]?.sum || 0)).toFixed(2);
+    [...document.querySelectorAll('.asof')].forEach((item)=>{
+      item.innerHTML = configData["month"]
+    })
       initSubmitEvent();
   }else{
     mui.toast(msg||'请求异常，请稍后重试');
@@ -121,6 +124,7 @@ const initSubmitEvent = async() => {
     list.removeEventListener('selected',()=>{});
     list.addEventListener('selected',function(e){
       serverCostIdx = e.detail.el.getAttribute('data-idx')
+      document.getElementById("label-server").style="color:#000;"
       const TotleNum = (mainTotleCost+Number(e.detail.el.getAttribute('data-sum'))).toFixed(2)
       document.getElementById("totle-cost").innerHTML = '￥' + TotleNum
       document.getElementById("service-charge-info").innerHTML = Number(e.detail.el.getAttribute('data-sum'))
@@ -129,6 +133,7 @@ const initSubmitEvent = async() => {
     document
     .getElementById("submit-btn-click").addEventListener("tap", async function (event) {
       if(serverCostIdx === null){
+        document.getElementById("label-server").style="color:red;"
         setTimeout(()=>{
           mui.toast('请您选择自主就业服务费');
         },50)

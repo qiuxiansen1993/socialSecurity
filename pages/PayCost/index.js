@@ -8,6 +8,19 @@ import {
 import './index.scss';
 
 let PageIdx = 0
+const setEndMonth= (startMonth,duration)=>{
+    let year = Number(startMonth.slice(0,4))
+    let month = Number(startMonth.slice(4))
+    for(let i = 0;i<duration-1;i++){
+        if(month >= 12){
+            year+=1
+            month = 1
+        }else{
+            month+=1
+        }
+    }
+    return [year,(month<10?'0'+month:month)].join('')
+}
 const viewContainer = document.querySelector('.mui-table-view');
 const getUserOrderListFunc = async(page = 0)=>{
     const {code,data = [],msg} = await get(getUserOrderList,{
@@ -26,7 +39,7 @@ const getUserOrderListFunc = async(page = 0)=>{
                 ${format(createTime)}
                 </div>
                 <div class="mui-col-sm-6 mui-col-xs-6">
-                ${startMonth}起缴纳${duration}个月
+                ${startMonth}-${setEndMonth(startMonth,duration)}
                 </div>
                 <div class="mui-col-sm-3 mui-col-xs-3">
                 ${status === '0' ?'<span data-id='+item.id+' class="handle-btn">取消订单</span>':status === '1' ?'':'' }
@@ -43,6 +56,7 @@ const getUserOrderListFunc = async(page = 0)=>{
                     <div>是否新缴纳公积金：${item.baseSalary == 1?'是':'否'}</div>
                     <div>基本工资：${item.baseSalary == 1?'是':'否'}</div>
                     <img src="${status === '0'?'/asset/imgs/shenheing.png':'/asset/imgs/shenheing.png'}" class="shenheState"></i>
+                    <span class="to-search mui-icon mui-icon-search">详情</span>
             </div>    
                `;
             viewContainer.appendChild(_listDom);

@@ -73,6 +73,14 @@ window.onload = () => {
   if(!window.__isreload){
     window.__isreload = true
   }
+  const localStorageTime = localStorage.getItem("home_title_show")
+  if(!localStorageTime || localStorageTime < new Date().getTime()){
+    localStorage.setItem("home_title_show", new Date().getTime()+3600*1000*24);
+    mui.alert(`
+    <img style="width:270px;margin:0 auto;" src="/asset/doc/liuchengtu.jpeg"/>
+    `,'服务流程','我知道了');
+  }
+  
   const homeMenu = document.getElementById("home-menu");
   const homeBody = document.getElementById("home-body");
   const contactUser = document.getElementById('contact-user');
