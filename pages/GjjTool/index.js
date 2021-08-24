@@ -24,15 +24,16 @@ const getCsiFunc = async () => {
   const { code, data } = await get(getCsi, { city });
   baseSalary.value = '';
   if (code === 200) {
-    const { baseGjj, baseYanglao,maxBaseYanglao } = data;
+    const { baseGjj, baseYanglao,maxBaseYanglao,maxGjjBase } = data;
     csi = type == 3 ? baseYanglao : type == 2 ? baseGjj : "";
     csiBtn.style = "display:block;";
-    document.getElementById("baseSalary").setAttribute('placeholder',`基数${baseYanglao}-${maxBaseYanglao}`)
+    document.getElementById("baseSalary").setAttribute('placeholder',type == 3 ?`基数${baseYanglao}-${maxBaseYanglao}`:type == 2 ?`基数${baseGjj}-${maxGjjBase}`:'')
   }
 };
 csiBtn.addEventListener(
   "tap",
   function (event) {
+    console.log(111)
     document.getElementById("baseSalary").value = csi;
   },
   false

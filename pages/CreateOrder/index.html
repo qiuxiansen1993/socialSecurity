@@ -101,8 +101,8 @@
         <div class="mui-card">
           <div class="mui-card-header">
             <div class="mui-input-row mui-checkbox mui-left">
-              <input class="seleted-checkbox" checked name="addSb" value="" type="checkbox">
-              <label>缴纳社保</label>
+              <input style="display: none;" checked name="addSb" value="" type="checkbox">
+              <label style="padding-left: 0;">缴纳社保</label>
             </div>
           </div>
           <!--内容区-->
@@ -134,8 +134,8 @@
         <div class="mui-card">
           <div class="mui-card-header">
             <div class="mui-input-row mui-checkbox mui-left">
-              <input class="seleted-checkbox" checked name="addGjj" value="" type="checkbox">
-              <label>缴纳公积金</label>
+              <input style="display: none;" checked name="addGjj" value="" type="checkbox">
+              <label style="padding-left: 0;">缴纳公积金</label>
             </div>
             </div>
           <!--内容区-->
@@ -209,7 +209,7 @@
               <span id="gjj-cost" style="padding-right: 15px"></span>
             </a>
           </li>
-          <li class="mui-table-view-cell">
+          <li class="mui-table-view-cell" id="gzView-conatiner">
             <a id="gzView" class="mui-navigate-right display-flex">
               <span>当月实发工资及代扣个税
                 <p>截止扣费日期：<span class="asof"></span></p>

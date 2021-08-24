@@ -9,6 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="/asset/tools/tools.css">
+        <script>var rootHtml = document.documentElement;rootHtml.style.fontSize = `${10}px`;window.NOT_REM_PAGE=true</script>
         <% for (var meta in htmlWebpackPlugin.options.files.meta) { %>
           <meta name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>" content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>" />
           <% } %>
@@ -23,7 +24,6 @@
           <script type="text/javascript" charset="utf-8">
             window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
           </script>
-          <script>var rootHtml = document.documentElement;rootHtml.style.fontSize = `${10}px`;</script>
       </head>
   <body>
     <header class="mui-bar mui-bar-nav">

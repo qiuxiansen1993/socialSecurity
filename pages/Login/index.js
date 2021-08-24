@@ -18,7 +18,7 @@ const handleAgreement = () =>{
 }
 
 document.querySelector(".img-code").addEventListener("tap", function (event) {
-  this.src = "/validateCode"
+  this.src = `/validateCode?${new Date().getTime()}`
 });
 const countdownFunc = () => {
   const _verificationCode = document.getElementById("verificationCode");
@@ -61,7 +61,7 @@ document
         validateCode
       });
       canSmsCode = true;
-      document.querySelector(".img-code").src = "/validateCode"
+      document.querySelector(".img-code").src = `/validateCode?${new Date().getTime()}`
       if (code === 200) {
         token = data.token;
         countdownFunc();

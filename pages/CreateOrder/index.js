@@ -78,6 +78,9 @@ const calSbDataFunc = async () => {
     document.querySelector(".submit-content").style = "display:block;";
     // 展示
     CalSbDataInfo = data
+    if(!CalSbDataInfo.salary){
+      document.getElementById("gzView-conatiner").style="display:none";
+    }
     const { sb ={}, gjj = {}, salary = {} } = data;
 
     mainTotleCost = Number(salary?.total||0) + Number(gjj?.total||0) + Number(sb?.total||0)
@@ -124,7 +127,7 @@ const initSubmitEvent = async() => {
     list.removeEventListener('selected',()=>{});
     list.addEventListener('selected',function(e){
       serverCostIdx = e.detail.el.getAttribute('data-idx')
-      document.getElementById("label-server").style="color:#000;"
+      document.getElementById("service-charge").style="border:none;"
       const TotleNum = (mainTotleCost+Number(e.detail.el.getAttribute('data-sum'))).toFixed(2)
       document.getElementById("totle-cost").innerHTML = '￥' + TotleNum
       document.getElementById("service-charge-info").innerHTML = Number(e.detail.el.getAttribute('data-sum'))
@@ -133,7 +136,8 @@ const initSubmitEvent = async() => {
     document
     .getElementById("submit-btn-click").addEventListener("tap", async function (event) {
       if(serverCostIdx === null){
-        document.getElementById("label-server").style="color:red;"
+        document.getElementById("service-charge").style="border:1px solid red;"
+        
         setTimeout(()=>{
           mui.toast('请您选择自主就业服务费');
         },50)
@@ -147,7 +151,7 @@ const initSubmitEvent = async() => {
       mui.hideLoading();
       if (code === 200) {
         mui.toast(msg || '提交成功~');
-        window.location = `${document.location.protocol}//${window.location.host}${'/MyServer/index.html?city='+escape('北京')}`;
+        window.location = `${document.location.protocol}//${window.location.host}/PayList/index.html`;
       }else{
         if(code === 400 || code === 500){
           mui.toast(msg||'提交失败，请稍后重试！');
