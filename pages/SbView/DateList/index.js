@@ -14,7 +14,7 @@ const getSbStartEndMonthFunc = async()=>{
         let max = endMonth.split('-')[0]
         let min = startMonth.split('-')[0]
         let slider = []
-        for(let i = min;i<max;i++){
+        for(let i = min;i<=max;i++){
             slider.push(`<div class="swiper-slide">${i}</div>`);
             sliderList.push(i)
         }
