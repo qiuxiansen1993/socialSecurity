@@ -79,7 +79,11 @@ const getUserOrderListFunc = async(page = 0)=>{
 const addEventCanle = ()=>{
     [...document.querySelectorAll('.handle-btn')].forEach((item)=>{
         item.addEventListener("tap", function (e) {
-            cancelUserOrderFunc(this.getAttribute('data-id'))
+            mui.confirm('是否取消订单','提示',['取消','确认'],(e)=>{
+                if(e.index == 1){
+                    cancelUserOrderFunc(this.getAttribute('data-id'))
+                }
+            })
             e.stopPropagation()
         })
     })
