@@ -25,7 +25,7 @@ const handleRefreshEvent = () => {
     .addEventListener("tap", async function (e) {
       window.location = `${document.location.protocol}//${
         window.location.host
-      }${"/sbinfo/querySbData.php?refresh=1"}`;
+      }${"/sbinfo/querySbData.php?type=sb&refresh=1"}`;
     });
 };
 const handleUserEvent = () => {
