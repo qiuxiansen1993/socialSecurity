@@ -44,7 +44,9 @@ const handleUserEvent = () => {
   })
 };
 const getSbBasicInfoFunc = async () => {
+  mui.showLoading("正在提交..","div");
   const { code, data } = await get(getSbBasicInfo);
+  mui.hideLoading();
   if (code == 200) {
     const {
       TInfoShebao,
