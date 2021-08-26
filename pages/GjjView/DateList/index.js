@@ -24,7 +24,9 @@ const getGjjDetailDataByYearFunc = async(year)=>{
     });
     mui.hideLoading();
     if(code === 200){
-        document.getElementById('data-list').innerHTML = data.map((item)=>{
+        const {increase,decrease} = sliderList.filter((it)=>it.year === year)?.[0];
+        const yearDom = `<p style="font-size:15px;padding:10px;color:#1199ff;">${year}年度 | 缴存${increase || '-'}元 | 提取${decrease|| '-'}元</p>`
+        document.getElementById('data-list').innerHTML = [yearDom,...data.map((item)=>{
             const {month,recordTime,increaseMoney,companyName,accountName,type,operatePlatform,decreaseMoney} = item
             return `
             <ul class="mui-table-view"> 
@@ -37,7 +39,7 @@ const getGjjDetailDataByYearFunc = async(year)=>{
                 </li>
             </ul>
             `
-        }).join('')
+        })].join('')
     }else{
         document.getElementById('data-list').innerHTML = '<div style="text-align:center;">无数据</div>'
     }
