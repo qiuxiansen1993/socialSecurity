@@ -120,7 +120,6 @@ const initSubmitEvent = async() => {
     .getElementById("service-charge")
     .addEventListener("tap", function (event) {
       mui.confirm(`
-      <div style="color:lightcoral;font-weight:700;padding:5px;">首次下单服务费交几个月送几个月</div>
       <ul class="mui-table-view mui-table-view-radio service-charge-sel">${renderServerChargeLi()}</ul>
     `,'服务详情');
     var list = document.querySelector('.mui-table-view.mui-table-view-radio');
