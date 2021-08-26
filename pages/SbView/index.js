@@ -6,7 +6,7 @@ import {
   getSbBasicInfo,
 } from "../utils/api/viewTool";
 import "./index.scss";
-const VSbSumDataMap = ["dwjf", "grjf"];
+const VSbSumDataMap = ["yanglao", "yiliao"];
 const TDetailYangLaoMap = ["type", "month", "base", "companyName"];
 const TInfoShebaoMap = [
   "name",
@@ -55,7 +55,6 @@ const getSbBasicInfoFunc = async () => {
     VSbSumDataMap.forEach((item) => {
       document.getElementById(item).innerHTML = VSbSumData?.[item + ""];
     });
-    document.getElementById('total').innerHTML = '总计'+Number(VSbSumData.dwjf)+Number(VSbSumData.grjf)+'元';
     
     TDetailYangLaoMap.forEach((item) => {
       document.getElementById(item).innerHTML = TDetailYangLao?.[item + ""];
