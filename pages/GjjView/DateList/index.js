@@ -10,7 +10,7 @@ const getGjjStatDataByYearFunc = async()=>{
     if(code === 200){
         const dataArr = data.sort((a,b)=>a.year - b.year)
         sliderList = dataArr
-        let slider = dataArr.map((item)=>`<div class="swiper-slide">${item.year},缴存:${item.increase},提取:${item.decrease}</div>`)
+        let slider = dataArr.map((item)=>`<div class="swiper-slide">${item.year}</div>`)
         mui('.swiper-wrapper')[0].innerHTML = slider.join('');
         regerterSwiper(dataArr.length-1)
         getGjjDetailDataByYearFunc(sliderList[dataArr.length-1]?.year)
