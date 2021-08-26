@@ -56,7 +56,7 @@ const getSbDetailDataByYearFunc = async(year)=>{
                 <div class="mui-col-sm-2 mui-col-xs-2">${type || '-'}</div>
                 <div class="mui-col-sm-2 mui-col-xs-2">${yanglao || '-'}</div>
                 <div class="mui-col-sm-2 mui-col-xs-2">${yiliao || '-'}</div>
-                <div class="mui-col-sm-2 mui-col-xs-2">${(yanglao+yiliao) || '-'}</div>
+                <div class="mui-col-sm-2 mui-col-xs-2">${(yanglao+yiliao).toFixed(2) || '-'}</div>
                 <div class="mui-col-sm-1 mui-col-xs-1"><i class="mui-icon mui-icon-arrowright toDetails" data-month="${month}" style="font-size:12px;" class="mui-icon mui-icon-arrowright"></i></div>
             </div>
             `
