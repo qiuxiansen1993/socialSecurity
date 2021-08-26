@@ -44,9 +44,9 @@ const getSbDetailDataByYearFunc = async(year)=>{
             <div class="mui-row" style="border-bottom: 1px solid #eee;">
             <div class="mui-col-sm-3 mui-col-xs-3">月份</div>
             <div class="mui-col-sm-2 mui-col-xs-2">缴费类型</div>
-            <div class="mui-col-sm-2 mui-col-xs-2">养老</div>
-            <div class="mui-col-sm-2 mui-col-xs-2">医疗</div>
-            <div class="mui-col-sm-2 mui-col-xs-2">失业</div>
+            <div class="mui-col-sm-2 mui-col-xs-2">个人</div>
+            <div class="mui-col-sm-2 mui-col-xs-2">公司</div>
+            <div class="mui-col-sm-2 mui-col-xs-2">总计</div>
             <div class="mui-col-sm-1 mui-col-xs-1"></div>
         </div>`,...data.map((item)=>{
             const {month,type,yanglao,yiliao,shiye} = item
@@ -56,7 +56,7 @@ const getSbDetailDataByYearFunc = async(year)=>{
                 <div class="mui-col-sm-2 mui-col-xs-2">${type || '-'}</div>
                 <div class="mui-col-sm-2 mui-col-xs-2">${yanglao || '-'}</div>
                 <div class="mui-col-sm-2 mui-col-xs-2">${yiliao || '-'}</div>
-                <div class="mui-col-sm-2 mui-col-xs-2">${shiye || '-'}</div>
+                <div class="mui-col-sm-2 mui-col-xs-2">${(yanglao+yiliao) || '-'}</div>
                 <div class="mui-col-sm-1 mui-col-xs-1"><i class="mui-icon mui-icon-arrowright toDetails" data-month="${month}" style="font-size:12px;" class="mui-icon mui-icon-arrowright"></i></div>
             </div>
             `
