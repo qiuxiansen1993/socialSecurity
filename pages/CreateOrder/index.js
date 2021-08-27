@@ -88,6 +88,12 @@ const calSbDataFunc = async () => {
     if(!CalSbDataInfo.salary){
       document.getElementById("gzView-conatiner").style="display:none";
     }
+    if(!CalSbDataInfo.sb){
+      document.getElementById("sbView-conatiner").style="display:none";
+    }
+    if(!CalSbDataInfo.gjj){
+      document.getElementById("gjjView-conatiner").style="display:none";
+    }
     const { sb ={}, gjj = {}, salary = {} } = data;
 
     mainTotleCost = Number(salary?.total||0) + Number(gjj?.total||0) + Number(sb?.total||0)
