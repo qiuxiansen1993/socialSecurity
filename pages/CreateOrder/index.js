@@ -67,6 +67,13 @@ const calSbDataFunc = async () => {
   [..._seletedCheckbox].forEach((item) => {
     calculateData[item.name] = item.checked;
   });
+  const checkedLength = calculateData.filter((it)=>it.checked).length;
+  if(checkedLength<1){
+    setTimeout(()=>{
+      mui.toast('至少要勾选社保、公积金、工资中的一种哦~');
+    },20)
+    return
+  }
   const { code, data,msg } = await post(calSbData, {
     ...calculateData,
   });
