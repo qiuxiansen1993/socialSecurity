@@ -31,14 +31,10 @@ const getGjjDetailDataByYearFunc = async(year)=>{
             return `
             <ul class="mui-table-view"> 
                 <li class="mui-table-view-cell mui-collapse">
-                    <a class="mui-navigate-right" href="#">${month}  -  缴存：${increaseMoney}元  -  提取：${decreaseMoney}元</a>
+                    <a class="mui-navigate-right" href="#">${recordTime}，增加${increaseMoney}元，减少：${decreaseMoney}元</a>
                     <div class="mui-collapse-content">
-                        <p>缴费日期：${recordTime}</p>
                         <p>缴费单位：${companyName}</p>
-                        <p>缴费账号：${accountName}</p>
                         <p>缴费类型：${type}</p>
-                        <p>操作平台：${operatePlatform}</p>
-                        <p style="color: red;">缴费金额：${increaseMoney}元</p>
                     </div>
                 </li>
             </ul>
