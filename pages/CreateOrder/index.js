@@ -151,7 +151,7 @@ const initSubmitEvent = async() => {
         document.getElementById("service-charge").style="border:1px solid red;"
         
         setTimeout(()=>{
-          mui.toast('请您选择自主就业服务费');
+          mui.toast('请您选择服务费');
         },50)
         return
       }

@@ -107,12 +107,10 @@
     setDefaultMoney() ;
 
     function setDefaultMoney() {
-        $.showLoading("正在加载...");
-        let total_fee = $.trim($("#web_money").val());
         $.post("/property/getUserProperty.php", {
         }, function (res) {
             if (res.code == 200) {
-                $("#web_money").text(res.data.orderSum);
+                $("#web_money").val(res.data.orderSum);
             } 
         });
     }
