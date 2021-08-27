@@ -8,7 +8,6 @@
     <meta content="email=no" name="format-detection">
     <link rel="stylesheet" href="//act.weixin.qq.com/static/cdn/css/wepayui/0.1.1/wepayui.min.css">
     <link rel="stylesheet" href="/weixinPay/css/weui.min.css">
-    <link rel="stylesheet" href="/weixinPay/jquery-weui.min.css">
     <link rel="stylesheet" href="/weixinPay/css/demos.css">
     <link rel="stylesheet" href="/weixinPay/css/pay.css">
     <title>微信支付</title>
@@ -103,6 +102,19 @@
 
     function showScanCode(id, name) {
         $(id).attr("src", "/static/" + name + "?random=" + Math.random());
+    }
+
+    setDefaultMoney() ;
+
+    function setDefaultMoney() {
+        $.showLoading("正在加载...");
+        let total_fee = $.trim($("#web_money").val());
+        $.post("/property/getUserProperty.php", {
+        }, function (res) {
+            if (res.code == 200) {
+                $("#web_money").text(res.data.orderSum);
+            } 
+        });
     }
 
     /* 微信扫码支付 END*/
