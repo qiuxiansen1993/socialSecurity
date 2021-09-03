@@ -69,17 +69,38 @@ const getTopMessageFunc = async()=>{
     
   }
 }
+const initGuide = (localStorageTime)=>{
+  const localStorageGuideTime = localStorage.getItem("home_guide_show");
+  console.log(localStorageGuideTime>localStorageTime)
+  if(!localStorageGuideTime || localStorageTime < new Date().getTime()){
+    localStorage.setItem("home_guide_show", new Date().getTime()+3600*1000*24*30);//
+    const guideContent = document.getElementById('guide-content');
+    guideContent.style="display:block;"
+    guideContent.addEventListener('tap',function(e){
+      guideContent.remove();
+    })
+  }
+  
+}
+const initProcessAlert = (localStorageTime)=>{
+  localStorage.setItem("home_title_show", new Date().getTime()+3600*1000*24*300);//
+    mui.alert(`
+    <img style="width:270px;margin:0 auto;" src="/asset/doc/liuchengtu.jpeg"/>
+    `,'服务流程','我知道了',()=>{
+      initGuide(localStorageTime)
+    });
+}
 window.onload = () => {
   if(!window.__isreload){
     window.__isreload = true
   }
   const localStorageTime = localStorage.getItem("home_title_show")
   if(!localStorageTime || localStorageTime < new Date().getTime()){
-    localStorage.setItem("home_title_show", new Date().getTime()+3600*1000*24*30);
-    mui.alert(`
-    <img style="width:270px;margin:0 auto;" src="/asset/doc/liuchengtu.jpeg"/>
-    `,'服务流程','我知道了');
+    initProcessAlert(localStorageTime);
+  }else{
+    initGuide(localStorageTime);
   }
+  
   
   const homeMenu = document.getElementById("home-menu");
   const homeBody = document.getElementById("home-body");

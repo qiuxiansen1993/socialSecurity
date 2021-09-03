@@ -76,28 +76,7 @@ body {
       font-size: 0.3rem;
     }
   }
-  .details-amount {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border: 0.01rem #1199FF solid;
-    background-color: #1199FF;
-    // border-top: #007aff 0.2rem solid;
-    border-top-left-radius: 0.2rem;
-    border-top-right-radius: 0.2rem;
-    border-bottom-left-radius: 0.1rem;
-    border-bottom-right-radius: 0.1rem;
-    // opacity: .9;
-    text-align: center;
-    div {
-      font-size: 0.35rem;
-      line-height: 1rem;
-    }
-    p {
-      line-height: 28px;
-      color: #fff;
-    }
-  }
+  
   .query-group {
     // display: flex;
     // justify-content:center;
@@ -141,4 +120,67 @@ body {
 }
 .mui-popup{
   width:300px;
+}
+.title-bg{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom: 0;
+  top:0;
+  background-color: #000;
+  opacity: .7;
+  z-index: 900;
+}
+.title-icon{
+  position: fixed;
+  height:100px;
+  width:100px;
+  top:0px;
+  left:0px;
+  z-index: 999;
+}
+.title-label{
+  position: fixed;
+  color:#fff;
+  font-size: 22px;
+  top:50px;
+  left:100px;
+  z-index: 999;
+}
+.mui-popover .mui-table-view{
+  max-height:100vh;
+}
+.mui-table-view-cell{
+  padding: 10px 15px;
+}
+.business-list{
+  .mui-table-view-cell{
+    padding: 20px 15px;
+  }
+}
+.details-amount {
+  border: 0.01rem #1199FF solid;
+  background-color: #1199FF;
+  // border-top: #007aff 0.2rem solid;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  border-bottom-left-radius: 0.1rem;
+  border-bottom-right-radius: 0.1rem;
+  // opacity: .9;
+  text-align: center;
+  .top-up{
+    font-size: 13px;
+    line-height: 25px;
+    color: red;
+    font-weight: 900;
+  }
+  div {
+    font-size: 0.35rem;
+    line-height: 1rem;
+  }
+  p {
+    line-height: 28px;
+    color: #fff;
+  }
 }

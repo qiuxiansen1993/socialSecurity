@@ -120,3 +120,14 @@
     color:#1199ff;
   }
 }
+#xiyi-content{
+  height:240px;
+  overflow: hidden;
+  line-height: 24px;
+}
+.pull-text{
+  position: absolute;
+  bottom:-3px;
+  transform: translate(-50%,0);
+  left:50%;
+}

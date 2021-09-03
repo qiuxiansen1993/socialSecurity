@@ -60,6 +60,12 @@
       <!-- 主页面容器 -->
       <div >
         <!-- 主页面内容容器 -->
+        <div id="guide-content" style="display: none;">
+          <div class="title-bg"></div>
+          <img class="title-icon" src="/asset/imgs/print.png" alt="">
+          <span class="title-label">点击这里进行更多操作</span>
+        </div>
+        
         <div style="background:#fff;" id="home-body">
           <!-- 主页面标题 -->
           <header class="mui-bar mui-bar-nav">
@@ -131,7 +137,11 @@
                       <span class="business-title">薪酬</span>
                     </li>
                   </div>
-                  <div class="details-amount" id="toPayCost">
+                 
+                </div>
+                <div class="details-amount" id="toPayCost">
+                  <p class="top-up">点击这里进行充值操作</p>
+                  <div style="display: flex;align-items: center;justify-content: space-around;">
                     <div>
                       <p>余额</p>
                       <p style="font-size: 16px;" id="mybalance-num"></p>
@@ -146,7 +156,6 @@
                     </div>
                   </div>
                 </div>
-                
                 <div class="query-group">
                   <button
                     type="button"

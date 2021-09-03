@@ -9,6 +9,7 @@ import {
 
 import "./index.scss";
 let city = '' // 城市
+let selectedCity = ''// 选择的城市
 let UserInfos = {} // 信息
 let isPageHide = false; 
 const xiyiTitle = document.getElementById('xiyi-title');
@@ -48,6 +49,13 @@ const getUserInfoFunc = async()=>{
 }
 const setXiyiContent = (city)=>{
   if(city === '北京'){
+    xiyiContent.style="";
+    const pullText = document.querySelector('.pull-text');
+    pullText.style="display:block;"
+    pullText.addEventListener("tap",function(e){
+      xiyiContent.style="height:auto;";
+      e.target.style="display:none;"
+    })
     xiyiTitle.innerHTML = '自主就业';
     xiyiContent.innerHTML = `
     <p>因政策要求，2020年9月起，您选择的工作城市不再支持单纯的“社保代缴”服务，<span class="highlight">不合政策要求的社保代缴服务会导致您的权益得不到保障。 </span>
@@ -129,6 +137,12 @@ window.onload = () => {
     window.location = `${document.location.protocol}//${window.location.host}/PayCost/index.html`
   });
   document.getElementById("create-order").addEventListener("tap", function () {
+    const {userIdCard,userName} = UserInfos
+    // if(!userIdCard || userIdCard === 'null' || !userName || userName === 'null'){
+    //   mui.alert('请先补充个人资料','提示','去补充',()=>{
+    //     window.location = `${document.location.protocol}//${window.location.host}/MyInfo/index.html?back=MyServer`
+    //   })
+    // }
     document.getElementById("handle-order").style= 'display:none;';
     document.getElementById("order-operation").style= 'display:none;';
     document.getElementById("handle-tools").style= 'display:none;';
