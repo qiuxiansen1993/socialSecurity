@@ -138,11 +138,11 @@ window.onload = () => {
   });
   document.getElementById("create-order").addEventListener("tap", function () {
     const {userIdCard,userName} = UserInfos
-    // if(!userIdCard || userIdCard === 'null' || !userName || userName === 'null'){
-    //   mui.alert('请先补充个人资料','提示','去补充',()=>{
-    //     window.location = `${document.location.protocol}//${window.location.host}/MyInfo/index.html?back=MyServer`
-    //   })
-    // }
+    if(!userIdCard || userIdCard === 'null' || !userName || userName === 'null'){
+      mui.alert('请先补充个人资料','提示','去补充',()=>{
+        window.location = `${document.location.protocol}//${window.location.host}/MyInfo/index.html?back=MyServer`
+      })
+    }
     document.getElementById("handle-order").style= 'display:none;';
     document.getElementById("order-operation").style= 'display:none;';
     document.getElementById("handle-tools").style= 'display:none;';
