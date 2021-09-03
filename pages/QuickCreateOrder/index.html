@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title></title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,user-scalable=no,minimal-ui"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8" />
+    <% for (var meta in htmlWebpackPlugin.options.files.meta) { %>
+    <meta
+      name="<%=htmlWebpackPlugin.options.files.meta[meta].name %>"
+      content="<%=htmlWebpackPlugin.options.files.meta[meta].content %>"
+    />
+    <% } %> <% for (var css in htmlWebpackPlugin.options.files.css) { %>
+    <link
+      href="<%=htmlWebpackPlugin.options.files.css[css] %>"
+      rel="stylesheet"
+    />
+    <% } %> <% for (var js in htmlWebpackPlugin.options.files.js) { %>
+    <script src="<%=htmlWebpackPlugin.options.files.js[js] %>"></script>
+    <% } %>
+    <script type="text/javascript" charset="utf-8">
+      window.NODE_ENV = "<%=htmlWebpackPlugin.options.files.NODE_ENV %>"
+    </script>
+  </head>
+  <body>
+    <header class="mui-bar mui-bar-nav">
+      <a
+        class="mui-icon mui-icon-arrowleft mui-icon-bars mui-pull-left nav-bar-handle"
+        id="home-menu"
+      ></a>
+      <h1 class="mui-title">快速创建订单</h1>
+    </header>
+    <div class="createOrder-content">
+      <div class="mui-card">
+        <!--页眉，放置标题-->
+        <div class="mui-card-header" style="display: flex;justify-content:left;">
+          <div id="headimg">
+            <i
+              class="mui-icon mui-icon-contact"
+              style="font-size: 50px; color: #1199ff;margin-right: 10px;"
+            ></i>
+          </div>
+          <div>
+            <div class="mui-row">
+              <div id="userName"></div>
+            </div>
+            <div class="mui-row">
+              <div id="userIdCard"></div>
+            </div>
+            <div class="mui-row">
+              <div id="userHouseHold"></div>
+            </div>
+          </div>
+          
+        </div>
+        <!--内容区-->
+        <div
+          class="mui-card-content create-order-info"
+          style="padding: 10px 15px"
+        >
+          <div class="mui-row">
+            <div class="mui-col-sm-4 mui-col-xs-4">工作城市</div>
+            <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right" id="cityName">
+            </div>
+          </div>
+          <div class="mui-row">
+            <div class="mui-col-sm-4 mui-col-xs-4">办理单位</div>
+            <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right" id="corpName"></div>
+          </div>
+          <div class="mui-row">
+            <div class="mui-col-sm-4 mui-col-xs-4">服务类型</div>
+            <div class="mui-col-sm-8 mui-col-xs-8 create-order-info__right" id="serverType">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mui-card">
+        <div class="mui-card-header" style="background-color:#1199ff;">选择缴纳信息</div>
+        <!--内容区-->
+        <div class="mui-card-content">
+          <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+              <a id="paymonth" class="mui-navigate-right display-flex">
+                <span>起始月份</span>
+                <span id="month" style="padding-right: 15px"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="submit-content" style="padding: 0 10px;">
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a id="service-charge" class="mui-navigate-right display-flex">
+              <span>
+                <span id="label-server">就业服务费</span>
+                <p><span class="asof"></span></p>
+              </span>
+              <span id="service-charge-info" style="padding-right: 15px"></span>
+            </a>
+          </li>
+        </ul>
+        <h5 class="cost-view">《办理须知》点击查看</h5>
+        <button class="submit-btn" id="submit-btn-click" type="button" class="mui-btn" >提交订单</button>
+      </div>
+      
+    </div>
+  </body>
+</html>

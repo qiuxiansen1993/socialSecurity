@@ -95,7 +95,7 @@ const config = {
     GjjTool:"./pages/GjjTool/index.js",
     Marketing:"./pages/Marketing/index.js",
     Announce:"./pages/Announce/index.js",
-    MyInviteRecommand:"./pages/MyInviteRecommand/index.js",
+    QuickCreateOrder:"./pages/QuickCreateOrder/index.js",
     SbView:"./pages/SbView/index.js",
     GjjView:"./pages/GjjView/index.js",
     SbViewDateList:"./pages/SbView/DateList/index.js",
@@ -363,6 +363,14 @@ const config = {
       filename: "MonthDetail/index.html",
       template: "./pages/SbView/MonthDetail/index.html",
       chunks: ["SbViewMonthDetail"],
+      inject:'body',
+      files:customPage
+    }),
+    new HtmlWebpackPlugin({
+      title: "QuickCreateOrder",
+      filename: "QuickCreateOrder/index.html",
+      template: "./pages/QuickCreateOrder/index.html",
+      chunks: ["QuickCreateOrder"],
       inject:'body',
       files:customPage
     }),

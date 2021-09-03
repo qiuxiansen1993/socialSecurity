@@ -55,7 +55,7 @@ const getUserOrderListFunc = async(page = 0)=>{
                     <div>是否新缴纳社保：${item.baseSalary == 1?'是':'否'}</div>
                     <div>是否新缴纳公积金：${item.baseSalary == 1?'是':'否'}</div>
                     <div>基本工资：${item.baseSalary == 1?'是':'否'}</div>
-                    <img src="${status === '0'?'/asset/imgs/shenheing.png':'/asset/imgs/shenheing.png'}" class="shenheState"></i>
+                    <img src="${status === '0'?'/asset/imgs/shenheing.png':'/asset/imgs/shenhesuc.png'}" class="shenheState"></i>
                     <span class="to-search mui-icon mui-icon-search">详情</span>
             </div>    
                `;
