@@ -14,10 +14,10 @@ import "./index.scss";
 const configData = {};
 const calculateData = {
   addSb: true,
-  sbIsNew: true,
+  sbIsNew: false,
   addGjj: true,
-  gjjIsNew: true,
-  addSalary: true,
+  gjjIsNew: false,
+  addSalary: false,
 };
 let cityNameinfo = '';
 let FeeInfo = [];
@@ -373,18 +373,18 @@ const initSwitchFunc = () => {
     .getElementById("shebao-switch")
     .addEventListener("toggle", function (event) {
       if (event.detail.isActive) {
-        calculateData["sbIsNew"] = false;
-      } else {
         calculateData["sbIsNew"] = true;
+      } else {
+        calculateData["sbIsNew"] = false;
       }
     });
   document
     .getElementById("gongjijin-switch")
     .addEventListener("toggle", function (event) {
       if (event.detail.isActive) {
-        calculateData["gjjIsNew"] = false;
-      } else {
         calculateData["gjjIsNew"] = true;
+      } else {
+        calculateData["gjjIsNew"] = false;
       }
     });
   document
