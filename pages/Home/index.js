@@ -41,9 +41,9 @@ const getUserPropertyFunc = async()=>{
   const { code,data } = await get(getUserProperty);
   if(code ===200){
     const {lwCoin,balance,orderSum} = data
-    document.getElementById('lwcion-num').innerHTML = Math.floor(lwCoin * 100) / 100||0;
-    document.getElementById('mybalance-num').innerHTML = Math.floor(balance * 100)/100||0;
-    document.getElementById('order-sum').innerHTML = Math.floor(orderSum * 100)/100||0;
+    document.getElementById('lwcion-num').innerHTML = Math.floor(lwCoin * 100) / 100||0.00;
+    document.getElementById('mybalance-num').innerHTML = Math.floor(balance * 100)/100||0.00;
+    document.getElementById('order-sum').innerHTML = Math.floor(orderSum * 100)/100||0.00 +"&nbsp;&nbsp;<a href='/PayList/index.html' style='color:yellow;'>(点击充值)</a>";
   }
 }
 const getTopMessageFunc = async()=>{
